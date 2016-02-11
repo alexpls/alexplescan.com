@@ -1,0 +1,58 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Avenir Next', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 5.0rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2.5rem;
+}
+
+small {
+  font-size: 80%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+span.bullet {
+  font-size: 55%;
+  vertical-align: middle;
+}
