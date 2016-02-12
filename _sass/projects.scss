@@ -1,62 +1,118 @@
+$overhang-width: 50px;
+
 .section-title {
   font-size: 3rem;
   margin-bottom: 1em;
+  border-bottom: 1px solid $border-color;
 }
 
 .projects {
   .project {
     margin-bottom: 4em;
 
-    .feature {
-      margin-left: -50px;
-      border-bottom: 1px solid #ddd;
+    h5 {
+      .meta {
+        float: right;
+        font-weight: normal;
+      }
     }
 
+    .feature {
+      margin-left: -$overhang-width;
+      margin-right: -$overhang-width;
+      border-bottom: 1px solid $border-color;
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
-}
 
+  $feature-height: 170px;
+  $feature-height-tablet: 120px;
+  $feature-height-mobile: 80px;
 
-.soonlist-feature {
-  $phone-height: 300px;
+  .soonlist-feature {
+    height: $feature-height;
+    @media screen and (max-width: $breakpoint-tablet) {
+      height: $feature-height-tablet;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      height: $feature-height-mobile;
+    }
 
-  height: $phone-height * 0.75;
-  overflow: hidden;
-
-  .phone {
     overflow: hidden;
-    float: left;
-    display: inline-block;
-    width: 33.33333%;
-    height: $phone-height;
-    border-radius: 4px;
-    border: 2px solid #ddd;
 
-    box-sizing: border-box;
-    -webkit-transform: perspective(500px) rotateY(6.3deg) scale(0.778, 0.863) translate(-1px, -7.5px);
-    -webkit-transition: transform 200ms;
+    margin-left: $overhang-width;
+    margin-right: $overhang-width;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
+    .phone {
+      float: left;
+      display: inline-block;
+      width: 33.33333%;
+
+      height: $feature-height + 30px;
+      @media screen and (max-width: $breakpoint-tablet) {
+        height: $feature-height-tablet + 30px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        height: $feature-height-mobile + 30px;
+      }
+
+      border-radius: $border-radius;
+      border: 2px solid $border-color;
+      box-sizing: border-box;
+
+      $translateX: 33px;
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        $translateX: 28px;
+      }
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        $translateX: 10px;
+      }
+
+      &.first {
+        -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+      }
+
+      &.third {
+        -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .image-feature {
+    height: $feature-height;
+    overflow: hidden;
+    text-align: center;
+    margin-left: $overhang-width;
+    margin-right: $overhang-width;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
 
     img {
+      border-radius: $border-radius;
+      border: 1px solid $border-color;
+      border-bottom: 0;
       width: 100%;
+      box-sizing: border-box;
       height: auto;
     }
-
-    &:hover {
-      -webkit-transform: perspective(0px) rotateY(0deg) scale(0.778, 0.863) translate(-1px, -7.5px);
-    }
-  }
-
-}
-
-.image-feature {
-  height: 170px;
-  overflow: hidden;
-  text-align: center;
-
-  img {
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    border-bottom: 0;
-    width: 80%;
-    height: auto;
   }
 }

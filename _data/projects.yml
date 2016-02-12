@@ -1,31 +1,27 @@
 - name: Soonlist
   year: 2015
-  meta: app
   link: http://soonlistapp.com
   feature_template_name: project_features/soonlist_feature.html
   description: >
-    iPhone app which sends you reminders when your favourite movies are
-    coming out.
+    Learn about upcoming movies. (iPhone app)
 
 - name: SideSwipe
   year: 2014
-  meta: web
   feature_template_name: project_features/sideswipe_feature.html
   description: >
-    Embeddable help center widget for web apps. Abandoned project.
+    Embeddable knowledge base widget for web apps. No longer maintained.
 
 - name: i-MID Wallpapers
-  year: 2014
-  meta: web
+  year: 2013
   link: https://imidwallpapers.com
   feature_template_name: project_features/imid_feature.html
   description: >
-    Create or find wallpapers for Honda cars with i-MID displays.
+    Find and create wallpapers for cars with i-MID displays.
 
-- name: Cristina Silaghi
-  year: 2013
-  meta: web
-  link: http://cristinasilaghi.com
-  feature_template_name: project_features/cristina_feature.html
-  description: >
-    Artist website.
+# - name: Cristina Silaghi
+#   year: 2013
+#   meta: web
+#   link: http://cristinasilaghi.com
+#   feature_template_name: project_features/cristina_feature.html
+#   description: >
+#     Artist website.

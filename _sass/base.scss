@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Avenir Next', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Avenir Next', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   line-height: 1.6;
 }
@@ -17,23 +17,34 @@ h2 {
 }
 
 h3 {
+  font-weight: 600;
   font-size: 3.6rem;
 }
 
 h4 {
+  font-weight: 600;
   font-size: 3rem;
 }
 
 h5 {
+  font-weight: 600;
   font-size: 2.4rem;
 }
 
 h6 {
+  font-weight: 600;
   font-size: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
+}
+
+a {
+  color: #4785df;
+}
+a:hover {
+  color: #5471c8;
 }
 
 p {

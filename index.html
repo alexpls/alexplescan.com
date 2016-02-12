@@ -6,7 +6,7 @@ title: Alex Plescan
 <div id="home">
 
   <section class="projects">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Recent projects</h2>
 
     {% for project in site.data.projects %}
     <div class="project">
@@ -17,8 +17,8 @@ title: Alex Plescan
           {{ project.name }}
         {% endif %}
 
-        {% if project.year and project.meta %}
-          <small class="meta">({{project.year}} <span class="bullet">&bullet;</span> {{project.meta}})</small>
+        {% if project.year %}
+          <small class="meta">({{ project.year }})</small>
         {% endif %}
       </h5>
 

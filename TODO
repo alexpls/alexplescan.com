@@ -2,4 +2,9 @@
 - Add CNAME for alexplescan.com
 - Some protection around my email address to prevent scrapers
 - Responsive styles
-- Check out how design looks on Windows (Arial)
+- Check out how design looks on Windows (Arial) (maybe just get a typekit font?)
+  - If using typekit, make sure kit only has fonts which are being used
+  - Try to get rid of the font flash somehow
+- Find a way to prevent the CSS transforms from flashing in
+- Nice degradation for the CSS transformed app screenshots
+- Any place where -webkit-transform is used add in -moz, -ms, etc transorms

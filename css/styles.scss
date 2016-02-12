@@ -2,6 +2,12 @@
 ---
 @import 'reset.scss';
 
+$breakpoint-tablet: 700px;
+$breakpoint-mobile: 400px;
+
+$border-color: #ddd;
+$border-radius: 4px;
+
 @mixin clearfix {
   &:after {
     content: ".";
@@ -14,34 +20,63 @@
 
 .page-content {
   margin: 0 auto;
+  padding: 0 15px;
   max-width: 600px;
 }
 
 header {
-  @include clearfix;
-
   padding: 1em 0 4em 0;
 
-  h1 {
-    float: left;
-
-    font-weight: 600;
-    font-size: 2.4rem;
-
-    .sub {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: normal;
-    }
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding-bottom: 1em;
   }
 
-  .links {
-    float: right;
+  h1 {
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
 
-    &>a {
-      display: block;
-      text-align: right;
+  .subhead {
+    @include clearfix;
+
+    &> p {
+      float: left;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        float: none;
+        margin-bottom: 0.3em;
+      }
     }
+
+    .links {
+      float: right;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        float: none;
+      }
+
+      &>a {
+        text-align: right;
+        margin-left: 6px;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          text-align: left;
+          margin-left: 0;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 80%;
+
+  .footer-links > li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 
