@@ -4,6 +4,7 @@ html {
 
 body {
   font-family: 'Lato', 'Avenir Next', Helvetica, Arial, sans-serif;
+  color: #222222;
   font-size: 1.5em;
   line-height: 1.6;
 }
@@ -17,22 +18,18 @@ h2 {
 }
 
 h3 {
-  font-weight: 600;
   font-size: 3.6rem;
 }
 
 h4 {
-  font-weight: 600;
   font-size: 3rem;
 }
 
 h5 {
-  font-weight: 600;
   font-size: 2.4rem;
 }
 
 h6 {
-  font-weight: 600;
   font-size: 1.5rem;
 }
 
@@ -40,8 +37,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
+h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
 a {
-  color: #4785df;
+  color: $primary-color;
 }
 a:hover {
   color: #5471c8;
@@ -66,4 +67,68 @@ em {
 span.bullet {
   font-size: 55%;
   vertical-align: middle;
+}
+
+html {
+  background-color: $background-color;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 600px;
+}
+
+header {
+  @include clearfix;
+
+  background: #efefef;
+  background: -webkit-linear-gradient(top, $background-color 0%, #efefef 100%);
+
+  border-bottom: 1px solid $border-color;
+  padding: 1em 0;
+
+  h1 {
+    float: left;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      float: none;
+    }
+
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
+
+  .subhead {
+    margin-top: 10px;
+    float: right;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      float: none;
+    }
+
+    .links {
+      &>a {
+        text-align: right;
+        margin-left: 6px;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          text-align: left;
+          margin-left: 0;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 80%;
+
+  .footer-links > li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

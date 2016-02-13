@@ -1,4 +1,6 @@
 - Compress images and provide @2x variants
+- Check over _config.yml before deploy
+- Favicon
 - Add CNAME for alexplescan.com
 - Some protection around my email address to prevent scrapers
 - Check out how design looks on Windows (Arial) (maybe just get a typekit font?)

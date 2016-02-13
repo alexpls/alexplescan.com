@@ -1,9 +1,22 @@
-$overhang-width: 50px;
+$overhang-width: 20px;
+
+@mixin overhang($breakpoint-width) {
+  margin-left: -$overhang-width;
+  margin-right: -$overhang-width;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: $breakpoint-width;
+    margin-right: $breakpoint-width;
+  }
+}
 
 .section-title {
+  @include overhang(0px);
+
   font-size: 3rem;
-  margin-bottom: 1em;
-  border-bottom: 1px solid $border-color;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  text-align: center;
 }
 
 .projects {
@@ -18,14 +31,8 @@ $overhang-width: 50px;
     }
 
     .feature {
-      margin-left: -$overhang-width;
-      margin-right: -$overhang-width;
+      @include overhang(0px);
       border-bottom: 1px solid $border-color;
-
-      @media screen and (max-width: $breakpoint-tablet) {
-        margin-left: 0;
-        margin-right: 0;
-      }
     }
   }
 
@@ -114,5 +121,17 @@ $overhang-width: 50px;
       box-sizing: border-box;
       height: auto;
     }
+  }
+}
+
+.other-work {
+  margin-bottom: 2.5rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    color: #999;
   }
 }
