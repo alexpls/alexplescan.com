@@ -1,6 +1,1 @@
-- Check over _config.yml before deploy
 - Favicon
-- Add CNAME for alexplescan.com
-- Some protection around my email address to prevent scrapers
-- Any place where -webkit-transform is used add in -moz, -ms, etc transorms
-- Add proper description and title meta tags
