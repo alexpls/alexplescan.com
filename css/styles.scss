@@ -8,6 +8,18 @@ $primary-color: #1c58c2;
 $border-color: #ddd;
 $border-radius: 4px;
 
+$overhang-width: 50px;
+
+@mixin overhang($breakpoint-width) {
+  margin-left: -$overhang-width;
+  margin-right: -$overhang-width;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: $breakpoint-width;
+    margin-right: $breakpoint-width;
+  }
+}
+
 @mixin clearfix {
   &:after {
     content: " ";
