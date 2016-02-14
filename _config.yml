@@ -1,0 +1,10 @@
+title: Alex Plescan
+email: alex@alexplescan.com
+description: Alex Plescan - web and mobile developer based in Gold Coast, Australia.
+url: "http://alexplescan.com"
+github_username:  alexpls
+
+markdown: kramdown
+
+sass:
+  style: compressed
