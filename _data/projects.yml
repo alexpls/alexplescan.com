@@ -1,13 +1,17 @@
 - name: Soonlist
   link: https://itunes.apple.com/au/app/soonlist-upcoming-movie-info/id1041801201?mt=8
   feature_template_name: project_features/soonlist_feature.html
-  description: Learn about upcoming movies. (iPhone app)
+  description: >
+    iPhone app to help you learn about upcoming movies near you and set up reminders
+    for when they're going to be released.
 
 - name: i-MID Wallpapers
   link: https://imidwallpapers.com
   feature_template_name: project_features/imid_feature.html
-  description: Find and create wallpapers for cars with i-MID displays.
+  description: >
+    Website which converts regular images into wallpapers for i-MID displays.
 
 - name: SideSwipe
   feature_template_name: project_features/sideswipe_feature.html
-  description: Embeddable knowledge base widget for web apps. No longer maintained.
+  description: >
+    An embeddable knowledge base widget for web apps. No longer maintained.

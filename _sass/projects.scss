@@ -9,7 +9,7 @@
 
 .projects {
   .project {
-    margin-bottom: 4em;
+    margin-bottom: $vertical-margin;
 
     h5 {
       .meta {
@@ -21,6 +21,7 @@
     .feature {
       @include overhang(0px);
       border-bottom: 1px solid $border-color;
+      box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -51,6 +52,7 @@
       float: left;
       display: inline-block;
       width: 33.33333%;
+      overflow: hidden;
 
       height: $feature-height + 30px;
       @media screen and (max-width: $breakpoint-tablet) {
@@ -61,7 +63,7 @@
       }
 
       border-radius: $border-radius;
-      border: 2px solid $border-color;
+      border: 1px solid $border-color;
       box-sizing: border-box;
 
       $translateX: 33px;
@@ -113,11 +115,7 @@
 }
 
 .other-work {
-  margin-bottom: 2.5rem;
-
-  p {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: $vertical-margin;
 
   .description {
     color: #999;

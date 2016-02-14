@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: 'Lato', 'Avenir Next', Helvetica, Arial, sans-serif;
-  color: #222222;
+  color: $text-color;
   font-size: 1.5em;
   line-height: 1.6;
 }
@@ -42,10 +42,10 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color: $primary-color;
+  color: $link-color;
 }
 a:hover {
-  color: #5471c8;
+  color: $link-hover-color;
 }
 
 p {
@@ -82,11 +82,14 @@ html {
 header {
   @include clearfix;
 
-  background: #efefef;
-  background: -webkit-linear-gradient(top, $background-color 0%, #efefef 100%);
-
-  border-bottom: 1px solid $border-color;
   padding: 1em 0;
+  margin-bottom: $vertical-margin;
+
+  background: #2C3E50;
+
+  a {
+    color: $background-color;
+  }
 
   h1 {
     float: left;
@@ -97,6 +100,11 @@ header {
 
     font-weight: 600;
     font-size: 2.4rem;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .subhead {
@@ -108,18 +116,24 @@ header {
     }
 
     .links {
+      $link-margin: 8px;
+
       &>a {
         text-align: right;
-        margin-left: 6px;
+        margin-left: $link-margin;
 
         @media screen and (max-width: $breakpoint-mobile) {
           text-align: left;
           margin-left: 0;
-          margin-right: 6px;
+          margin-right: $link-margin;
         }
       }
     }
   }
+}
+
+section {
+  margin-bottom: $vertical-margin;
 }
 
 footer {
