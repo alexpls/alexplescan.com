@@ -1,3 +1,7 @@
+$feature-height: 170px;
+$feature-height-tablet: 120px;
+$feature-height-mobile: 80px;
+
 .section-title {
   @include overhang(0px);
 
@@ -6,116 +10,142 @@
   text-align: center;
 }
 
-.projects {
-  .project {
-    margin-bottom: $vertical-margin;
+.project {
+  margin-bottom: $vertical-margin;
 
-    h5 {
-      .meta {
-        float: right;
-        font-weight: normal;
-      }
-    }
-
-    .feature {
-      @include overhang(0px);
-      border-bottom: 1px solid $border-color;
-      box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
+  h5 {
+    .meta {
+      float: right;
+      font-weight: normal;
     }
   }
 
-  $feature-height: 170px;
-  $feature-height-tablet: 120px;
-  $feature-height-mobile: 80px;
+  .feature {
+    @include overhang(0px);
+    border-bottom: 1px solid $border-color;
+    box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
+  }
+}
 
-  .soonlist-feature {
-    height: $feature-height;
-    @media screen and (max-width: $breakpoint-tablet) {
-      height: $feature-height-tablet;
-    }
-    @media screen and (max-width: $breakpoint-mobile) {
-      height: $feature-height-mobile;
-    }
-
-    overflow: hidden;
-
-    margin-left: $overhang-width;
-    margin-right: $overhang-width;
-
-    @media screen and (max-width: $breakpoint-tablet) {
-      margin-left: 4px;
-      margin-right: 4px;
-    }
-
-    .phone {
-      float: left;
-      display: inline-block;
-      width: 33.33333%;
-      overflow: hidden;
-
-      height: $feature-height + 30px;
-      @media screen and (max-width: $breakpoint-tablet) {
-        height: $feature-height-tablet + 30px;
-      }
-      @media screen and (max-width: $breakpoint-mobile) {
-        height: $feature-height-mobile + 30px;
-      }
-
-      border-radius: $border-radius;
-      border: 1px solid $border-color;
-      box-sizing: border-box;
-
-      $translateX: 33px;
-
-      @media screen and (max-width: $breakpoint-tablet) {
-        $translateX: 28px;
-      }
-
-      @media screen and (max-width: $breakpoint-mobile) {
-        $translateX: 10px;
-      }
-
-      &.first {
-        -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-      }
-
-      &.third {
-        -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
+.soonlist-feature {
+  height: $feature-height;
+  @media screen and (max-width: $breakpoint-tablet) {
+    height: $feature-height-tablet;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: $feature-height-mobile;
   }
 
-  .image-feature {
-    height: $feature-height;
+  overflow: hidden;
+
+  margin-left: $overhang-width;
+  margin-right: $overhang-width;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .phone {
+    float: left;
+    display: inline-block;
+    width: 30%;
+    overflow: hidden;
+
+    &.second {
+      margin-left: 3.333%;
+      margin-right: 3.333%;
+    }
+
+    &.first {
+      margin-left: 1.5%;
+    }
+
+    &.third {
+      margin-right: 1.5%;
+    }
+
+    height: $feature-height + 30px;
     @media screen and (max-width: $breakpoint-tablet) {
-      height: $feature-height-tablet;
+      height: $feature-height-tablet + 30px;
     }
     @media screen and (max-width: $breakpoint-mobile) {
-      height: $feature-height-mobile;
+      height: $feature-height-mobile + 30px;
     }
-    overflow: hidden;
-    text-align: center;
-    margin-left: $overhang-width;
-    margin-right: $overhang-width;
 
-    @media screen and (max-width: $breakpoint-tablet) {
-      margin-left: 4px;
-      margin-right: 4px;
-    }
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
 
     img {
-      border-radius: $border-radius;
-      border: 1px solid $border-color;
-      border-bottom: 0;
       width: 100%;
-      box-sizing: border-box;
       height: auto;
     }
+  }
+}
+
+.supports-transform .projects .soonlist-feature .phone {
+  width: 33.33333%;
+  margin-right: 0;
+
+  $translateX: 33px;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    $translateX: 28px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    $translateX: 10px;
+  }
+
+  &.first {
+    -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -moz-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -ms-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -o-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+  }
+
+  &.third {
+    -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -moz-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -ms-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -o-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+  }
+
+  &.first, &.second, &.third {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+.image-feature {
+  height: $feature-height;
+  @media screen and (max-width: $breakpoint-tablet) {
+    height: $feature-height-tablet;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: $feature-height-mobile;
+  }
+  overflow: hidden;
+  text-align: center;
+  margin-left: $overhang-width;
+  margin-right: $overhang-width;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  img {
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    border-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
   }
 }
 
