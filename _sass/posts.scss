@@ -1,0 +1,15 @@
+.post-header {
+  text-align: center;
+
+  p.subtitle {
+    color: $text-muted-color;
+  }
+}
+
+.post-content {
+  margin-bottom: $leading * 3;
+  img {
+    display: block;
+    width: 100%;
+  }
+}

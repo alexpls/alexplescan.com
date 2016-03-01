@@ -1,0 +1,11 @@
+---
+layout: default
+title: Recent posts
+---
+<div id="posts">
+  <section class="posts">
+    {% for post in site.posts %}
+      {% include post_item.html %}
+    {% endfor %}
+  </section>
+</div>

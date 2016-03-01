@@ -1,44 +1,9 @@
 html {
-  font-size: 62.5%;
+  background-color: $background-color;
 }
 
 body {
-  font-family: 'Lato', 'Avenir Next', Helvetica, Arial, sans-serif;
   color: $text-color;
-  font-size: 1.5em;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 5.0rem;
-}
-
-h2 {
-  font-size: 4.2rem;
-}
-
-h3 {
-  font-size: 3.6rem;
-}
-
-h4 {
-  font-size: 3rem;
-}
-
-h5 {
-  font-size: 2.4rem;
-}
-
-h6 {
-  font-size: 1.5rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-}
-
-h3, h4, h5, h6 {
-  font-weight: 600;
 }
 
 a {
@@ -48,20 +13,14 @@ a:hover {
   color: $link-hover-color;
 }
 
-p {
-  margin-bottom: 2.5rem;
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
-small {
-  font-size: 80%;
-}
-
-strong {
-  font-weight: bold;
-}
-
-em {
-  font-style: italic;
+blockquote {
+  border-left: 5px solid #ddd;
+  padding-left: 10px;
 }
 
 span.bullet {
@@ -69,20 +28,16 @@ span.bullet {
   vertical-align: middle;
 }
 
-html {
-  background-color: $background-color;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 600px;
+  max-width: 720px;
 }
 
 header {
   @include clearfix;
 
-  padding: 1em 0;
+  padding: 8px 0;
   margin-bottom: $vertical-margin;
 
   background: #2C3E50;
@@ -94,13 +49,14 @@ header {
   h1 {
     float: left;
 
+    margin: 0;
+    font-size: $baseFontSize * 1px;
+    line-height: $baseFontSize * $baseLineHeight * 1px;
+    font-weight: 800;
+
     @media screen and (max-width: $breakpoint-mobile) {
       float: none;
     }
-
-    font-weight: 600;
-    font-size: 2.4rem;
-    margin-bottom: 0;
 
     a {
       text-decoration: none;
@@ -108,7 +64,6 @@ header {
   }
 
   .subhead {
-    margin-top: 10px;
     float: right;
 
     @media screen and (max-width: $breakpoint-mobile) {
@@ -116,11 +71,17 @@ header {
     }
 
     .links {
-      $link-margin: 8px;
+      $link-margin: 10px;
+      font-size: $baseFontSize * 0.9px;
+      line-height: $baseFontSize * $baseLineHeight * 1px;
 
       &>a {
         text-align: right;
         margin-left: $link-margin;
+
+        &.active {
+          font-weight: 600;
+        }
 
         @media screen and (max-width: $breakpoint-mobile) {
           text-align: left;

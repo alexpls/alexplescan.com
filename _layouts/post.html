@@ -2,7 +2,13 @@
 layout: default
 ---
 <article>
-  <h2>{{ page.title }}</h2>
+  <div class="post-header">
+    <h2>{{ page.title }}</h2>
+    <p class="subtitle">
+      <time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+      | <a href="{{ page.url }}">Permalink</a>
+    </p>
+  </div>
 
   <div class="post-content">
     {{ content }}

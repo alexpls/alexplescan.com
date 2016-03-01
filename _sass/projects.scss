@@ -3,9 +3,6 @@ $feature-height-tablet: 120px;
 $feature-height-mobile: 80px;
 
 .section-title {
-  @include overhang(0px);
-
-  font-size: 3rem;
   margin-bottom: 1em;
   text-align: center;
 }
@@ -21,7 +18,7 @@ $feature-height-mobile: 80px;
   }
 
   .feature {
-    @include overhang(0px);
+    margin-top: $leading;
     border-bottom: 1px solid $border-color;
     box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
   }
