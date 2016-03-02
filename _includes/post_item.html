@@ -1,10 +1,10 @@
 <article>
-  <div class="post-header">
+  <header class="post-header">
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <p class="subtitle">
-      <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+      <time datetime="{{ post.date }}">{{ post.date | date: "%-d %B %Y" }}</time>
     </p>
-  </div>
+  </header>
 
   <div class="post-content">
     {{ post.content }}

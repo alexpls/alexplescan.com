@@ -13,3 +13,12 @@
     width: 100%;
   }
 }
+
+// an image caption
+img + em {
+  display: block;
+  font-size: $smallFontSize;
+  margin-top: -($leading/2);
+  color: $text-muted-color;
+  text-align: center;
+}

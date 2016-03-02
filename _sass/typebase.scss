@@ -7,6 +7,8 @@ $leading:$baseLineHeight * 1rem;
 // I actually like this to be slightly smaller then the leading. Makes for tight headings.
 $scale:1.414;
 
+$smallFontSize: 0.6 * $scale * 1rem;
+
 html {
     font-family: Lato, sans-serif;
     font-size: $baseFontSize / 16 * 100%;
@@ -74,14 +76,17 @@ h3 {
 
 h4 {
     font-size: $scale / 1.5 * 1rem;
+    font-weight: bold;
 }
 
 h5 {
     font-size: $scale / 2 * 1rem;
+    font-weight: bold;
 }
 
 h6 {
     font-size: $scale / 2.5 * 1rem;
+    font-weight: bold;
 }
 
 /* Tables */
