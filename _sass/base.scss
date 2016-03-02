@@ -101,12 +101,14 @@ span.bullet {
 }
 
 section {
-  margin-bottom: $vertical-margin;
+  margin-bottom: $leading;
 }
 
 footer {
   text-align: center;
   font-size: 80%;
+  margin-top: $leading * 2;
+  margin-bottom: $leading;
 
   .footer-links > li {
     display: inline;

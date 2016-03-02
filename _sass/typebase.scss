@@ -89,20 +89,9 @@ h6 {
     font-weight: bold;
 }
 
-/* Tables */
-
-table {
-  margin-top: $leading;
-  border-spacing: 0px;
-  border-collapse: collapse;
+small {
+  font-size: 80%;
 }
-
-td, th {
-    padding: 0;
-    line-height: $baseLineHeight * $baseFontSize - 0px;
-}
-
-/* Code blocks */
 
 /* Leading paragraph text */
 

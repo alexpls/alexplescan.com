@@ -12,15 +12,17 @@ This post will guide you through setting up SwiftLint to run locally on your mac
 
 If you're completely new to Travis CI, I'd recommend you read [this excellent getting started tutorial](http://www.raywenderlich.com/109418/travis-ci-tutorial) first, as this guide assumes that you already have a Swift project on GitHub integrated with Travis CI.
 
+[**TLDR**: This GitHub repo shows an example SwiftLint + Travis CI implementation.](https://github.com/alexpls/SwiftLint-TravisCI-Example)
+
 ### Let's get SwiftLint running locally
 
-Installing SwiftLint is dead simple, just do a `$ brew install swiftlint` and you should be good to go!
+Installing SwiftLint is dead simple, just do a `$ brew update && brew install swiftlint` and you should be good to go!
 
 Once installed, you can verify that Swiftlint works by opening your terminal, `cd`-ing to your repo's root directory and running `$ swiftlint`.
 
 This will scan your source code and show you places where improvements can be made. Once the scan is complete you should see something like this:
 
-{% highlight bash linenos %}
+{% highlight bash %}
 $ swiftlint
 Linting Swift files in current working directory
 Linting 'AppDelegate.swift' (1/4)
@@ -36,7 +38,7 @@ This command line output is good, but what's even better is getting these hints 
 
 To do this you'll need to add a new "Run Script Phase" to your XCode build process which contains the following script:
 
-{% highlight bash linenos %}
+{% highlight bash %}
 if which swiftlint >/dev/null; then
   swiftlint
 else
@@ -60,7 +62,7 @@ Now that your code has been de-linted locally, it's time to add SwiftLint to you
 
 Before integrating with SwiftLint my total build time on Travis CI was around 50 seconds. I tried a few approaches to installing SwiftLint to see which would work the fastest:
 
-{% highlight bash linenos %}
+{% highlight bash %}
 # Approach 1: Installing via Homebrew
 # Time to run build: 3min 18sec
 $ brew update && brew install swiftlint
@@ -84,7 +86,7 @@ Downloading and installing the precompiled pkg file was the fastest by far, only
 
 So as to keep the Travis config file as clutter free as possible I created a bash script `install_swiftlint.sh` to handle the install. In the unlikely situation that the `SwiftLint.pkg` file isn't available for download I've included a fallback which compiles SwiftLint from source:
 
-{% highlight bash linenos %}
+{% highlight bash %}
 #!/bin/bash
 
 # Installs the SwiftLint package.
@@ -114,7 +116,7 @@ Once you create that script, make sure to do a `$ chmod u+x install_swiftlint.sh
 
 Open up your `.travis.yml` config file and update it to call our SwiftLint install script by adding these lines:
 
-{% highlight yaml linenos %}
+{% highlight yaml %}
 install:
   - ./install_swiftlint.sh
 
