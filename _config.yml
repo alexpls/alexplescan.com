@@ -1,7 +1,7 @@
 title: Alex Plescan
 email: alex@alexplescan.com
-description: Alex Plescan - web and mobile developer based in Gold Coast, Australia.
-url: "http://alexplescan.com"
+description: Alex Plescan writes blogs here!
+url: "https://alexplescan.com"
 github_username:  alexpls
 permalink: /posts/:year/:month/:day/:title/
 
@@ -9,3 +9,16 @@ markdown: kramdown
 
 sass:
   style: compressed
+
+gems:
+  - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      author:
+        name: 'Alex Plescan'
+        email: 'alex@alexplescan.com'
+        uri: 'https://alexplescan.com'

@@ -79,7 +79,14 @@ header {
         text-align: right;
         margin-left: $link-margin;
 
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
         &.active {
+          color: white;
           font-weight: 600;
         }
 
