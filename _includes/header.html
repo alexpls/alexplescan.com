@@ -1,12 +1,14 @@
-<header>
+{% assign current = page.url | downcase | split: '/' %}
+<div class="top-header">
   <div class="container">
     <h1><a title="Alex Plescan" href="/">Alex Plescan</a></h1>
 
     <div class="subhead">
       <div class="links">
+        <a href="/projects" {% if current[1] == 'projects' %}class="active"{% endif %}>Projects</a>
+        <a href="/posts" {% if current[1] == 'posts' %}class="active"{% endif %}>Blog</a>
         <a title="Send me an email" href="mailto:alex@alexplescan.com" target="_blank">Email</a>
-        <a title="Visit my Github" href="https://github.com/alexpls" target="_blank">Github</a>
       </div>
     </div>
   </div>
-</header>
+</div>

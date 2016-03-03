@@ -1,0 +1,30 @@
+/* code styling */
+
+$code-size: 12;
+
+pre, code {
+  background: white;
+  white-space: pre;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+  line-height: $code-size * $baseLineHeight * 1px;
+  font-size: $code-size * 1px;
+}
+
+code.highlighter-rouge {
+  padding: 2px;
+  border: 1px solid #ddd;
+}
+
+figure.highlight {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  border: 1px solid #ddd;
+  margin-top: $leading;
+  padding: 8px 10px;
+
+  table {
+    margin: 0;
+  }
+}

@@ -6,6 +6,7 @@ $breakpoint-mobile: 400px;
 $background-color: #ECF0F1;
 $primary-color: #3498DB;
 $text-color: #2C3E50;
+$text-muted-color: #999999;
 $border-color: #2C3E50;
 $secondary-color: #E74C3C;
 $link-color: $primary-color;
@@ -38,6 +39,9 @@ $overhang-width: 50px;
 }
 
 @import 'reset.scss';
+@import 'typebase.scss';
 @import 'base.scss';
 @import 'home.scss';
 @import 'projects.scss';
+@import 'posts.scss';
+@import 'code.scss';

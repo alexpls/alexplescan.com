@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header">
+    <h2>{{ page.title }}</h2>
+    <p class="subtitle">
+      <time datetime="{{ page.date }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      | <a href="{{ page.url }}">Permalink</a>
+    </p>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

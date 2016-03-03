@@ -1,16 +1,5 @@
 #home {
-  font-size: 2rem;
-
   @media screen and (max-width: $breakpoint-tablet) {
     padding: 0;
-  }
-
-  .short-about {
-    font-size: 120%;
-
-    p {
-      margin: 0;
-      padding: 0;
-    }
   }
 }
