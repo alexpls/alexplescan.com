@@ -1,0 +1,44 @@
+$breakpoint-tablet: 700px;
+$breakpoint-mobile: 400px;
+
+$background-color: #ECF0F1;
+$primary-color: #3498DB;
+$text-color: #2C3E50;
+$text-muted-color: #999999;
+$border-color: #2C3E50;
+$secondary-color: #E74C3C;
+$link-color: $primary-color;
+$link-hover-color: #2980B9;
+
+$border-radius: 4px;
+
+$vertical-margin: 3em;
+
+$overhang-width: 50px;
+
+$baseFontSize:18; // in pixels.
+$baseLineHeight:1.6;
+$leading:$baseLineHeight * 1rem;
+$scale:1.414;
+
+$smallFontSize: 0.6 * $scale * 1rem;
+
+@mixin overhang($breakpoint-width) {
+  margin-left: -$overhang-width;
+  margin-right: -$overhang-width;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: $breakpoint-width;
+    margin-right: $breakpoint-width;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
