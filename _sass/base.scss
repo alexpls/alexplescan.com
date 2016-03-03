@@ -104,11 +104,24 @@ section {
   margin-bottom: $leading;
 }
 
-footer {
+footer.container {
+  color: $text-muted-color;
   text-align: center;
   font-size: 80%;
   margin-top: $leading * 2;
   margin-bottom: $leading;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 60%;
+
+    p {
+      line-height: 140%;
+    }
+    small {
+      display: block;
+      margin-top: 10px;
+    }
+  }
 
   .footer-links > li {
     display: inline;
