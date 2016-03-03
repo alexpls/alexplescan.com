@@ -46,15 +46,15 @@ else
 fi
 {% endhighlight %}
 
-![inline SwiftLint hints](/assets/posts/swiftlint_travis_ci/adding_build_phase.png)
+<img alt="Adding build phase" src="/assets/posts/swiftlint_travis_ci/adding_build_phase_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/adding_build_phase_compressed.png 1x, /assets/posts/swiftlint_travis_ci/adding_build_phase_compressed@2x.png 2x">
 
 Then `CMD+B` to rebuild your code and you should see lint hints appear inline in XCode like this:
 
-![inline SwiftLint hints](/assets/posts/swiftlint_travis_ci/example_hints.png)
+<img alt="Inline SwiftLint hints" src="/assets/posts/swiftlint_travis_ci/example_hints_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/example_hints_compressed.png 1x, /assets/posts/swiftlint_travis_ci/example_hints_compressed@2x.png 2x">
 
 You can now go ahead and do what the hints suggest, but don't take their advice as gospel. If you want to ignore a particular hint SwiftLint gives you several ways of doing this, [outlined here](https://github.com/realm/swiftlint#disable-a-rule-in-code). I prefer to be explicit when ignoring SwiftLint hints by adding the ignore directive inline with my code:
 
-![disabled hint](/assets/posts/swiftlint_travis_ci/inline_disable_hint.png)
+<img alt="Disabled hint" src="/assets/posts/swiftlint_travis_ci/inline_disable_hint_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/inline_disable_hint_compressed.png 1x, /assets/posts/swiftlint_travis_ci/inline_disable_hint_compressed@2x.png 2x">
 
 ### Installing SwiftLint on Travis CI
 
@@ -128,7 +128,9 @@ You can see the `script` parameter has a new `swiftlint` call added to it, and t
 
 It's time to commit and push! The new Travis CI build should appear immediately, but may take a few minutes to start up. If all goes well it should exit with a `0` status and happy green color!
 
-[![Passed Travis build](/assets/posts/swiftlint_travis_ci/passed_travis.png)](https://travis-ci.org/alexpls/SwiftLint-TravisCI-Example/builds/113081882)
+<a href="https://travis-ci.org/alexpls/SwiftLint-TravisCI-Example/builds/113081882" title="See the build on Travis CI">
+  <img src="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png 1x, /assets/posts/swiftlint_travis_ci/passed_travis_compressed@2x.png 2x">
+</a>
 
 ### Example code
 I've set up an example repo on GitHub which shows shows this method of running SwiftLint. [Check it out here.](https://github.com/alexpls/SwiftLint-TravisCI-Example)
