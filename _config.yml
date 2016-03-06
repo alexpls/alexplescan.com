@@ -25,3 +25,5 @@ gems:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
+
+exclude: [vendor, script]

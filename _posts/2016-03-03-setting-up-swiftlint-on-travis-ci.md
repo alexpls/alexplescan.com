@@ -129,7 +129,7 @@ You can see the `script` parameter has a new `swiftlint` call added to it, and t
 It's time to commit and push! The new Travis CI build should appear immediately, but may take a few minutes to start up. If all goes well it should exit with a `0` status and happy green color!
 
 <a href="https://travis-ci.org/alexpls/SwiftLint-TravisCI-Example/builds/113081882" title="See the build on Travis CI">
-  <img src="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png 1x, /assets/posts/swiftlint_travis_ci/passed_travis_compressed@2x.png 2x">
+  <img alt="Passed Travis build" src="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/passed_travis_compressed.png 1x, /assets/posts/swiftlint_travis_ci/passed_travis_compressed@2x.png 2x">
 </a>
 
 ### Example code
