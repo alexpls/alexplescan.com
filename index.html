@@ -17,4 +17,16 @@ description: Hi, I'm Alex - a web and mobile developer based in Gold Coast, Aust
       or <a href="/posts/">blog post</a> comes out!
     </p>
   </section>
+
+  <section class="from-the-blog">
+    <h4>From the blog&hellip;</h4>
+    <ul>
+      {% for post in site.posts %}
+        <li class="post-line">
+          <a href="{{post.url}}">{{post.title}}</a>
+          <time class="posted-at" datetime="{{post.date}}">({{ post.date | date: "%-d %B %Y" }})</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 </div>
