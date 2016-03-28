@@ -1,3 +1,2 @@
 #!/bin/bash
-bundle exec jekyll serve --drafts --host 0.0.0.0 --config "_config.yml,_config_dev.yml"
-
+bundle exec jekyll serve --config "_config.yml,_config_dev.yml"
