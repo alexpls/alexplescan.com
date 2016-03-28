@@ -8,7 +8,7 @@ While building this website using Jekyll I found that there were a few places wh
 I needed to override config variables when the site is running in a development
 environment. Some examples of dev only overrides I wanted to do are:
 
-- Skip minifying the SASS output so it's still be easily debuggable
+- Skip minifying the SASS output so it's easily debuggable
 - Show all draft posts by default
 - Run the server on port 4000, accepting all incoming connections
 
