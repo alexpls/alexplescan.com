@@ -5,7 +5,7 @@ url: "https://alexplescan.com"
 github_username:  alexpls
 permalink: /posts/:year/:month/:day/:title/
 
-markdown: redcarpet
+markdown: kramdown
 
 show_drafts: false
 
