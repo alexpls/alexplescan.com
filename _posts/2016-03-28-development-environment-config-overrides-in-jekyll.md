@@ -16,16 +16,16 @@ The best way I found to do this was by having two config files; a base config
 used in production (`_config.yml`), and an override config used only in
 development (`_config_dev.yml`):
 
-{% highlight yaml %}
+```yaml
 # _config.yml - Base config used in production
 
 sass:
   style: compressed
 
 show_drafts: false
-{% endhighlight %}
+```
 
-{% highlight yaml %}
+```yaml
 # _config_dev.yml - Dev environment configs and overrides
 
 show_drafts: true
@@ -37,7 +37,7 @@ port: 4000
 # Don't compress SASS output
 sass:
   style: full
-{% endhighlight %}
+```
 
 As you can see, any dev-specific config options just need to go into the
 `_config_dev.yml` file. This can be a Jekyll option you need to override,
@@ -47,9 +47,9 @@ To launch the Jekyll server in a dev environment I then run the following comman
 - note that `_config_dev.yml` must be specified last so that
 its config items override `_config.yml`.
 
-{% highlight bash %}
+```bash
 $ jekyll serve --config "_config.yml,_config_dev.yml"
-{% endhighlight %}
+```
 
 This command will first load in the normal config, and then the dev
 only overrides. To make this even easier to launch I put the command

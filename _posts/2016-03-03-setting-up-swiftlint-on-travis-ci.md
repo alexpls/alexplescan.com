@@ -22,7 +22,7 @@ Once installed, you can verify that Swiftlint works by opening your terminal, `c
 
 This will scan your source code and show you places where improvements can be made. Once the scan is complete you should see something like this:
 
-{% highlight bash %}
+```bash
 $ swiftlint
 Linting Swift files in current working directory
 Linting 'AppDelegate.swift' (1/4)
@@ -32,19 +32,19 @@ Linting 'UIColor+RandomColorTests.swift' (4/4)
 UIColor+RandomColorTests.swift:16:26: error: Force Cast Violation: Force casts should be avoided. (force_cast)
 UIColor+RandomColorTests.swift:17: warning: Trailing Whitespace Violation: Lines should not have trailing whitespace. (trailing_whitespace)
 Done linting! Found 2 violations, 1 serious in 4 files.
-{% endhighlight %}
+```
 
 This command line output is good, but what's even better is getting these hints inline in XCode.
 
 To do this you'll need to add a new "Run Script Phase" to your XCode build process which contains the following script:
 
-{% highlight bash %}
+```bash
 if which swiftlint >/dev/null; then
   swiftlint
 else
   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
 fi
-{% endhighlight %}
+```
 
 <img alt="Adding build phase" src="/assets/posts/swiftlint_travis_ci/adding_build_phase_compressed.png" srcset="/assets/posts/swiftlint_travis_ci/adding_build_phase_compressed.png 1x, /assets/posts/swiftlint_travis_ci/adding_build_phase_compressed@2x.png 2x">
 
@@ -62,7 +62,7 @@ Now that your code has been de-linted locally, it's time to add SwiftLint to you
 
 Before integrating with SwiftLint my total build time on Travis CI was around 50 seconds. I tried a few approaches to installing SwiftLint to see which would work the fastest:
 
-{% highlight bash %}
+```bash
 # Approach 1: Installing via Homebrew
 # Time to run build: 3min 18sec
 $ brew update && brew install swiftlint
@@ -80,13 +80,13 @@ $ git clone https://github.com/realm/SwiftLint.git /tmp/SwiftLint &&
 # Time to run build: 1min 13sec (!!!)
 $ wget --output-document /tmp/SwiftLint.pkg https://github.com/realm/SwiftLint/releases/download/0.9.1/SwiftLint.pkg &&
   sudo installer -pkg /tmp/SwiftLint.pkg -target /
-{% endhighlight %}
+```
 
 Downloading and installing the precompiled pkg file was the fastest by far, only taking 23 more seconds to run the build.
 
 So as to keep the Travis config file as clutter free as possible I created a bash script `install_swiftlint.sh` to handle the install. In the unlikely situation that the `SwiftLint.pkg` file isn't available for download I've included a fallback which compiles SwiftLint from source:
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 
 # Installs the SwiftLint package.
@@ -110,19 +110,19 @@ else
   git submodule update --init --recursive &&
   sudo make install
 fi
-{% endhighlight %}
+```
 
 Once you create that script, make sure to do a `$ chmod u+x install_swiftlint.sh` to give execute permissions execute permissions it. If you don't do this the Travis build will crash.
 
 Open up your `.travis.yml` config file and update it to call our SwiftLint install script by adding these lines:
 
-{% highlight yaml %}
+```yaml
 install:
   - ./install_swiftlint.sh
 
 script:
   - swiftlint
-{% endhighlight %}
+```
 
 You can see the `script` parameter has a new `swiftlint` call added to it, and the `install` parameter adds a call to our shell script `install_swiftlint.sh`.
 

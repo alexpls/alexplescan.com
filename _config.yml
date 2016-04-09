@@ -7,6 +7,9 @@ permalink: /posts/:year/:month/:day/:title/
 
 markdown: kramdown
 
+kramdown:
+  input: GFM
+
 show_drafts: false
 
 sass:
@@ -28,4 +31,4 @@ gems:
   - jekyll-sitemap
   - jemoji
 
-exclude: [vendor, script]
+exclude: [vendor, script, meta]

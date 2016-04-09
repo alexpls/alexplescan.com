@@ -16,13 +16,14 @@ code.highlighter-rouge {
   border: 1px solid #ddd;
 }
 
-figure.highlight {
+figure.highlight, div.highlighter-rouge {
   width: 100%;
   box-sizing: border-box;
   overflow: auto;
   border: 1px solid #ddd;
   margin-top: $leading;
   padding: 8px 10px;
+  background: white;
 
   table {
     margin: 0;
