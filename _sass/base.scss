@@ -117,16 +117,19 @@ footer.container {
     p {
       line-height: 140%;
     }
+
     small {
       display: block;
       margin-top: 10px;
     }
   }
 
-  .footer-links > li {
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
+  small a {
+    color: $text-muted-color;
+
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 }
 
