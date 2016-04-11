@@ -7,7 +7,7 @@
 }
 
 .post-content {
-  margin-bottom: $leading * 3;
+  margin-bottom: $leading * 2;
   img {
     display: block;
     width: 100%;
@@ -21,4 +21,15 @@ img + em {
   margin-top: -($leading/2);
   color: $text-muted-color;
   text-align: center;
+}
+
+#posts article:after {
+  content: '• • •';
+  margin-bottom: $leading * 3;
+  display: block;
+  width: 100%;
+  position: relative;
+  color: $text-muted-color;
+  text-align: center;
+  opacity: 0.2;
 }
