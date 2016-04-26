@@ -1,5 +1,5 @@
 - name: Soonlist
-  link: https://itunes.apple.com/au/app/soonlist-upcoming-movie-info/id1041801201?mt=8
+  link: https://soonlistapp.com
   feature_template_name: project_features/soonlist_feature.html
   description: >
     iPhone app to help you learn about upcoming movies near you and set up reminders
