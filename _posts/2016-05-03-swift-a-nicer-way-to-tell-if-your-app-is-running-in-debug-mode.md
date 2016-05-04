@@ -13,7 +13,7 @@ _isDebugAssertConfiguration() -> Bool
 // Returns true if the app is running in a Release build
 _isReleaseAssertConfiguration() -> Bool
 
-/// Example usage: only printing to the log when the app is running in Debug
+// Example usage: only printing to the log when the app is running in Debug
 if _isDebugAssertConfiguration() {
   print("Log: User \(user) logged in")
 }
