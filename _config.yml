@@ -32,3 +32,5 @@ gems:
   - jemoji
 
 exclude: [vendor, script, meta]
+
+enable_google_analytics: true

@@ -7,3 +7,6 @@ port: 4000
 # Don't compress SASS output
 sass:
   style: full
+
+# Don't send Google Analytics tracking events while running in dev mode
+enable_google_analytics: false
