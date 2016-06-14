@@ -26,6 +26,6 @@ To get around this an exception can be added for `localhost` (or any other known
 </dict>
 ```
 
-If you're editing your `Info.plist` visually in XCode, you should have these entries:
+If you're editing your `Info.plist` visually in Xcode, you should have these entries:
 
 <img alt="App Transport Security info.plist screenshot" src="/assets/posts/app_transport_security/app_transport_security_info_plist.png" srcset="/assets/posts/app_transport_security/app_transport_security_info_plist.png 1x, /assets/posts/app_transport_security/app_transport_security_info_plist@2x.png 2x">
