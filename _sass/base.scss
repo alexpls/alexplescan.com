@@ -31,7 +31,7 @@ span.bullet {
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 720px;
+  max-width: $main-container-width;
 }
 
 .top-header {

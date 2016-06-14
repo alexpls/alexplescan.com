@@ -8,9 +8,20 @@
 
 .post-content {
   margin-bottom: $leading * 2;
+
   img {
     display: block;
-    width: 100%;
+    width: auto;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+
+    @media screen and (max-width: $main-container-width) {
+      width: 100%;
+    }
+  }
+
+  img.no-border {
+    border: 0;
   }
 }
 
