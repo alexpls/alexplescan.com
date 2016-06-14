@@ -44,3 +44,12 @@ img + em {
   text-align: center;
   opacity: 0.2;
 }
+
+ol {
+  list-style-type: decimal;
+  margin-left: 25px;
+
+  li {
+    padding-bottom: $leading/3;
+  }
+}
