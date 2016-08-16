@@ -21,5 +21,5 @@ To do this yourself you can follow these steps:
 <img alt="Dev console" class="no-border" src="/assets/posts/emojify_wifi/dev-console@2x.png" srcset="/assets/posts/emojify_wifi/dev-console.png 1x, /assets/posts/emojify_wifi/dev-console@2x.png 2x">
 1. Craft your beautiful emoji-enriched SSID
 1. Save and enjoy your new SSID... you finally fit in with the neighbours
-<br>
+<br><br>
 <img alt="New SSID updated" src="/assets/posts/emojify_wifi/wifi-ssids@2x.png" srcset="/assets/posts/emojify_wifi/wifi-ssids.png 1x, /assets/posts/emojify_wifi/wifi-ssids@2x.png 2x">
