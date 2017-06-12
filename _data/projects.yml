@@ -3,7 +3,7 @@
   feature_template_name: project_features/soonlist_feature.html
   description: >
     iPhone app to help you learn about upcoming movies near you and set up reminders
-    for when they're going to be released.
+    for when they're going to be released. No longer maintained.
 
 - name: i-MID Wallpapers
   link: https://imidwallpapers.com
