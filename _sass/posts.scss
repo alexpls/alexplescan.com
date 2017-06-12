@@ -53,3 +53,12 @@ ol {
     padding-bottom: $leading/3;
   }
 }
+
+.pagination {
+  text-align: center;
+  font-size: 80%;
+
+  .current {
+    font-weight: bold;
+  }
+}
