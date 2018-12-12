@@ -25,7 +25,7 @@ defaults:
         email: 'alex@alexplescan.com'
         uri: 'https://alexplescan.com'
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
