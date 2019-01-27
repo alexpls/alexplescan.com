@@ -1,45 +1,19 @@
 <section class="projects">
-  <h2 class="section-title">Recent projects</h2>
+  <h2 class="section-title">Projects and Websites</h2>
 
-  {% for project in site.data.projects %}
+  {% for project in site.projects reversed %}
   <div class="project">
     <h3>
       {% if project.link %}
-        <a href="{{ project.link }}" target="_blank">{{project.name}}</a>
+        <a href="{{ project.link }}" target="_blank">{{project.title}}</a>
       {% else %}
-        {{ project.name }}
+        {{ project.title }}
       {% endif %}
 
-      {% if project.year %}
-        <small class="meta">({{ project.year }})</small>
-      {% endif %}
+      <small class="meta">({{ project.date | date: "%Y" }})</small>
     </h3>
 
-    <p>{{ project.description }}</p>
-
-    <div class="feature">
-      {% if project.feature_template_name %}
-        {% include {{project.feature_template_name}} %}
-      {% endif %}
-    </div>
+    {{ project.content }}
   </div>
   {% endfor %}
-
-  <div class="other-work">
-    <p>
-      Besides the projects above, I've worked on a number of websites over the years.
-      Most of them have since been replaced or lost into the ether, but some are still around:
-    </p>
-
-    <ul>
-      {% for website in site.data.websites %}
-      <li>
-        <a href="{{ website.link }}" target="_blank">{{ website.name }}</a>
-        {% if website.description %}
-        <span class="description">{{ website.description }}</span>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
 </section>

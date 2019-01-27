@@ -1,13 +1,11 @@
-$feature-height: 170px;
-$feature-height-tablet: 120px;
-$feature-height-mobile: 80px;
-
 .section-title {
   margin-bottom: 1em;
   text-align: center;
 }
 
 .project {
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
   margin-bottom: $vertical-margin;
 
   h5 {
@@ -17,145 +15,40 @@ $feature-height-mobile: 80px;
     }
   }
 
-  .feature {
-    margin-top: $leading;
-    border-bottom: 1px solid $border-color;
-    box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.soonlist-feature {
-  height: $feature-height;
-  @media screen and (max-width: $breakpoint-tablet) {
-    height: $feature-height-tablet;
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    height: $feature-height-mobile;
+  .project-description, .project-main {
+    margin-top: 1rem;
   }
 
-  overflow: hidden;
-
-  margin-left: $overhang-width;
-  margin-right: $overhang-width;
-
-  @media screen and (max-width: $breakpoint-tablet) {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
-  .phone {
-    float: left;
-    display: inline-block;
-    width: 30%;
+  .image-feature {
+    height: $feature-height;
+    box-sizing: border-box;
+    max-width: 90%;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 
-    &.second {
-      margin-left: 3.333%;
-      margin-right: 3.333%;
-    }
-
-    &.first {
-      margin-left: 1.5%;
-    }
-
-    &.third {
-      margin-right: 1.5%;
-    }
-
-    height: $feature-height + 30px;
     @media screen and (max-width: $breakpoint-tablet) {
-      height: $feature-height-tablet + 30px;
+      height: $feature-height-tablet;
     }
     @media screen and (max-width: $breakpoint-mobile) {
-      height: $feature-height-mobile + 30px;
+      height: $feature-height-mobile;
     }
 
-    border-radius: $border-radius;
-    border: 1px solid $border-color;
-    box-sizing: border-box;
+    > a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
     img {
       width: 100%;
-      height: auto;
+      min-width: 300px;
+      box-sizing: border-box;
+      border: 1px solid $border-color;
+      border-bottom: 0;
+      border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
-  }
-}
-
-.supports-transform .projects .soonlist-feature .phone {
-  width: 33.33333%;
-  margin-right: 0;
-
-  $translateX: 33px;
-
-  @media screen and (max-width: $breakpoint-tablet) {
-    $translateX: 28px;
-  }
-
-  @media screen and (max-width: $breakpoint-mobile) {
-    $translateX: 10px;
-  }
-
-  &.first {
-    -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -moz-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -ms-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -o-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-  }
-
-  &.third {
-    -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -moz-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -ms-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -o-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-  }
-
-  &.first, &.second, &.third {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-
-.image-feature {
-  height: $feature-height;
-  @media screen and (max-width: $breakpoint-tablet) {
-    height: $feature-height-tablet;
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    height: $feature-height-mobile;
-  }
-  overflow: hidden;
-  text-align: center;
-  margin-left: $overhang-width;
-  margin-right: $overhang-width;
-
-  @media screen and (max-width: $breakpoint-tablet) {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
-  img {
-    border-radius: $border-radius;
-    border: 1px solid $border-color;
-    border-bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-    height: auto;
-  }
-}
-
-.other-work {
-  margin-bottom: $vertical-margin;
-
-  .description {
-    font-size: 80%;
-    color: #999;
-  }
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
   }
 }

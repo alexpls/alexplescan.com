@@ -1,0 +1,95 @@
+@import 'variables';
+
+.soonlist-feature {
+  height: $feature-height;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    height: $feature-height-tablet;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: $feature-height-mobile;
+  }
+
+  overflow: hidden;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  margin-left: $overhang-width;
+  margin-right: $overhang-width;
+
+  .phone {
+    float: left;
+    display: inline-block;
+    width: 30%;
+    overflow: hidden;
+
+    &.second {
+      margin-left: 3.333%;
+      margin-right: 3.333%;
+    }
+
+    &.first {
+      margin-left: 1.5%;
+    }
+
+    &.third {
+      margin-right: 1.5%;
+    }
+
+    height: $feature-height + 50px;
+    @media screen and (max-width: $breakpoint-tablet) {
+      height: $feature-height-tablet + 50px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      height: $feature-height-mobile + 50px;
+    }
+
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.supports-transform .soonlist-feature .phone {
+  width: 33.33333%;
+  margin-right: 0;
+
+  $translateX: 33px;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    $translateX: 28px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    $translateX: 10px;
+  }
+
+  &.first {
+    -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -moz-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -ms-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    -o-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+    transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
+  }
+
+  &.third {
+    -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -moz-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -ms-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    -o-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+    transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
+  }
+
+  &.first, &.second, &.third {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
