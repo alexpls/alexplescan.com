@@ -1,9 +1,13 @@
 title: Alex Plescan
 email: alex@alexplescan.com
-description: Alex Plescan writes blogs here!
+description: I'm a web and mobile developer. This is my personal website. 
 url: "https://alexplescan.com"
 github_username:  alexpls
 permalink: /posts/:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: false
 
 markdown: kramdown
 

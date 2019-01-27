@@ -24,6 +24,10 @@ $scale:1.414;
 
 $smallFontSize: 0.6 * $scale * 1rem;
 
+$feature-height: 240px;
+$feature-height-tablet: 160px;
+$feature-height-mobile: 120px;
+
 @mixin overhang($breakpoint-width) {
   margin-left: -$overhang-width;
   margin-right: -$overhang-width;
