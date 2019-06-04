@@ -8,6 +8,8 @@ permalink: /posts/:year/:month/:day/:title/
 collections:
   projects:
     output: false
+  photos:
+    output: false
 
 markdown: kramdown
 

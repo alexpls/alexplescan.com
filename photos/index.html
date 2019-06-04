@@ -1,0 +1,14 @@
+---
+layout: default
+title: Photos
+description: Photos that I've taken
+---
+<section class="photos">
+  <h2 class="section-title">Photos</h2>
+
+  {% for photo in site.photos reversed %}
+  <div class="photo">
+    {% picture fullwidth assets/photo/{{photo.filename}} %}
+  </div>
+  {% endfor %}
+</section>
