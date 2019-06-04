@@ -40,8 +40,6 @@ plugins:
   - jekyll-paginate
   - jemoji
 
-exclude: [vendor, script, meta]
-
 enable_google_analytics: true
 
 paginate: 3
@@ -61,4 +59,3 @@ exclude:
   - package.json
   - yarn.lock
   - webpack.config.js
-  - meta
