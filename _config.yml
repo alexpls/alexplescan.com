@@ -19,6 +19,10 @@ show_drafts: false
 sass:
   style: compressed
 
+favicon:
+  source: /assets/favicon.png
+  path: /assets/favicon
+
 defaults:
   -
     scope:
