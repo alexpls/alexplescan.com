@@ -3,8 +3,15 @@ markup_presets:
     markup: data_auto
     noscript: true
     base_width: 600
-    base_height: 250
     pixel_ratios: [1, 2]
     formats: [webp, jpg]
     attributes:
       img: class="project-screenshot lazy"
+  fullwidth:
+    markup: data_auto
+    noscript: true
+    base_width: 720
+    pixel_ratios: [1, 2, 3]
+    formats: [webp, jpg]
+    attributes:
+      img: class="fullwidth lazy"
