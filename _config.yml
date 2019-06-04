@@ -46,3 +46,19 @@ enable_google_analytics: true
 
 paginate: 3
 paginate_path: '/posts/pages/:num/'
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - working
+  - terraform
+  - tsconfig.json
+  - package.json
+  - yarn.lock
+  - webpack.config.js
+  - meta

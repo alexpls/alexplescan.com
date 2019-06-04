@@ -10,6 +10,7 @@ No license here, so if any of this code is of use to you - take it and use it ho
 To get a local development server up and running, run the following commands:
 
 ```
+$ yarn build
 $ bundle install
 $ script/dev
 ```
