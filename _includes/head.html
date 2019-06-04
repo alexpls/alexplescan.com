@@ -5,13 +5,16 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- I know it's ugly but look: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery -->
+  <!-- Inline crucial CSS to speed up page load: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery -->
   <style type="text/css">
     {% capture inlined %}
       {% include crucial_css.scss %}
     {% endcapture %}
     {{ inlined | scssify }}
   </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css?cache={{ site.time | date: '%s' }}">
 
   {% favicon %}
 
