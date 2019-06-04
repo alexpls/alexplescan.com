@@ -40,8 +40,6 @@ plugins:
   - jekyll-paginate
   - jemoji
 
-enable_google_analytics: true
-
 paginate: 3
 paginate_path: '/posts/pages/:num/'
 
