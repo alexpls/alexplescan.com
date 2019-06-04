@@ -1,35 +1,39 @@
 /*! Typebase.scss v0.1.0 | MIT License */
 
 html {
-    font-family: Lato, sans-serif;
-    font-size: $baseFontSize / 16 * 100%;
-    -webkit-font-smoothing: antialiased;
+  font-family: Lato, sans-serif;
+  font-size: $baseFontSize / 16 * 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
-    line-height: $leading;
-    margin-top: $leading;
-    margin-bottom: 0;
+  line-height: $leading;
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  + h1, +h2, +h3, +h4, +h5, +h6 {
+    margin-top: 2rem;
+  }
 }
 
 ul, ol {
-  margin-top: $leading;
-  margin-bottom: $leading;
+  margin-top: 0;
+  margin-bottom: 1rem;
 
   li {
-      line-height: $leading;
+    line-height: $leading;
   }
 
   ul, ol {
-      margin-top: 0;
-      margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
 blockquote {
   line-height: $leading;
-  margin-top: $leading;
-  margin-bottom: $leading;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 strong {
@@ -39,20 +43,20 @@ strong {
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: $leading;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
   line-height: $leading;
 
   &+ .subtitle {
-    margin-top: $leading/3;
+    margin-top: -0.8rem;
     font-size: $scale * 0.6 * 1rem;
   }
 }
 
 h1 {
-    font-size: 2 * $scale * 1rem;
-    line-height: 2 * $leading;
-    margin-top: 2 * $leading;
+  font-size: 2 * $scale * 1rem;
+  line-height: 2 * $leading;
+  margin-bottom: 2 * $leading;
 }
 
 h2 {
@@ -62,35 +66,24 @@ h2 {
 }
 
 h3 {
-    font-size: 1 * $scale * 1rem;
+  font-size: 1 * $scale * 1rem;
 }
 
 h4 {
-    font-size: $scale / 1.5 * 1rem;
-    font-weight: bold;
+  font-size: $scale / 1.5 * 1rem;
+  font-weight: bold;
 }
 
 h5 {
-    font-size: $scale / 2 * 1rem;
-    font-weight: bold;
+  font-size: $scale / 2 * 1rem;
+  font-weight: bold;
 }
 
 h6 {
-    font-size: $scale / 2.5 * 1rem;
-    font-weight: bold;
+  font-size: $scale / 2.5 * 1rem;
+  font-weight: bold;
 }
 
 small {
   font-size: 80%;
-}
-
-/* Leading paragraph text */
-
-.lead {
-  font-size: $scale * 1rem;
-}
-/* Hug a the block above you */
-
-.hug {
-  margin-top: 0;
 }

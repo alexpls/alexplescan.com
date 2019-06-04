@@ -8,15 +8,8 @@
   box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.2);
   margin-bottom: $vertical-margin;
 
-  h5 {
-    .meta {
-      float: right;
-      font-weight: normal;
-    }
-  }
-
-  .project-description, .project-main {
-    margin-top: 1rem;
+  .project-title {
+    margin-bottom: 0.5rem;
   }
 
   .image-feature {

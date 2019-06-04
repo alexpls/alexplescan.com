@@ -1,9 +1,13 @@
+.photo {
+  .fullwidth {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
 .photos {
   .photo {
-    .fullwidth {
-      width: 100%;
-      height: auto;
-      margin-bottom: $vertical-margin / 2;
-    }
+    margin-top: 2rem;
   }
 }

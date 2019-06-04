@@ -57,8 +57,11 @@ ol {
 .pagination {
   text-align: center;
   font-size: 80%;
+  margin-bottom: 1rem;
 
   .current {
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

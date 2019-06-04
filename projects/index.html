@@ -8,7 +8,7 @@ description: Projects and websites that I've worked on.
 
   {% for project in site.projects reversed %}
   <div class="project">
-    <h3>
+    <h3 class="project-title">
       {% if project.link %}
         <a href="{{ project.link }}" target="_blank">{{project.title}}</a>
       {% else %}

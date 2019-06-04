@@ -6,14 +6,14 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
 
 <div id="home">
   <section class="short-about">
-    <h3>
+    <h2>
       <strong>Hi, I'm Alex &mdash; a web and mobile developer.</strong>
-    </h3>
+    </h2>
 
     <p>
       Currently based in Brisbane, Australia.
       Every now and again I'll update this website with a new <a href="/posts">blog post</a>, a 
-      <a href="/projects">project</a>, or a <a href="/projects">website</a> that I've worked on.
+      <a href="/projects">project</a> I've worked on, or a <a href="/photos">photo</a> I've taken.
     </p>
 
     <p>
@@ -25,14 +25,25 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
   </section>
 
   <section class="from-the-blog">
-    <h4>Latest from the blog&hellip;</h4>
+    <h3>Latest blog posts&hellip;</h3>
     <ul>
-      {% for post in site.posts %}
+      {% for post in site.posts limit:3 %}
         <li class="post-line">
           <a href="{{post.url}}">{{post.title}}</a>
           <time class="posted-at" datetime="{{post.date}}">({{ post.date | date: "%-d %B %Y" }})</time>
         </li>
       {% endfor %}
     </ul>
+  </section>
+
+  <section class="latest-photo">
+    <h3>Latest photo&hellip;</h3>
+    {% for photo in site.photos reversed %}
+      {% if forloop.first %}
+        <div class="photo">
+          {% picture fullwidth assets/photo/{{photo.filename}} %}
+        </div>
+      {% endif %}
+    {% endfor %}
   </section>
 </div>
