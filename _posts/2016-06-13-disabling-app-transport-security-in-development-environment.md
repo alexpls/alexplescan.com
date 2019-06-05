@@ -8,7 +8,7 @@ iOS 9 introduced [App Transport Security](https://developer.apple.com/library/io
 
 To get around this an exception can be added for `localhost` (or any other known development environment domain) which will allow your app to send and receive unencrypted HTTP requests. In your `Info.plist` add the following:
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
   <key>NSExceptionDomains</key>

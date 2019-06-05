@@ -4,10 +4,8 @@
     height: auto;
     margin-bottom: 1rem;
   }
-}
 
-.photos {
-  .photo {
-    margin-top: 2rem;
+  + p {
+    margin-top: 0;
   }
 }

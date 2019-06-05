@@ -1,3 +1,5 @@
+
+
 .post-header {
   text-align: center;
 
@@ -7,11 +9,12 @@
 }
 
 .post-content {
-  margin-bottom: $leading * 2;
+  margin-bottom: 2rem;
 
   img {
     display: block;
-    width: auto;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
     border: 1px solid #ddd;
 
@@ -28,15 +31,15 @@
 // an image caption
 img + em {
   display: block;
-  font-size: $smallFontSize;
-  margin-top: -($leading/2);
+  @include fontSizeSmall();
+  margin-top: -2rem;
   color: $text-muted-color;
   text-align: center;
 }
 
 #posts article:after {
   content: '• • •';
-  margin-bottom: $leading * 3;
+  margin-bottom: 3rem;
   display: block;
   width: 100%;
   position: relative;
@@ -50,14 +53,13 @@ ol {
   margin-left: 25px;
 
   li {
-    padding-bottom: $leading/3;
+    padding-bottom: 0.3rem;
   }
 }
 
 .pagination {
+  @include fontSizeSmall();
   text-align: center;
-  font-size: 80%;
-  margin-bottom: 1rem;
 
   .current {
     font-weight: bold;

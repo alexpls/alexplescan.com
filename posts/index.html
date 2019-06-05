@@ -6,8 +6,6 @@ title: Recent posts
 <div id="posts">
   <h2 class="section-title">Blog posts</h2>
 
-  {% include pagination.html %}
-
   <section class="posts">
     {% for post in paginator.posts %}
       {% include post_item.html %}

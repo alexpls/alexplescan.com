@@ -37,7 +37,7 @@ span.bullet {
 .top-header {
   @include clearfix;
 
-  padding: 8px 0;
+  padding: 0.7rem 0;
   margin-bottom: $vertical-margin;
 
   background: #2C3E50;
@@ -47,12 +47,11 @@ span.bullet {
   }
 
   h1 {
-    float: left;
-
-    margin: 0;
-    font-size: $baseFontSize * 1px;
-    line-height: $baseFontSize * $baseLineHeight * 1px;
+    @include fontSizeNormal();
     font-weight: 800;
+
+    float: left;
+    margin: 0;
 
     @media screen and (max-width: $breakpoint-mobile) {
       float: none;
@@ -71,9 +70,8 @@ span.bullet {
     }
 
     .links {
+      @include fontSizeSmall();
       $link-margin: 10px;
-      font-size: $baseFontSize * 0.9px;
-      line-height: $baseFontSize * $baseLineHeight * 1px;
 
       &>a {
         text-align: right;
@@ -101,23 +99,16 @@ span.bullet {
 }
 
 section {
-  margin-bottom: $leading * 2;
+  margin-bottom: 2rem;
 }
 
 footer.container {
+  @include fontSizeSmaller();
   color: $text-muted-color;
   text-align: center;
-  font-size: 80%;
-  margin-top: $leading * 2;
-  margin-bottom: $leading;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: $breakpoint-mobile) {
-    font-size: 60%;
-
-    p {
-      line-height: 140%;
-    }
-
     small {
       display: block;
       margin-top: 10px;

@@ -17,7 +17,7 @@ section.from-the-blog {
   .post-line {
     .posted-at {
       color: $text-muted-color;
-      font-size: $smallFontSize;
+      @include fontSizeSmall();
     }
   }
 }
