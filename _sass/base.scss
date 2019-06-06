@@ -70,8 +70,10 @@ span.bullet {
     }
 
     .links {
-      @include fontSizeSmall();
       $link-margin: 10px;
+
+      @include fontSizeSmall();
+      line-height: $normal-line-height;
 
       &>a {
         text-align: right;

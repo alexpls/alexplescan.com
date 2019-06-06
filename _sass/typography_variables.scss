@@ -1,8 +1,9 @@
 $normal-font-size: 18px;
+$normal-line-height: $normal-font-size * 1.6;
 
 @mixin fontSizeScaled($scale) {
   font-size: $normal-font-size * $scale;
-  line-height: $normal-font-size * 1.6 * $scale;
+  line-height: $normal-line-height * $scale;
 }
 
 @mixin fontSizeNormal() { 
