@@ -73,8 +73,9 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws s3 cp /tmp/workspace/_site/ s3://alexplescan.com/ --recursive --include "*" --exclude "generated/*"
+            aws s3 cp /tmp/workspace/_site/ s3://alexplescan.com/ --recursive --include "*" --exclude "generated/*" --exclude "assets/fonts/*"
             aws s3 cp /tmp/workspace/_site/generated/ s3://alexplescan.com/generated/ --recursive --cache-control max-age=31104000
+            aws s3 cp /tmp/workspace/_site/assets/fonts/ s3://alexplescan.com/assets/fonts/ --recursive --cache-control max-age=31104000
 
       - run:
           name: Invalidate CloudFront distribution

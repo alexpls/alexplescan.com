@@ -1,5 +1,6 @@
 html, body {
-  font-family: Lato, sans-serif;
+  font-family: 'LatoLatinWeb', sans-serif;
+  font-weight: normal;
   @include fontSizeNormal();
 }
 
@@ -13,12 +14,12 @@ p, ul, ol {
 
 h1 {
   @include fontSizeScaled(1.8);
-  font-weight: 800;
+  font-weight: bold;
 }
 
 h2 {
   @include fontSizeScaled(1.6);
-  font-weight: 800;
+  font-weight: bold;
 }
 
 h3 {
