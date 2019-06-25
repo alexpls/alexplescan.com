@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "website" {
     project = "${var.project_name}"
   }
 
-  website = {
+  website {
     index_document = "index.html"
     error_document = "404.html"
   }
@@ -119,7 +119,7 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     origin_id = "origin-bucket-${aws_s3_bucket.website.id}"
     domain_name = "${aws_s3_bucket.website.website_endpoint}"
 
-    custom_origin_config = {
+    custom_origin_config {
       origin_protocol_policy = "http-only"
       http_port              = "80"
       https_port             = "443"
@@ -149,7 +149,7 @@ resource "aws_cloudfront_distribution" "website_cdn" {
     compress               = true
   }
 
-  viewer_certificate = {
+  viewer_certificate {
     acm_certificate_arn      = "${aws_acm_certificate.cert.arn}"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1"
@@ -178,7 +178,7 @@ resource "aws_cloudfront_distribution" "website_redirect_cdn" {
     origin_id = "origin-bucket-${aws_s3_bucket.website_redirect.id}"
     domain_name = "${aws_s3_bucket.website_redirect.website_endpoint}"
 
-    custom_origin_config = {
+    custom_origin_config {
       origin_protocol_policy = "http-only"
       http_port              = "80"
       https_port             = "443"
@@ -208,7 +208,7 @@ resource "aws_cloudfront_distribution" "website_redirect_cdn" {
     compress               = true
   }
 
-  viewer_certificate = {
+  viewer_certificate {
     acm_certificate_arn      = "${aws_acm_certificate.cert_www.arn}"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1"
