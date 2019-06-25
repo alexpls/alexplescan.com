@@ -15,7 +15,8 @@
     "build": "yarn build:ts && yarn build:rb",
     "build:rb": "JEKYLL_ENV=production bundle exec jekyll build --config _config.yml",
     "build:ts": "webpack",
-    "build:watch": "webpack --watch",
+    "build:watch:rb": "bundle exec jekyll serve",
+    "build:watch:ts": "webpack --watch",
     "deploy": "AWS_PROFILE=alexpls aws s3 cp _site/ s3://alexplescan.com/ --recursive"
   },
   "dependencies": {
