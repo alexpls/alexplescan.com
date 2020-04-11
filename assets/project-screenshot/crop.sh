@@ -11,7 +11,7 @@ for filename in *-original.jpg *-original.png; do
   convert $filename \
     -sampling-factor 4:2:0 \
     -strip \
-    -quality 85 \
+    -quality 90 \
     -interlace JPEG \
     -resize "${desired_width}x${desired_height}^" \
     -gravity North \
