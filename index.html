@@ -24,20 +24,7 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
     </p>
   </section>
 
-  <section class="from-the-blog">
-    <h3>Latest blog posts&hellip;</h3>
-    <ul>
-      {% for post in site.posts limit:3 %}
-        <li class="post-line">
-          <a href="{{post.url}}">{{post.title}}</a>
-          <time class="posted-at" datetime="{{post.date}}">({{ post.date | date: "%-d %B %Y" }})</time>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-
   <section class="latest-photo">
-    <h3>Latest photo&hellip;</h3>
     {% for photo in site.photos reversed %}
       {% if forloop.first %}
         <div class="photo">
