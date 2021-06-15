@@ -58,7 +58,7 @@
   }
 }
 
-.supports-transform .soonlist-feature .phone {
+.soonlist-feature .phone {
   width: 33.33333%;
   margin-right: 0;
 
@@ -73,18 +73,10 @@
   }
 
   &.first {
-    -webkit-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -moz-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -ms-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
-    -o-transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
     transform: perspective(500px) rotateY(8.3deg) scale(0.73, 0.8) translate(-$translateX, -8px);
   }
 
   &.third {
-    -webkit-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -moz-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -ms-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
-    -o-transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
     transform: perspective(500px) rotateY(-8.3deg) scale(0.73, 0.8) translate($translateX, -8px);
   }
 

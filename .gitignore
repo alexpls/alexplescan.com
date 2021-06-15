@@ -2,11 +2,9 @@ _site
 .sass-cache
 .jekyll-metadata
 .DS_Store
-dist
 node_modules
 terraform.tfstate
 terraform.tfstate.backup
 .terraform
-dist
 yarn-error.log
 .jekyll-cache
