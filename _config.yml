@@ -45,6 +45,9 @@ plugins:
 paginate: 3
 paginate_path: '/posts/pages/:num/'
 
+# Whether to enable Plausible analytics
+analytics: true
+
 exclude:
   - Gemfile
   - Gemfile.lock

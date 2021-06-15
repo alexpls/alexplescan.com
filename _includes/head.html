@@ -16,4 +16,8 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css?cache={{ site.time | date: '%s' }}">
 
   {% favicon %}
+
+  {% if site.analytics %}
+  <script defer data-domain="alexplescan.com" src="https://plausible.io/js/plausible.js"></script>
+  {% endif %}
 </head>
