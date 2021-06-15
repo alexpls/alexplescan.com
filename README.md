@@ -7,6 +7,7 @@ No license here, so if any of this code is of use to you - take it and use it ho
 ## Installation
 
 ```
+$ brew install git-lfs vips
 $ bundle && yarn
 ```
 
