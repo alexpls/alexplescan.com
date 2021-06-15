@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
-ruby '~> 2.6.3'
+ruby '~> 2.7.3'
 
-gem "jekyll", "~> 3.8.5"
+gem "jekyll", "~> 4.2.0"
 
 group :jekyll_plugins do
   gem 'jekyll-seo-tag'
-  gem 'jekyll-picture-tag', git: 'https://github.com/robwierzbowski/jekyll-picture-tag'
+  gem 'jekyll_picture_tag', '~> 2.0'
   gem 'jekyll-favicon'
   gem 'jekyll-feed'
   gem 'jekyll-sitemap'

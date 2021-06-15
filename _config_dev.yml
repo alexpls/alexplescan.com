@@ -7,3 +7,6 @@ port: 4000
 # Don't compress SASS output
 sass:
   style: full
+
+# Don't enable plausible analytics when running locally
+analytics: false

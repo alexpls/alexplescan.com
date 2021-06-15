@@ -17,5 +17,7 @@
 
   {% favicon %}
 
-  <script async src="/dist/index.js"></script>
+  {% if site.analytics %}
+  <script defer data-domain="alexplescan.com" src="https://plausible.io/js/plausible.js"></script>
+  {% endif %}
 </head>
