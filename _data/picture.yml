@@ -3,6 +3,9 @@ presets:
     base_width: 600
     pixel_ratios: [1, 2]
     formats: [webp, jpg]
+    format_quality:
+      webp: 90
+      jpg: 90
     attributes:
       img: class="project-screenshot"
   fullwidth:
