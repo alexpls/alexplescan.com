@@ -13,7 +13,7 @@ description: Photos that I've taken
 
   {% for photo in site.photos reversed %}
   <div class="photo">
-    {% picture fullwidth assets/photo/{{photo.filename}} %}
+    {% picture fullwidth assets/photo/{{photo.filename}} --alt {{photo.alt}}  %}
   </div>
   {% endfor %}
 

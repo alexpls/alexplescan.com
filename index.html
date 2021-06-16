@@ -28,7 +28,7 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
     {% for photo in site.photos reversed %}
       {% if forloop.first %}
         <div class="photo">
-          {% picture fullwidth assets/photo/{{photo.filename}} %}
+          {% picture fullwidth assets/photo/{{photo.filename}} --alt {{photo.alt}} %}
         </div>
       {% endif %}
     {% endfor %}

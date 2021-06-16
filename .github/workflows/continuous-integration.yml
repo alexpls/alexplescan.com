@@ -18,6 +18,8 @@ jobs:
         with:
           ruby-version: "2.7.3"
           bundler-cache: true
+      - name: Test
+        run: bundle exec rake test
       - name: Build
         run: bundle exec jekyll build --config _config.yml
       - uses: actions/upload-artifact@v2
