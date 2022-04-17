@@ -24,13 +24,41 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
     </p>
   </section>
 
+  <section class="latest">
+    <h3>Latest blog posts</h3>
+    <ul>
+      {% assign epoch = '2022-01-01' | date: '%s' %}
+      {% for post in site.posts limit:3 %}
+        {% assign post_date = post.date | date: '%s' %}
+        {% if post_date >= epoch %}
+        <li class="post-line">
+          <a href="{{post.url}}">{{post.title}}</a>
+          <time class="posted-at" datetime="{{post.date}}">({{ post.date | date: "%-d %B %Y" }})</time>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="latest">
+    <h3>Latest projects</h3>
+    <ul>
+      {% assign projects = site.projects | sort: "date" | reverse %}
+      {% for project in projects limit:3 %}
+        <li class="post-line">
+          <a href="{{project.link}}">{{project.title}}</a>
+          <time class="posted-at" datetime="{{project.date}}">({{ project.date | date: "%Y" }})</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
   <section class="latest-photo">
-    {% for photo in site.photos reversed %}
-      {% if forloop.first %}
-        <div class="photo">
-          {% picture fullwidth assets/photo/{{photo.filename}} --alt {{photo.alt}} %}
-        </div>
-      {% endif %}
+    {% assign photos = site.photos | reverse %}
+    {% for photo in photos limit:1 %}
+      <div class="photo">
+        {% picture fullwidth assets/photo/{{photo.filename}} --alt {{photo.alt}} %}
+      </div>
     {% endfor %}
   </section>
 </div>
