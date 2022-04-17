@@ -67,3 +67,16 @@ ol {
     margin-right: 10px;
   }
 }
+
+.callout {
+  background-color: #ffffe3;
+  padding: 10px;
+  border: 1px solid #d5d59f;
+  border-radius: $border-radius;
+}
+
+hr {
+  border: 1px solid $light-border-color;
+  outline: 0;
+  margin: 1.5rem 0;
+}

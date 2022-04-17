@@ -6,15 +6,17 @@ pre, code {
 }
 
 code.highlighter-rouge {
-  padding: 2px;
-  border: 1px solid #ddd;
+  padding: 2px 4px;
+  border: 1px solid $light-border-color;
+  border-radius: 4px;
 }
 
 figure.highlight, div.highlighter-rouge {
   width: 100%;
   box-sizing: border-box;
   overflow: auto;
-  border: 1px solid #ddd;
+  border: 1px solid $light-border-color;
+  border-radius: $border-radius;
   margin-bottom: 1rem;
   padding: 8px 10px;
   background: white;
