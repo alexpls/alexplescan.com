@@ -8,10 +8,10 @@ No license here, so if any of this code is of use to you - take it and use it ho
 
 ```
 # Install ruby
-$ brew install rbenv
-$ rbenv install
-# or, if on an M1 Mac
-RUBY_CFLAGS="-w" rbenv install 2.7.1
+$ brew install asdf
+$ asdf install
+# or, if on Apple Silicon
+RUBY_CFLAGS="-w" asdf install 2.7.1
 
 $ brew install git-lfs vips
 $ bundle

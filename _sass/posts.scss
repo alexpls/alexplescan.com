@@ -26,6 +26,19 @@
   img.no-border {
     border: 0;
   }
+
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  small {
+    @include fontSizeSmall();
+  }
+
+  strong {
+    font-weight: bold;
+  }
 }
 
 // an image caption
