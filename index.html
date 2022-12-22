@@ -28,7 +28,7 @@ description: Hi, I'm Alex - a web and mobile developer based in Brisbane, Austra
     <h3>Latest blog posts</h3>
     <ul>
       {% assign epoch = '2022-01-01' | date: '%s' %}
-      {% for post in site.posts limit:3 %}
+      {% for post in site.posts limit:4 %}
         {% assign post_date = post.date | date: '%s' %}
         {% if post_date >= epoch %}
         <li class="post-line">
