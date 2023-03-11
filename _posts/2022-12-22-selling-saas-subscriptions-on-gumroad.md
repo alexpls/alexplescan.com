@@ -226,7 +226,7 @@ defmodule MailgripWeb.GumroadWebhookSubscriber do
   end
 
   defp webhook_url do
-    MailgripWeb.Router.Helpers.gumroad_webhook_path(
+    MailgripWeb.Router.Helpers.gumroad_webhook_url(
 	  MailgripWeb.Endpoint,
 	  :handle
     )
