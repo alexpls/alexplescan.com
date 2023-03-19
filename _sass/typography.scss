@@ -37,3 +37,7 @@ h5 {
 h5 {
   @include fontSizeScaled(0.8);
 }
+
+em {
+  font-style: italic;
+}

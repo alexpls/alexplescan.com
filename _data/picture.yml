@@ -8,6 +8,12 @@ presets:
       jpg: 90
     attributes:
       img: class="project-screenshot"
+  mediumwidth:
+    base_width: 500
+    pixel_ratios: [1, 2, 3]
+    formats: [webp, jpg]
+    attributes:
+      img: class="mediumwidth"
   fullwidth:
     base_width: 720
     pixel_ratios: [1, 2, 3]
