@@ -10,7 +10,7 @@ It resulted in a much easier implementation, with less reliance on client-side J
 
 This post provides an introduction to the Declarative Shadow DOM, and how it compares to the regular ol' Shadow DOM.
 
-{% picture fullwidth assets/posts/shadow-dom/mailgrip-shadow-dom.jpg --alt a screenshot of mailgrip showing depicting an email embedded onto the page %}
+{% picture fullwidth assets/posts/shadow-dom/mailgrip-shadow-dom.jpg --alt a screenshot of mailgrip depicting an email embedded onto the page %}
 
 ---
 
