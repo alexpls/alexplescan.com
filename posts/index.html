@@ -7,11 +7,16 @@ title: Recent posts
   <h2 class="section-title">Blog posts</h2>
 
   <section class="posts">
-    {% for post in paginator.posts %}
-      {% include post_item.html %}
-    {% endfor %}
+    <ul class="posts">
+      {% for post in site.posts %} {% assign post_date = post.date | date: '%s'
+      %}
+      <li class="post-line">
+        <a href="{{post.url}}">{{post.title}}</a>
+        <time class="posted-at" datetime="{{post.date}}"
+          >({{ post.date | date: "%-d %B %Y" }})</time
+        >
+      </li>
+      {% endfor %}
+    </ul>
   </section>
-
-  {% include pagination.html %}
-
 </div>
