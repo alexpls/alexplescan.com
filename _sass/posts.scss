@@ -39,6 +39,17 @@
     }
   }
 
+  .svg-embed {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+
+    & > svg {
+      background: white;
+      border: 1px solid #ddd;
+    }
+  }
+
   .video {
     max-width: 100%;
     height: auto;
