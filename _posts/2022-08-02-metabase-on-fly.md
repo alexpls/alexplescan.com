@@ -4,6 +4,8 @@ title: "Deploying Metabase to Fly.io"
 description: "Guide on how to deploy Metabase to Fly.io in minutes"
 ---
 
+> **July 2023**: Updated post to include instructions compatible with Fly Machines V2, and to include scale to zero configuration.
+
 If you're reading this you probably already know what [Metabase][mb] and [Fly.io][fly] are.
 This is guide on how to get the two working together in minutes.
 
@@ -54,70 +56,61 @@ This is guide on how to get the two working together in minutes.
    kill_timeout = 5
 
    [build]
-     # You might want to pin this version to a specific
-     # tag in order to avoid surprising updates.
-     image = "metabase/metabase:latest"
+   # You might want to pin this version to a specific
+   # tag in order to avoid surprising updates.
+   image = "metabase/metabase:latest"
 
    # Mounts the Fly volume to the Metabase Docker image
    [mounts]
-     source = "metabase_data"
-     destination = "/metabase-data"
+   source = "metabase_data"
+   destination = "/metabase-data"
 
    [env]
-     # Tells Metabse to store the H2 database on
-     # the mounted volume.
-     MB_DB_FILE = "/metabase-data/metabase.db"
+   # Tells Metabse to store the H2 database on
+   # the mounted volume.
+   MB_DB_FILE = "/metabase-data/metabase.db"
 
-   [[services]]
-     internal_port = 3000
-     processes = ["app"]
-     protocol = "tcp"
+   [http_service]
+   internal_port = 3000
+   force_https = true
+   # This configuration scales Metabase down to 0 when
+   # it's not being used. It's a good money saver, but
+   # does lead to cold start lag, so if you need your
+   # Metabase to be snappy, or if you use its ability to
+   # generate reports on a schedule, change min_machines_running
+   # accordingly.
+   auto_start_machines = true
+   auto_stop_machines = true
+   min_machines_running = 0
 
-     [[services.ports]]
-       force_https = true
-       handlers = ["http"]
-       port = 80
+   [http_service.concurrency]
+   type = "requests"
+   hard_limit = 150
+   soft_limit = 100
 
-     [[services.ports]]
-       handlers = ["tls", "http"]
-       port = 443
-
-     [[services.tcp_checks]]
-       grace_period = "30s"
-       interval = "15s"
-       restart_limit = 0
-       timeout = "2s"
-
-     [[services.http_checks]]
-       grace_period = "30s"
-       interval = "15s"
-       method = "get"
-       path = "/api/health"
-       protocol = "http"
-       restart_limit = 3
+   [[http_service.checks]]
+   grace_period = "120s"
+   interval = "30s"
+   method = "GET"
+   timeout = "5s"
+   path = "/api/health"
    ```
 
-4. Scale up memory
-
-   Metabase runs on the JVM, and the JVM is hungry! I frequently saw out of memory (OOM) errors in logs when running with less than 1024MB.
-
-   ```shell
-   $ fly scale memory 1024
-   ```
-
-5. Deploy!
+4. Deploy!
 
    Now that everything's configured let's push up the app! This will take longer the first time you do it as Metabase will need to initialise and run migrations on its database.
 
+   Note that we set the VM Memory to 1024MB from the get-go. Metabase runs on the JVM, and the JVM is hungry! I frequently saw out of memory (OOM) errors in logs when running with less than 1024MB.
+
    ```bash
-   $ fly deploy
+   $ fly deploy --vm-memory 1024
 
    # And if you're curious you can follow your app's logs
    # in a separate terminal:
    $ fly logs
    ```
 
-6. Done!
+5. Done!
 
    Hooray - your deployment's done! Time to configure Metabase via its UI by opening your browser and visiting your new deployment:
 
