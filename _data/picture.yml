@@ -12,11 +12,17 @@ presets:
     base_width: 500
     pixel_ratios: [1, 2, 3]
     formats: [webp, jpg]
+    format_quality:
+      webp: 90
+      jpg: 90
     attributes:
       img: class="mediumwidth"
   fullwidth:
     base_width: 720
     pixel_ratios: [1, 2, 3]
     formats: [webp, jpg]
+    format_quality:
+      webp: 90
+      jpg: 90
     attributes:
       img: class="fullwidth"
