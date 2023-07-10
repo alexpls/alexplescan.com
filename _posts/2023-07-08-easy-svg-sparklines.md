@@ -240,7 +240,7 @@ defmodule MailgripWeb.InboxController do
 end
 ```
 
-Which in turn calls this module (heavily inspired by the [Contex](https://github.com/mindok/contex) package):
+Which in turn calls this module (heavily inspired by the [ContEx](https://github.com/mindok/contex) package):
 
 ```elixir
 defmodule MailgripWeb.Sparkline do
