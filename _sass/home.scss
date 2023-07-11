@@ -12,6 +12,12 @@ ul.posts {
   list-style-type: none;
   margin-left: 0;
 
+  .post-year-posts {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
   .post-line {
     .posted-at {
       color: $text-muted-color;
