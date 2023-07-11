@@ -2,6 +2,7 @@
 layout: post
 title: Using Declarative Shadow DOM to embed HTML emails on a web page
 description: How I used the Declarative Shadow DOM to embed HTML emails on a web page without breaking its CSS styles
+image: assets/posts/shadow-dom/cover.jpg
 ---
 
 Recently, I worked on embedding HTML emails into a web page for [Mailgrip](https://mailgrip.io).

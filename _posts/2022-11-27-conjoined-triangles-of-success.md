@@ -2,6 +2,7 @@
 layout: post
 title: "PDF: The Conjoined Triangles of Success"
 description: "A downloadable PDF of Silicon Valley's Conjoined Triangles of Success poster"
+image: assets/posts/conjoined_triangles/cover.jpg
 ---
 
 A little while back I wanted to print a poster of Jack Barker's Conjoined Triangles of Success (as featured in the [Silicon Valley TV show](<https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)>)).

@@ -2,6 +2,7 @@
 layout: post
 title: Selling SaaS on Gumroad
 description: My experience with using Gumroad to sell subscription based software
+image: assets/posts/selling-saas-on-gumroad/cover.jpg
 ---
 
 As part of my recent work on building [Mailgrip](https://mailgrip.io), I decided to experiment with using [Gumroad](https://gumroad.com) to manage payments and subscriptions. This post documents the minimum viable Gumroad integration I implemented, in case you are looking at doing the same thing!

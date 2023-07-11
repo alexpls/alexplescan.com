@@ -2,6 +2,7 @@
 layout: post
 title: Easy SVG sparklines
 description: Using SVG to easily create sparkline charts, and rendering them on the server side with Elixir and Phoenix
+image: assets/posts/easy-svg-sparklines/cover.jpg
 ---
 
 [Sparkline charts](https://en.wikipedia.org/wiki/Sparkline) are compact, simple charts showing a general trend without getting into the nitty-gritty of a more complete solution.

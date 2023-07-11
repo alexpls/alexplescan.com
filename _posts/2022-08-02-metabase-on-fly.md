@@ -2,6 +2,7 @@
 layout: post
 title: "Deploying Metabase to Fly.io"
 description: "Guide on how to deploy Metabase to Fly.io in minutes"
+image: assets/posts/metabase-on-fly/cover.jpg
 ---
 
 > **July 2023**: Updated post to include instructions compatible with Fly Machines V2, and to include scale to zero configuration.
