@@ -2,25 +2,32 @@
 layout: default
 title: Recent posts
 ---
-{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date:
+'%Y'" %}
 <div id="posts">
   <h2 class="section-title">Blog posts</h2>
+  <div class="section-subtitle">
+    <a href="/feed.xml" title="View my RSS Feed">RSS feed</a>
+  </div>
 
   <section class="posts">
     <ul class="posts">
       {% for year in posts_by_year %}
-        <li class="post-year">
-          {{ year.name }}
-          <ul class="post-year-posts">
-            {% for post in year.items %}
-              {% assign post_date = post.date | date: '%s' %}
-              <li class="post-line">
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                <time class="posted-at" datetime="{{ post.date }}">({{ post.date | date: "%-d %B %Y" }})</time>
-              </li>
-            {% endfor %}
-          </ul>
-        </li>
+      <li class="post-year">
+        {{ year.name }}
+        <ul class="post-year-posts">
+          {% for post in year.items %} {% assign post_date = post.date | date:
+          '%s' %}
+          <li class="post-line">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <time class="posted-at" datetime="{{ post.date }}"
+              >({{ post.date | date: "%-d %B %Y" }})</time
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
       {% endfor %}
     </ul>
   </section>

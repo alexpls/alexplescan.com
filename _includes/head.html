@@ -1,9 +1,16 @@
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
 
   {% seo %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Alex Plescan"
+    href="https://alexplescan.com/feed.xml"
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Inline crucial CSS to speed up page load: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery -->
   <style type="text/css">
@@ -13,11 +20,17 @@
     {{ inlined | scssify }}
   </style>
 
-  <link rel="stylesheet" type="text/css" href="/css/styles.css?cache={{ site.time | date: '%s' }}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="/css/styles.css?cache={{ site.time | date: '%s' }}"
+  />
 
-  {% favicon %}
-
-  {% if site.analytics %}
-  <script defer data-domain="alexplescan.com" src="https://plausible.io/js/plausible.js"></script>
+  {% favicon %} {% if site.analytics %}
+  <script
+    defer
+    data-domain="alexplescan.com"
+    src="https://plausible.io/js/plausible.js"
+  ></script>
   {% endif %}
 </head>
