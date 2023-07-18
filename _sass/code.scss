@@ -1,8 +1,11 @@
 pre, code {
   background: white;
-  white-space: pre-wrap;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   @include fontSizeScaled(0.7);
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    @include fontSizeScaled(0.65);
+  }
 }
 
 code.highlighter-rouge {

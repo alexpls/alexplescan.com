@@ -24,8 +24,10 @@ If you're reading this, PostgreSQL is likely where your application's data alrea
 We'll build a SQL query that'll return the number of messages received to an inbox in the past 5 days. Let's start by listing those days:
 
 ```sql
-select cast(calendar.entry as date) as date_str
-from generate_series(now(), now() - interval '4 day', '-1 day') as calendar(entry);
+select
+  cast(calendar.entry as date) as date_str
+from
+  generate_series(now(), now() - interval '4 day', '-1 day') as calendar (entry);
 ```
 
 ```text
@@ -52,11 +54,13 @@ Few noteworthy things happening here:
 Now that we've got the dates we're interested in, we can join them with other data from our database:
 
 ```sql
-select cast(calendar.entry as date) as date_str, messages.id
-from generate_series(now(), now() - interval '4 day', '-1 day') as calendar(entry)
-left join messages
-  on messages.inbox_id = 1
-  and cast(messages.received_at as date) = cast(calendar.entry as date);
+select
+  cast(calendar.entry as date) as date_str,
+  messages.id
+from
+  generate_series(now(), now() - interval '4 day', '-1 day') as calendar (entry)
+  left join messages on messages.inbox_id = 1
+    and cast(messages.received_at as date) = cast(calendar.entry as date);
 ```
 
 ```text
@@ -78,11 +82,13 @@ Using a left join to the `messages` table means that if there are any days with 
 Finally, let's round this off by grouping the results and counting them:
 
 ```sql
-select cast(calendar.entry as date) as date_str, count(messages.id)
-from generate_series(now(), now() - interval '4 day', '-1 day') as calendar(entry)
-left join messages
-  on messages.inbox_id = 1
-  and cast(messages.received_at as date) = cast(calendar.entry as date)
+select
+  cast(calendar.entry as date) as date_str,
+  count(messages.id)
+from
+  generate_series(now(), now() - interval '4 day', '-1 day') as calendar (entry)
+  left join messages on messages.inbox_id = 1
+    and cast(messages.received_at as date) = cast(calendar.entry as date)
 group by calendar.entry
 order by date_str asc;
 ```
@@ -116,11 +122,13 @@ In Elixir and using the [Ecto](https://hexdocs.pm/ecto/Ecto.html) package, the i
 defmodule Mailgrip.Emails do
   def message_stats(%Inbox{} = inbox, num_days) do
     sql = """
-      select cast(calendar.entry as date) as date_str, count(messages.id)
-      from generate_series(now(), now() - $2::integer * interval '1 day', '-1 day') as calendar(entry)
-      left join messages
-        on messages.inbox_id = $1::integer
-        and cast(messages.received_at as date) = cast(calendar.entry as date)
+      select
+        cast(calendar.entry as date) as date_str,
+        count(messages.id)
+      from
+        generate_series(now(), now() - $2::integer * interval '1 day', '-1 day') as calendar (entry)
+        left join messages on messages.inbox_id = $1::integer
+          and cast(messages.received_at as date) = cast(calendar.entry as date)
       group by calendar.entry
       order by date_str asc
     """
