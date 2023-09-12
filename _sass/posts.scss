@@ -9,8 +9,6 @@
 }
 
 .post-content {
-  margin-bottom: 10rem;
-
   img {
     display: block;
     max-width: 100%;
@@ -121,4 +119,11 @@ hr {
   border: 1px solid $light-border-color;
   outline: 0;
   margin: 1.5rem 0;
+}
+
+.post-footer {
+  padding: 2rem 0;
+  margin: 4rem 0;
+  border-top: 1px solid $light-border-color;
+  border-bottom: 1px solid $light-border-color;
 }
