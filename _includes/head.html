@@ -26,7 +26,11 @@
     href="/css/styles.css?cache={{ site.time | date: '%s' }}"
   />
 
-  {% favicon %} {% if site.analytics %}
+  <link rel="shortcut icon" sizes="180x180" href="/assets/favicon.png" />
+  <link rel="shortcut icon" sizes="36x36" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#2C3E50" />
+
+  {% if site.analytics %}
   <script
     defer
     data-domain="alexplescan.com"
