@@ -1,0 +1,65 @@
+{{ define "main" }}
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+
+  {{ with .Resources.Get (.Params.topImage) }}
+  <div class="text-center relative mb-6">
+    <!-- TODO: put this through the variant pipeline to get good resizes -->
+    <!-- TODO: parallax? -->
+    <img alt="abstract surface" class="w-full max-h-[400px] object-cover" src="{{ .RelPermalink }}">
+    <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
+      <div class="bg-slate-900 bg-opacity-50 px-6 py-3">
+        <h1 class="text-4xl font-bold dark:text-slate-200 mb-2 drop-shadow-lg">{{ $.Title }}</h1>
+        <time datetime="{{ $dateMachine }}" class="drop-shadow-lg font-semibold">{{ $dateHuman }}</time>
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="py-12 text-center">
+    <div class="mx-6">
+      <h1 class="text-4xl font-bold dark:text-slate-200 mb-2">{{ $.Title }}</h1>
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="container mx-auto flex justify-between gap-12">
+    <div class="flex-1">
+      <article class="mx-auto prose prose-slate dark:prose-invert prose-pre:text-xs">
+        {{ .Content }}
+      </article>
+    </div>
+
+    <aside class="border-l dark:border-slate-600 pl-6 text-sm max-w-sm">
+      <div class="sticky top-0">
+        <div class="text-center border-b dark:border-slate-600 font-semibold py-3">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4 border-b dark:border-slate-600">
+          <div class="border-r dark:border-slate-600 py-3">
+            <div class="uppercase text-xs font-bold dark:text-slate-200">Published</div>
+            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          </div>
+          <div class="py-3">
+            <div class="uppercase text-xs font-bold dark:text-slate-200">Tags</div>
+            {{- with .GetTerms "tags" -}}
+              <div>
+                <ul>
+                  {{- range . }}
+                    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                  {{- end }}
+                </ul>
+              </div>
+            {{- end -}}
+          </div>
+        </div>
+        <div class="py-3">
+          <div class="uppercase mb-2 text-xs font-bold dark:text-slate-200">Table of Contents</div>
+          <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:dark:text-slate-500">
+            {{ .TableOfContents }}
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+{{ end }}

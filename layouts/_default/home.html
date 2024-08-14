@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <div class="border-b dark:border-b-slate-600 py-12">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-2xl font-bold mb-6 dark:text-slate-100">
+        Hey, I'm Alex - I make websites.
+      </p>
+
+      <p class="text-xl">
+        Sometimes while I'm doing that something interesting happens,
+        and I'll post about it here.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto py-12">
+    <div class="max-w-md">
+      <h2 class="text-xl font-bold mb-4 dark:text-slate-100">Recent posts</h2>
+      {{ range site.RegularPages.Limit 5 }}
+        <div class="mb-3">
+          <h3 class="font-bold dark:text-slate-100"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+          <p class="text-sm">{{ .Summary }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+

@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <div class="container mx-auto">
+    <div class="py-12 text-center">
+      <h1 class="text-4xl font-bold dark:text-slate-200">{{ .Title }}</h1>
+    </div>
+
+    {{ .Content }}
+
+    <div class="max-w-2xl mx-auto">
+      {{ range .Pages }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+
+        <div class="border dark:border-slate-600 mb-10 dark:shadow-[inset_0px_-40px_60px_-60px_#020617]">
+          {{ with .Resources.Get (.Params.topImage) }}
+            <!-- TODO: resize this -->
+            <img alt="abstract surface" src="{{ .RelPermalink }}" class="w-full h-[16px] object-cover">
+          {{ end }}
+          <div class="p-6 pt-4">
+            <time datetime="{{ $dateMachine }}" class="text-sm">{{ $dateHuman }}</time>
+            <h2 class="font-bold text-xl dark:text-slate-200 mb-4">
+              <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </h2>
+            <div class="leading-relaxed mb-2">
+              {{ .Summary }}
+            </div>
+            <div>
+              <a class="dark:text-slate-200 uppercase text-sm font-bold dark:hover:text-slate-100 hover:underline" href="{{ .RelPermalink }}">Read more</a>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
