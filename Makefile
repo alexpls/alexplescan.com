@@ -9,5 +9,5 @@ tailwind-watch:
 
 .PHONY: hugo-watch
 hugo-watch:
-	hugo server
+	hugo server --bind "0.0.0.0"
 
