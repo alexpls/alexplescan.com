@@ -8,39 +8,39 @@
     <!-- TODO: parallax? -->
     <img alt="abstract surface" class="w-full max-h-[400px] object-cover" src="{{ .RelPermalink }}">
     <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
-      <div class="bg-slate-900 bg-opacity-50 px-6 py-3">
-        <h1 class="text-4xl font-bold dark:text-slate-200 mb-2 drop-shadow-lg">{{ $.Title }}</h1>
-        <time datetime="{{ $dateMachine }}" class="drop-shadow-lg font-semibold">{{ $dateHuman }}</time>
+      <div class="flex items-center justify-center bg-slate-900 bg-opacity-50 px-6 py-3 w-full h-full lg:w-auto lg:h-auto">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold dark:text-slate-200 drop-shadow-lg">{{ $.Title }}</h1>
+          <time datetime="{{ $dateMachine }}" class="hidden lg:block drop-shadow-lg font-semibold">{{ $dateHuman }}</time>
+        </div>
       </div>
     </div>
   </div>
   {{ else }}
   <div class="py-12 text-center">
     <div class="mx-6">
-      <h1 class="text-4xl font-bold dark:text-slate-200 mb-2">{{ $.Title }}</h1>
-      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      <h1 class="text-3xl sm:text-4xl font-bold dark:text-slate-200">{{ $.Title }}</h1>
+      <time datetime="{{ $dateMachine }}" class="hidden lg:block">{{ $dateHuman }}</time>
     </div>
   </div>
   {{ end }}
 
-  <div class="container mx-auto flex justify-between gap-12">
-    <div class="flex-1">
-      <article class="mx-auto prose prose-slate dark:prose-invert prose-pre:text-xs">
-        {{ .Content }}
-      </article>
-    </div>
+  <div class="container px-3 mx-auto flex flex-col-reverse lg:divide-x lg:flex-row justify-between gap-6 lg:gap-12">
+    <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words prose prose-slate dark:prose-invert prose-pre:text-xs">
+      {{ .Content }}
+    </article>
 
-    <aside class="border-l dark:border-slate-600 pl-6 text-sm max-w-sm">
-      <div class="sticky top-0">
-        <div class="text-center border-b dark:border-slate-600 font-semibold py-3">
+    <aside class="lg:basis-[300px] flex-shrink-0 max-lg:border dark:border-slate-600 lg:pl-6 text-sm mx-auto">
+      <div class="lg:sticky lg:top-0">
+        <div class="hidden lg:block text-center border-b dark:border-slate-600 font-semibold py-3">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
-        <div class="grid grid-cols-2 gap-4 border-b dark:border-slate-600">
-          <div class="border-r dark:border-slate-600 py-3">
+        <div class="grid grid-cols-2 divide-x border-b dark:border-slate-600 dark:divide-slate-600">
+          <div class="text-center lg:text-left py-3">
             <div class="uppercase text-xs font-bold dark:text-slate-200">Published</div>
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           </div>
-          <div class="py-3">
+          <div class="py-3 pl-0 lg:pl-3 text-center lg:text-left">
             <div class="uppercase text-xs font-bold dark:text-slate-200">Tags</div>
             {{- with .GetTerms "tags" -}}
               <div>
@@ -53,7 +53,7 @@
             {{- end -}}
           </div>
         </div>
-        <div class="py-3">
+        <div class="py-3 px-3 lg:px-0">
           <div class="uppercase mb-2 text-xs font-bold dark:text-slate-200">Table of Contents</div>
           <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:dark:text-slate-500">
             {{ .TableOfContents }}
