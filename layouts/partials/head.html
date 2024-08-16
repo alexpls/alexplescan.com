@@ -1,18 +1,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{ range resources.Match "js/*.js" }}
+  {{ if hugo.IsDevelopment }}
+    <script type="text/javascript" defer src="{{ .RelPermalink }}"></script>
+  {{ else }}
+    {{ with . | fingerprint }}
+      <script type="text/javascript" defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{ with resources.Get "css/output.css" }}
-  {{ with . }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" />
-    {{ else }}
-      {{ with . | minify | fingerprint }}
-        <link
-          rel="stylesheet"
-          href="{{ .RelPermalink }}"
-          integrity="{{ .Data.Integrity }}"
-          crossorigin="anonymous" />
-      {{ end }}
+  {{ if hugo.IsDevelopment }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" />
+  {{ else }}
+    {{ with . | minify | fingerprint }}
+      <link
+        rel="stylesheet"
+        href="{{ .RelPermalink }}"
+        integrity="{{ .Data.Integrity }}"
+        crossorigin="anonymous" />
     {{ end }}
   {{ end }}
 {{ end }}

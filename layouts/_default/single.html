@@ -6,7 +6,9 @@
   <div class="text-center relative mb-6">
     <!-- TODO: put this through the variant pipeline to get good resizes -->
     <!-- TODO: parallax? -->
-    <img alt="abstract surface" class="w-full max-h-[400px] object-cover" src="{{ .RelPermalink }}">
+    <div data-parallax class="w-full max-h-[400px]">
+      <img alt="abstract surface" class="w-full h-full object-cover" src="{{ .RelPermalink }}">
+    </div>
     <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
       <div class="flex items-center justify-center bg-slate-900 bg-opacity-50 px-6 py-3 w-full h-full lg:w-auto lg:h-auto">
         <div>
