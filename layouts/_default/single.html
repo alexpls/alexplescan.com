@@ -3,14 +3,11 @@
   {{ $dateHuman := .Date | time.Format ":date_long" }}
 
   {{ with .Resources.Get (.Params.topImage) }}
-  <div class="text-center relative mb-6">
+  <div class="text-center relative my-6">
     <!-- TODO: put this through the variant pipeline to get good resizes -->
-    <!-- TODO: parallax? -->
-    <div data-parallax class="w-full max-h-[400px]">
-      <img alt="abstract surface" class="w-full h-full object-cover" src="{{ .RelPermalink }}">
-    </div>
+    <img alt="abstract surface" class="max-h-[400px] container mx-auto object-cover" src="{{ .RelPermalink }}">
     <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
-      <div class="flex items-center justify-center bg-slate-900 bg-opacity-50 px-6 py-3 w-full h-full lg:w-auto lg:h-auto">
+      <div class="flex items-center justify-center bg-slate-900 bg-opacity-50 px-6 py-3">
         <div>
           <h1 class="text-3xl sm:text-4xl font-bold dark:text-slate-200 drop-shadow-lg">{{ $.Title }}</h1>
           <time datetime="{{ $dateMachine }}" class="hidden lg:block drop-shadow-lg font-semibold">{{ $dateHuman }}</time>
@@ -19,8 +16,8 @@
     </div>
   </div>
   {{ else }}
-  <div class="py-12 text-center">
-    <div class="mx-6">
+  <div class="py-12 lg:py-24 text-center">
+    <div class="mx-auto">
       <h1 class="text-3xl sm:text-4xl font-bold dark:text-slate-200">{{ $.Title }}</h1>
       <time datetime="{{ $dateMachine }}" class="hidden lg:block">{{ $dateHuman }}</time>
     </div>
