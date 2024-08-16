@@ -1,26 +1,51 @@
 {{ define "main" }}
-  <div class="border-b dark:border-b-slate-600 py-12">
-    <div class="max-w-2xl mx-auto">
-      <p class="text-2xl font-bold mb-6 dark:text-slate-100">
-        Hey, I'm Alex - I make websites.
-      </p>
+  <div class="border-b dark:border-b-slate-600 py-14">
+    <div class="max-w-2xl px-3 mx-auto text-pretty">
+      <h1 class="text-3xl font-bold mb-7 dark:text-slate-100">
+        Hey, I&rsquo;m Alex &mdash; a software engineer
+      </h1>
 
-      <p class="text-xl">
-        Sometimes while I'm doing that something interesting happens,
-        and I'll post about it here.
-      </p>
+      <div class="text-lg lg:text-xl">
+        <p class="mb-3 lg:mb-5">
+          &hellip; which is a fancy way of saying I make websites.
+          Every now and again I&rsquo;ll post here about
+          something learned along the way.
+        </p>
+
+        <p class="mb-3 lg:mb-5">
+          To stay up to date you can subscribe to my
+          <a href="#" class="ap-link">newsletter</a>,
+          or
+          <a href="#" class="ap-link">RSS feed</a>.
+        </p>
+
+        <p>
+          You can find me elsewhere on
+          <a href="https://github.com/alexpls" class="ap-link">GitHub</a>,
+          <a href="https://twitter.com/alexplescan" class="ap-link">Twitter</a>,
+          and
+          <a href="mailto:alex@alexplescan.com" class="ap-link">email</a>.
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="max-w-4xl mx-auto py-12">
-    <div class="max-w-md">
+  <div class="max-w-2xl px-3 mx-auto py-12">
+    <div class="max-w-lg">
       <h2 class="text-xl font-bold mb-4 dark:text-slate-100">Recent posts</h2>
-      {{ range site.RegularPages.Limit 5 }}
-        <div class="mb-3">
-          <h3 class="font-bold dark:text-slate-100"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-          <p class="text-sm">{{ .Summary }}</p>
-        </div>
-      {{ end }}
+      <ul class="list-disc ml-4">
+        {{ range site.RegularPages.Limit 3 }}
+          <li class="mb-6">
+            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{ $dateHuman := .Date | time.Format ":date_long" }}
+            <time datetime="{{ $dateMachine }}" class="text-sm dark:text-slate-400">{{ $dateHuman }}</time>
+            <div>
+              <a class="font-bold dark:text-slate-200 hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </div>
+            <p class="text-sm text-justify">{{ .Summary }}</p>
+          </li>
+        {{ end }}
+      </ul>
     </div>
   </div>
 {{ end }}
