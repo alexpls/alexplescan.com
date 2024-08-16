@@ -7,8 +7,8 @@
 asdf install && npm install
 
 # dev
-make hugo-watch &
-make tailwind-watch &
+make watch-hugo &
+make watch-tailwind &
 
 # build
 make

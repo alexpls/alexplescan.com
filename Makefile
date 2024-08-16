@@ -3,11 +3,11 @@ build:
 	npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css
 	hugo
 
-.PHONY: tailwind-watch
-tailwind-watch:
+.PHONY: watch-tailwind
+watch-tailwind:
 	npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
 
-.PHONY: hugo-watch
-hugo-watch:
+.PHONY: watch-hugo
+watch-hugo:
 	hugo server --bind "0.0.0.0"
 
