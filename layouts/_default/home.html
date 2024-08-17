@@ -1,7 +1,7 @@
 {{ define "main" }}
-  <div class="border-b dark:border-b-slate-600 py-14">
+  <div class="border-b dark:border-b-slate-600 py-20">
     <div class="max-w-2xl px-3 mx-auto text-pretty">
-      <h1 class="text-3xl font-bold mb-7 dark:text-slate-100">
+      <h1 class="text-3xl font-bold mb-7 dark:text-slate-300">
         Hey, I&rsquo;m Alex &mdash; a software engineer
       </h1>
 
@@ -31,21 +31,26 @@
   </div>
 
   <div class="max-w-2xl px-3 mx-auto py-12">
-    <div class="max-w-lg">
-      <h2 class="text-xl font-bold mb-4 dark:text-slate-100">Recent posts</h2>
+    <div class="max-w-md">
+      {{ $numPosts := 3 }}
+      <h2 class="text-xl font-bold mb-4 dark:text-slate-300">Latest posts</h2>
       <ul class="list-disc ml-4">
-        {{ range site.RegularPages.Limit 3 }}
-          <li class="mb-6">
+        {{ range site.RegularPages.Limit $numPosts }}
+          <li class="mb-6 marker:text-slate-500">
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
             {{ $dateHuman := .Date | time.Format ":date_long" }}
-            <time datetime="{{ $dateMachine }}" class="text-sm dark:text-slate-400">{{ $dateHuman }}</time>
+            <time datetime="{{ $dateMachine }}" class="text-sm">{{ $dateHuman }}</time>
             <div>
-              <a class="font-bold dark:text-slate-200 hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+              <a class="font-bold dark:text-slate-300 hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </div>
             <p class="text-sm text-justify">{{ .Summary }}</p>
           </li>
         {{ end }}
       </ul>
+
+      {{ if gt site.RegularPages.Len $numPosts }}
+        <a href="/posts" class="ap-link">View {{ sub site.RegularPages.Len $numPosts }} more posts</a>
+      {{ end }}
     </div>
   </div>
 {{ end }}

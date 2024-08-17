@@ -4,7 +4,7 @@
 
 @layer base {
   .ap-link {
-    @apply underline dark:text-slate-200 hover:dark:text-slate-100;
+    @apply underline dark:text-slate-300 hover:dark:text-slate-100;
   }
 }
 
