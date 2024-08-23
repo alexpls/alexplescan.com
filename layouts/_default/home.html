@@ -43,8 +43,10 @@
             <div>
               <a class="font-bold dark:text-slate-300 hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </div>
-            <p class="text-sm text-justify dark:text-slate-400">{{ .Summary }}</p>
-            <p><a href="{{ .RelPermalink }}" class="ap-link text-sm">Read more</a></p>
+            <p class="text-sm text-justify dark:text-slate-400">
+              {{ .Summary }}
+              <a href="{{ .RelPermalink }}" class="ap-link text-sm">Read more</a>.
+            </p>
           </li>
         {{ end }}
       </ul>

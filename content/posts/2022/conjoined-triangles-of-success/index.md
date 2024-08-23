@@ -8,12 +8,12 @@ title: 'PDF: The Conjoined Triangles of Success'
 
 A little while back I wanted to print a poster of Jack Barker's Conjoined Triangles of Success (as featured in the [Silicon Valley TV show](<https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)>)).
 
-![Silicon Valley TV show screengrab](screengrab.jpg)
+{{< image src="screengrab.jpg" alt="Silicon Valley TV show screengrab" >}}
 
 Since I couldn't find a copy online that was high-res enough for printing, I made one! And now here it is, in case for some reason you also want to print this thing.
 
 [Download the PDF](conjoined_triangles_of_success_poster.pdf) (it's about 4.1MB)
 
-[![conjoined triangle poster](thumbnail.png)](conjoined_triangles_of_success_poster.pdf)
+[{{< image src="thumbnail.png" alt="conjoined triangle poster" >}}](conjoined_triangles_of_success_poster.pdf)
 
 Enjoy and use wisely!

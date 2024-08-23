@@ -47,15 +47,15 @@ else
 fi
 ```
 
-![Adding build phase](adding_build_phase.png)
+{{< image src="adding_build_phase.png" alt="Adding build phase" >}}
 
 Then `CMD+B` to rebuild your code and you should see lint hints appear inline in XCode like this:
 
-![Inline SwiftLint hints](example_hints.png)
+{{< image src="example_hints.png" alt="Inline SwiftLint hints" >}}
 
 You can now go ahead and do what the hints suggest, but don't take their advice as gospel. If you want to ignore a particular hint SwiftLint gives you several ways of doing this, [outlined here](https://github.com/realm/swiftlint#disable-a-rule-in-code). I prefer to be explicit when ignoring SwiftLint hints by adding the ignore directive inline with my code:
 
-![Disabled hint](inline_disable_hint.png)
+{{< image src="inline_disable_hint.png" alt="Disabled hint" >}}
 
 ### Installing SwiftLint on Travis CI
 
@@ -129,7 +129,7 @@ You can see the `script` parameter has a new `swiftlint` call added to it, and t
 
 It's time to commit and push! The new Travis CI build should appear immediately, but may take a few minutes to start up. If all goes well it should exit with a `0` status and happy green color!
 
-![Passed Travis build](passed_travis.png)
+{{< image src="passed_travis.png" alt="Passed Travis build" >}}
 
 ### Example code
 I've set up an example repo on GitHub which shows shows this method of running SwiftLint. [Check it out here.](https://github.com/alexpls/SwiftLint-TravisCI-Example)

@@ -6,15 +6,11 @@ image: assets/posts/easy-svg-sparklines/cover.jpg
 title: Easy SVG sparklines
 ---
 
-**15 July 2023:** See [Timeseries with PostgreSQL](/posts/2023/07/15/postgres-timeseries/) for an addendum re. how the timeseries data is generated.
-
----
-
 [Sparkline charts](https://en.wikipedia.org/wiki/Sparkline) are compact, simple charts showing a general trend without getting into the nitty-gritty of a more complete solution.
 
 On [Mailgrip](https://mailgrip.io), I use them as a UI flourish to give a visual indication of how many emails an inbox has received over time:
 
-![a screenshot showing an example of a sparkline](mailgrip-sparkline.png)
+{{< image src="mailgrip-sparkline.png" alt="a screenshot showing an example of a sparkline" >}}
 
 This post will explain how to use SVG to create minimal sparklines in a really easy and fast way.
 
@@ -317,3 +313,8 @@ My use of sparklines is gonna go:
   </svg>
 </div>
 {{< /raw >}}
+
+---
+
+**Edit 15 July 2023:** See [Timeseries with PostgreSQL](/posts/2023/07/15/postgres-timeseries/) for an addendum re. how the timeseries data is generated.
+

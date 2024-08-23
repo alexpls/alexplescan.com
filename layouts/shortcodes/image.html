@@ -1,6 +1,7 @@
-{{- $img := .Page.Resources.Get .Destination -}}
-{{- $fallbackImg := $img.Process ( print "resize 640x jpg" ) -}}
-{{- $alt := .Text -}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $img := .Page.Resources.Get $src -}}
+{{- $fallbackImg := $img.Process (print "resize 640x jpg") -}}
 
 {{- $dpi_multipliers := slice 1 2 3 -}}
 {{- $breakpoints := slice

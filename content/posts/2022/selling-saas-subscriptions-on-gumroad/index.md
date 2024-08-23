@@ -161,11 +161,11 @@ end
 
 When a customer signs up for from the Mailgrip site, but then needs to finalise their subscription on Gumroad, they're presented with this screen:
 
-![a screenshot of the screen that redirects customers to Gumroad](checkout-on-gumroad-screenshot.png)
+{{< image src="checkout-on-gumroad-screenshot.png" alt="a screenshot of the screen that redirects customers to Gumroad" >}}
 
 On clicking the "Create subscription" button, they're taken straight to the Gumroad checkout page with their email address already filled in:
 
-![a screenshot of the Gumroad checkout page](gumroad-checkout-page-screenshot.png)
+{{< image src="gumroad-checkout-page-screenshot.png" alt="a screenshot of the Gumroad checkout page" >}}
 
 To get this deep-link straight to the checkout page, I add the `wanted` and `email` params to my product's URL:
 

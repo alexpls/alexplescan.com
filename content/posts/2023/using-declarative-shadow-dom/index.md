@@ -12,7 +12,7 @@ It resulted in a much easier implementation, with less reliance on client-side J
 
 This post provides an introduction to the Declarative Shadow DOM, and how it compares to the regular ol' Shadow DOM.
 
-![a screenshot of mailgrip depicting an email embedded onto the page](mailgrip-shadow-dom.jpg)
+{{< image src="mailgrip-shadow-dom.jpg" alt="a screenshot of mailgrip depicting an email embedded onto the page" >}}
 
 ---
 
@@ -77,7 +77,7 @@ So, in this implementation we:
 
 ... and that all comes together into a page that looks like this:
 
-![a screenshot showing a shadow dom embedded inside host dom](shadow-dom-example.png)
+{{< image src="shadow-dom-example.png" alt="a screenshot showing a shadow dom embedded inside host dom" >}}
 
 The blue-ish parts are the host DOM, and the salmon-ish parts are in the Shadow DOM.
 Note how the `monospace` styles from inside the Shadow DOM's stylesheet don't leak outside of its bounds.

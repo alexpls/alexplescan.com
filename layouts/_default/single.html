@@ -35,11 +35,11 @@
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
         <div class="grid grid-cols-2 divide-x border-b dark:border-slate-600 dark:divide-slate-600">
-          <div class="text-center lg:text-left py-3">
+          <div class="text-center lg:text-left p-3 lg:pl-0">
             <div class="uppercase text-xs font-bold dark:text-slate-200">Published</div>
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           </div>
-          <div class="py-3 pl-0 lg:pl-3 text-center lg:text-left">
+          <div class="p-3 lg:pl-3 text-center lg:text-left">
             <div class="uppercase text-xs font-bold dark:text-slate-200">Tags</div>
             {{- with .GetTerms "tags" -}}
               <div>
@@ -49,15 +49,19 @@
                   {{- end }}
                 </ul>
               </div>
+            {{ else }}
+              (none)
             {{- end -}}
           </div>
         </div>
-        <div class="py-3 px-3 lg:px-0">
-          <div class="uppercase mb-2 text-xs font-bold dark:text-slate-200">Table of Contents</div>
-          <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:dark:text-slate-500">
-            {{ .TableOfContents }}
+        {{ if gt 0 (len .Fragments.Headings) }}
+          <div class="py-3 px-3 lg:px-0">
+            <div class="uppercase mb-2 text-xs font-bold dark:text-slate-200">Table of Contents</div>
+            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:dark:text-slate-500">
+              {{ .TableOfContents }}
+            </div>
           </div>
-        </div>
+        {{ end }}
       </div>
     </aside>
   </div>

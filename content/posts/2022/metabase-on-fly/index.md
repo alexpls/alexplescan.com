@@ -13,7 +13,7 @@ This is guide on how to get the two working together in minutes.
 [mb]: https://www.metabase.com/
 [fly]: https://fly.io/
 
-![Metabase screenshot](metabase-installed.png)
+{{< image src="metabase-installed.png" alt="Metabase screenshot" >}}
 
 1. Create your Fly app
 
@@ -119,6 +119,6 @@ This is guide on how to get the two working together in minutes.
    $ fly open
    ```
 
-   ![Metabase welcome screen](metabase-welcome.png)
+   {{< image src="metabase-welcome.png" alt="Metabase welcome screen" >}}
 
    Tip: If you're adding a datasource from within your Fly org, you can easily reference it by its internal network address: `[app-name].internal`.

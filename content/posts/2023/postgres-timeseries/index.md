@@ -12,8 +12,6 @@ After publishing [Easy SVG Sparklines](/posts/2023/07/08/easy-svg-sparklines/) l
 
 And now, for the longer answer:
 
----
-
 Let's go with the usecase I had for Mailgrip. Generating a timeseries representing how many emails were received by an inbox over a given time period.
 
 You could reach for a dedicated [timeseries database](https://prometheus.io/), or maybe a [PostgreSQL extension](https://www.timescale.com/) to do this, but do you really need to take on that complexity?
