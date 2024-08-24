@@ -29,4 +29,4 @@ To get around this an exception can be added for `localhost` (or any other known
 
 If you're editing your `Info.plist` visually in Xcode, you should have these entries:
 
-{{< image src="app_transport_security_info_plist.png" alt="App Transport Security info.plist screenshot" >}}
+{{< image src="app_transport_security_info_plist.png" alt="App Transport Security info.plist screenshot" width="525" >}}

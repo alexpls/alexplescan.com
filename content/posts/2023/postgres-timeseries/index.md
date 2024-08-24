@@ -18,7 +18,7 @@ You could reach for a dedicated [timeseries database](https://prometheus.io/), o
 
 If you're reading this, PostgreSQL is likely where your application's data already lives, and it comes with great support for generating timeseries built-in. Let's look at how to build a query, and then how it may be used in an Elixir application.
 
-### The timeseries query
+## The timeseries query
 
 We'll build a SQL query that'll return the number of messages received to an inbox in the past 5 days. Let's start by listing those days:
 
@@ -105,7 +105,7 @@ order by date_str asc;
 
 Beautiful! We can see how many messages were received on each day in our series. Now if we want to generate more data, we just change the `interval '4 day'` to whatever interval we need.
 
-### Query performance
+## Query performance
 
 This solution does a sequential scan of `messages` that belong to an inbox, for the period we're querying. Sequential scans are one of the first things you'd typically look at optimising, however in this particular case I haven't found it necessary.
 
@@ -113,7 +113,7 @@ My query window used to visualize sparklines is 30 days, for just one inbox. Eve
 
 Yes, this approach would not scale for an unbounded data set, but that's something I definitely don't need to worry about now.
 
-### Example implementation
+## Example implementation
 
 In Elixir and using the [Ecto](https://hexdocs.pm/ecto/Ecto.html) package, the implementation looks like:
 
@@ -145,6 +145,6 @@ Combining this with the sample Elixir/Phoenix code on [Easy SVG Sparklines](/pos
 
 _(For simplicity I've omitted timezone support, as well as some other business logic relevant to Mailgrip. This is still ~90% of the code I use in production to generate timeseries data)._
 
-### Acknowledgements
+## Acknowledgements
 
 [The Art of PostgreSQL](https://theartofpostgresql.com/) was a very influential book in my use of PostgreSQL (and thinking about the role of a RDBMS in general). If you like the approach layed out in this post - it's barely scratching the surface of what Dimitri Fontaine covers in the book.

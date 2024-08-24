@@ -5,15 +5,13 @@ image: assets/posts/metabase-on-fly/cover.jpg
 title: Deploying Metabase to Fly.io
 ---
 
-> **July 2023**: Updated post to include instructions compatible with Fly Machines V2, and to include scale to zero configuration.
-
 If you're reading this you probably already know what [Metabase][mb] and [Fly.io][fly] are.
 This is guide on how to get the two working together in minutes.
 
 [mb]: https://www.metabase.com/
 [fly]: https://fly.io/
 
-{{< image src="metabase-installed.png" alt="Metabase screenshot" >}}
+{{< image src="metabase-installed.png" alt="Metabase screenshot" class="mx-auto" width="600" >}}
 
 1. Create your Fly app
 
@@ -119,6 +117,10 @@ This is guide on how to get the two working together in minutes.
    $ fly open
    ```
 
-   {{< image src="metabase-welcome.png" alt="Metabase welcome screen" >}}
+   {{< image src="metabase-welcome.png" alt="Metabase welcome screen" class="mx-auto" width="600" >}}
 
    Tip: If you're adding a datasource from within your Fly org, you can easily reference it by its internal network address: `[app-name].internal`.
+
+---
+
+**Edit July 2023**: Updated post to include instructions compatible with Fly Machines V2, and to include scale to zero configuration.

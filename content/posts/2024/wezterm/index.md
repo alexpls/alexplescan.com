@@ -9,7 +9,7 @@ tags: tools
 
 A while back [my friend](https://blog.lambo.land/) recommended that I try [WezTerm](https://wezfurlong.org/wezterm/). I'd been an iTerm 2 stalwart for the better part of a decade, but not to be *too* narrow-minded I conceded, started it up, and saw this:
 
-{{< image src="01_default_look.png" alt="screenshot of WezTerm's default look" >}}
+{{< image src="01_default_look.png" alt="screenshot of WezTerm's default look" class="ap-post-img" >}}
 
 Does the job, sure, but doesn't feel quite right. Okay then, experiment over. Back to iTerm...
 
@@ -23,7 +23,7 @@ We *won't* be looking at some of WezTerm's key features, like custom hyperlinks 
 
 The feature I find most exciting about WezTerm is the flexibility of its Lua config, so we'll be focusing on that. This includes configuring appearance, keybindings, multiplexing, workspace navigation, status bar setup, and dynamic theming. By the end of it all, we'll have a terminal that looks like this:
 
-{{< image src="02_pretty_look.png" alt="screenshot of the WezTerm look we'll end up with at the end of this post" >}}
+{{< image src="02_pretty_look.png" alt="screenshot of the WezTerm look we'll end up with at the end of this post" class="ap-post-img" >}}
 
 Subtly prettier than the default, and with some great features to boot.
 
@@ -84,7 +84,7 @@ wezterm.log_info("hello world! my name is " .. wezterm.hostname())
 
 Save. Now... where did that log go? Press `CTRL + SHIFT + L` to bring up the debug overlay ([docs](https://wezfurlong.org/wezterm/troubleshooting.html#debug-overlay)) and lo and behold, your beautiful log was waiting for you all along. Not only that but what you're looking at is a full Lua REPL. Enter `1 + 1` and you'll see the result. Enter `wezterm.home_dir` and you'll see the result of accessing the `home_dir` entry on the `wezterm` module ([docs](https://wezfurlong.org/wezterm/config/lua/wezterm/home_dir.html)). 
 
-{{< image src="03_debug_overlay.png" alt="screenshot of the WezTerm's debug overlay" >}}
+{{< image src="03_debug_overlay.png" alt="screenshot of the WezTerm's debug overlay" class="ap-post-img" >}}
 
 The combination of hot reloading and the debug overlay makes experimenting with WezTerm configs extremely low friction and low consequence. The feedback loop is so tight now it's more like a feedback lp.
 
@@ -100,7 +100,7 @@ config.color_scheme = 'Tokyo Night'
 
 Save, and you should immediately see it update. Thanks Wez!
 
-{{< image src="04_colour_scheme.png" alt="screenshot of applying a colour scheme to WezTerm" >}}
+{{< image src="04_colour_scheme.png" alt="screenshot of applying a colour scheme to WezTerm" class="ap-post-img" >}}
 
 (if the hot config reload doesn't work for whatever reason, you can manually reload it by pressing `CMD + R`).
 
@@ -135,7 +135,7 @@ end)
 
 Open up a few windows (`CMD + N` on macOS) and each one will have a different colour scheme. A cornucopia of terminals, each more surprising than the last. We, my friends, are truly innovating now.
 
-{{< image src="05_cornucopia.png" alt="screenshot of many WezTerm terminal windows, each with a distinctive colour scheme" >}}
+{{< image src="05_cornucopia.png" alt="screenshot of many WezTerm terminal windows, each with a distinctive colour scheme" class="ap-post-img" >}}
 
 But really, that was kind of a dumb idea meant to prove a point. Now that you've gotten a taste for dynamic config, you probably wanna remove those lines and stick to a colour scheme you *do* like.
 
@@ -187,9 +187,7 @@ end
 
 Toggle your system appearance between dark mode and light mode, and watch your theme change right before your eyes.
 
-<!-- hackily putting this into a p to have the margin to next heading look good. need to review
-     stylesheet to fix this properly -->
-<p>{{< image src="06_light_v_dark.png" alt="screenshot of WezTerm in light and dark mode" >}}</p>
+{{< image src="06_light_v_dark.png" alt="screenshot of WezTerm in light and dark mode" class="ap-post-img" >}}
 
 ### Fonts
 
@@ -227,7 +225,7 @@ config.window_frame = {
 }
 ```
 
-{{< image src="07_window_styling.png" alt="screenshot of WezTerm after we've styled its window" >}}
+{{< image src="07_window_styling.png" alt="screenshot of WezTerm after we've styled its window" class="ap-post-img" >}}
 
 Now, let's do something a little kitsch. See that empty space to the right of our terminal's tab bar? Let's fill it with a powerline looking status bar. We'll add an `update-status` callback:
 
@@ -257,7 +255,7 @@ wezterm.on('update-status', function(window)
 end)
 ```
 
-{{< image src="08_status_bar.png" alt="screenshot of WezTerm with a right status bar showing the system's hostname" >}}
+{{< image src="08_status_bar.png" alt="screenshot of WezTerm with a right status bar showing the system's hostname" class="ap-post-img" >}}
 
 A few interesting things happening here:
 1. We just used WezTerm's events API with `wezterm.on`. Events are things that happen to the terminal (e.g. window resize) that we can define callbacks for. The `update-status` event is emitted periodically when the terminal is ready to have its status updated. WezTerm manages this cleverly to ensure that only one such update can run at any given time, and if your code takes too long to execute, a timeout will be hit and your handler will be abandoned... protecting your terminal from bogging down.
@@ -340,7 +338,7 @@ Let's move on to WezTerm's multiplexing capabilities. If you make use of a multi
 
 Hit `CTRL + SHIFT + P` to bring up WezTerm's command palette. (Yes, WezTerm has a command palette. Yes, it's as customisable as everything else we've seen so far. No, we won't dwell on it here). Type `split horizontally` until the "Shell: Split Horizontally" option is selected and hit `ENTER`. Ta-da! Your shell split horizontally! Do the same for `split vertically` and... you get the idea.
 
-{{< image src="09_command_palette.png" alt="screenshot of WezTerm's command palette" >}}
+{{< image src="09_command_palette.png" alt="screenshot of WezTerm's command palette" class="ap-post-img" >}}
 
 You may have noticed that the command palette displays the keyboard shortcut assigned to each action. The ones for splitting are quite a fingerful, e.g. `SHIFT + CTRL + OPTION + "`. I get why they're this complicated - because they're trying not to clash with any other shortcuts you may have on your system, but we can do a lot better - and WezTerm gives us the tools do so easily!
 
@@ -383,7 +381,7 @@ config.keys = {
 
 Give it a go now. Press `CTRL + A`, quickly followed by `"`, and you'll get a horizontal split. Use the other assignment and you'll get a vertical split.
 
-{{< image src="10_splits.png" alt="screenshot of WezTerm's with split panes" >}}
+{{< image src="10_splits.png" alt="screenshot of WezTerm's with split panes" class="ap-post-img" >}}
 
 Before we move on - you might be wondering what happens if you actually want to send the `CTRL + A` keypress *without* invoking the leader? `CTRL + A` is useful in and of its own as pressing it jumps to the start of a line on your shell (and on operating systems like Emacs).
 
@@ -601,7 +599,7 @@ config.keys = {
 
 Lots going on here, take your time to read it and the comments. And give it a go! Push `LEADER + P`, and you'll see the project input selector come up. Pick a project by highlighting one and pushing `ENTER`, or push `CTRL + C` to close the picker. Once you've picked a project you'll see its directory logged to your debug overlay (`CTRL + SHIFT + L`).
 
-{{< image src="11_workspace_switcher.png" alt="screenshot of WezTerm's with the workspace switcher we've configured" >}}
+{{< image src="11_workspace_switcher.png" alt="screenshot of WezTerm's with the workspace switcher we've configured" class="ap-post-img" >}}
 
 Still a couple of issues though... it's really annoying to type out all your projects by hand in that file, and, uh, what was the other issue? Oh yeah! When you pick a project nothing happens. Okay, let's fix these. Back in `projects.lua`, we'll start by having the list of projects automatically populate.
 
@@ -735,7 +733,7 @@ wezterm.on('update-status', function(window, _)
 end)
 ```
 
-{{< image src="12_status_bar_enhanced.png" alt="screenshot of WezTerm with an enhanced status line, showing multiple segments in different colours" >}}
+{{< image src="12_status_bar_enhanced.png" alt="screenshot of WezTerm with an enhanced status line, showing multiple segments in different colours" class="ap-post-img" >}}
 
 WezTerm delivers yet again. This updated callback supports arbitrary numbers of segments for its powerline. We've specified 3 but you could add way more. All this without needing to manually configure what colour we want on each segment, but rather have WezTerm do it for us by creating a gradient based on the currently active theme. Some highlights:
 

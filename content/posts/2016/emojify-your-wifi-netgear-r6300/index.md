@@ -8,18 +8,17 @@ After reading Brian Jordan's post [Emojify your Wi-Fi](https://medium.com/@bcjor
 
 Adding the emoji directly from the admin panel didn't work though, when I tried to I got this alert:
 
-{{< image src="not-allowed-alert.png" alt="Character not allowed alert dialog" >}}
+{{< image src="not-allowed-alert.png" alt="Character not allowed alert dialog" width="562" >}}
 
 Following in Brian's footsteps, I found the Javascript function which validates the characters in an SSID and overrode it to always return true. This was enough to get an emoji character accepted as part of the SSID!
 
 To do this yourself you can follow these steps:
 
 1. Go to your Netgear admin panel and craft your beautiful emoji-enriched SSID
-{{< image src="admin-panel.png" alt="Wi-fi admin panel" >}}
+{{< image src="admin-panel.png" alt="Wi-fi admin panel" class="701" >}}
 1. Open up the developer console
 1. Override the validation function by typing in `window.checkData = function() { return true; }` (and then pressing Return)
-{{< image src="dev-console.png" alt="Dev console" >}}
+{{< image src="dev-console.png" alt="Dev console" width="734" >}}
 1. Craft your beautiful emoji-enriched SSID
 1. Save and enjoy your new SSID... you finally fit in with the neighbours
-<br><br>
-{{< image src="wifi-ssids.png" alt="New SSID updated" >}}
+{{< image src="wifi-ssids.png" alt="New SSID updated" width="286" >}}

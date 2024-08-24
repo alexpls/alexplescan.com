@@ -10,7 +10,7 @@ title: Easy SVG sparklines
 
 On [Mailgrip](https://mailgrip.io), I use them as a UI flourish to give a visual indication of how many emails an inbox has received over time:
 
-{{< image src="mailgrip-sparkline.png" alt="a screenshot showing an example of a sparkline" >}}
+{{< image src="mailgrip-sparkline.png" alt="a screenshot showing an example of a sparkline" width="500" class="ap-post-img" >}}
 
 This post will explain how to use SVG to create minimal sparklines in a really easy and fast way.
 
@@ -65,9 +65,12 @@ Now, let's put these coordinates to work and draw our sparkline:
 
 Behold our beautiful creation:
 
-{{< raw >}}
-<div class="svg-embed">
-  <svg height="180px" width="500px">
+<div>
+  <svg
+    height="180px"
+    width="500px"
+    class="ap-post-img"
+  >
     <path
       d="M 0 14 L 1 15 L 2 10 L 3 11 L 4 7 L 5 5 L 6 0 L 7 5 L 8 10 L 9 11"
       stroke-width="2"
@@ -75,7 +78,6 @@ Behold our beautiful creation:
       fill="transparent" />
   </svg>
 </div>
-{{< /raw >}}
 
 Okay that's a bit sad, we've got a few more steps to go still...
 
@@ -98,9 +100,13 @@ We use the `viewBox` attribute ([docs](https://developer.mozilla.org/en-US/docs/
 </svg>
 ```
 
-{{< raw >}}
-<div class="svg-embed">
-  <svg height="180px" width="500px" viewBox="0 0 9 15">
+<div>
+  <svg
+    height="180px"
+    width="500px"
+    viewBox="0 0 9 15"
+    class="ap-post-img"
+  >
     <path
       d="M 0 14 L 1 15 L 2 10 L 3 11 L 4 7 L 5 5 L 6 0 L 7 5 L 8 10 L 9 11"
       stroke-width="2"
@@ -108,7 +114,6 @@ We use the `viewBox` attribute ([docs](https://developer.mozilla.org/en-US/docs/
       fill="transparent" />
   </svg>
 </div>
-{{< /raw >}}
 
 Ah, but now a couple of other funky things have happened:
 
@@ -127,13 +132,13 @@ Ah, but now a couple of other funky things have happened:
 </svg>
 ```
 
-{{< raw >}}
-<div class="svg-embed">
+<div>
   <svg
     height="180px"
     width="500px"
     viewBox="0 0 9 15"
     preserveAspectRatio="none"
+    class="ap-post-img"
   >
     <path
       d="M 0 14 L 1 15 L 2 10 L 3 11 L 4 7 L 5 5 L 6 0 L 7 5 L 8 10 L 9 11"
@@ -144,7 +149,6 @@ Ah, but now a couple of other funky things have happened:
     />
   </svg>
 </div>
-{{< /raw >}}
 
 That's better, now for some more... flare... let's add a fill to the SVG as well:
 
@@ -169,9 +173,14 @@ To do this, we copy our existing line but set a `fill` on it instead of a `strok
 </svg>
 ```
 
-{{< raw >}}
-<div class="svg-embed">
-  <svg height="180px" width="500px" viewBox="0 0 9 15" preserveAspectRatio="none">
+<div>
+  <svg
+    height="180px"
+    width="500px"
+    viewBox="0 0 9 15"
+    preserveAspectRatio="none"
+    class="ap-post-img"
+  >
     <path
       d="M 0 14 L 1 15 L 2 10 L 3 11 L 4 7 L 5 5 L 6 0 L 7 5 L 8 10 L 9 11"
       stroke="transparent"
@@ -186,7 +195,6 @@ To do this, we copy our existing line but set a `fill` on it instead of a `strok
     />
   </svg>
 </div>
-{{< /raw >}}
 
 Almost there! Let's close that unsightly white gap. To do so, we need to extend our line to the bottom right of the graphic (`L 9 15`), then to the bottom left (`L 0 15`), then back up to the starting point (`Z`).
 
@@ -209,9 +217,14 @@ This creates a closed line that nicely encapsulates the area we want to fill in:
 </svg>
 ```
 
-{{< raw >}}
-<div class="svg-embed">
-  <svg height="180px" width="500px" viewBox="0 0 9 15" preserveAspectRatio="none">
+<div>
+  <svg
+    height="180px"
+    width="500px"
+    viewBox="0 0 9 15"
+    preserveAspectRatio="none"
+    class="ap-post-img"
+  >
     <path
       d="M 0 14 L 1 15 L 2 10 L 3 11 L 4 7 L 5 5 L 6 0 L 7 5 L 8 10 L 9 11 L 9 15 L 0 15 Z"
       stroke="transparent"
@@ -226,7 +239,6 @@ This creates a closed line that nicely encapsulates the area we want to fill in:
     />
   </svg>
 </div>
-{{< /raw >}}
 
 That's looking pretty good now - especially considering how simple it was to draw. Now let's move on to rendering these on the server...
 
@@ -295,9 +307,14 @@ That's all it takes for minimal sparklines to add some flourish to your user int
 
 My use of sparklines is gonna go:
 
-{{< raw >}}
-<div class="svg-embed">
-  <svg height="180px" width="500px" viewBox="0 0 10 50" preserveAspectRatio="none">
+<div>
+  <svg
+    height="180px"
+    width="500px"
+    viewBox="0 0 10 50"
+    preserveAspectRatio="none"
+    class="ap-post-img"
+  >
     <path
       d="M 0 50 L 1 49 L 2 49 L 3 48 L 4 47 L 5 44 L 6 43 L 7 42 L 8 35 L 9 22 L 10 0 L 10 50 L 0 50 Z"
       stroke="transparent"
@@ -312,7 +329,6 @@ My use of sparklines is gonna go:
     />
   </svg>
 </div>
-{{< /raw >}}
 
 ---
 

@@ -1,35 +1,38 @@
 {{- $src := .Get "src" -}}
-{{- $alt := .Get "alt" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $class := .Get "class" -}}
+{{- $desiredWidth := .Get "width" -}}
+{{- $width := $desiredWidth | default "640" -}}
+{{- $width = int $width -}}
 {{- $img := .Page.Resources.Get $src -}}
-{{- $fallbackImg := $img.Process (print "resize 640x jpg") -}}
+{{- $fallbackImg := $img.Process (print "resize " $width "x jpg") -}}
 
-{{- $dpi_multipliers := slice 1 2 3 -}}
-{{- $breakpoints := slice
-  (dict "imageWidth" 430 "mediaQuery" "(max-width: 430px)")
-  (dict "imageWidth" 655 "mediaQuery" "(min-width: 431px)")
--}}
 {{- $variants := slice
   (dict "type" "webp" "contentType" "image/webp")
   (dict "type" "jpg" "contentType" "image/jpeg")
 -}}
 
+{{- $dpiMultipliers := slice 1 -}}
+{{- range slice 2 3 -}}
+  {{- $multipliedWidth := mul $width . -}}
+  {{- if lt $multipliedWidth $img.Width -}}
+    {{- $dpiMultipliers = $dpiMultipliers | append . -}}
+  {{- end -}}
+{{- end -}}
+
 <picture>
   {{- range $variant := $variants -}}
-    {{- range $breakpoint := $breakpoints -}}
-      {{- if ge $img.Width $breakpoint.imageWidth -}}
-        <source type="{{ $variant.contentType }}" media="{{ $breakpoint.mediaQuery }}" srcset="
-          {{- range $i, $multiplier := $dpi_multipliers -}}
-            {{- $multipliedWidth := mul $breakpoint.imageWidth $multiplier -}}
-            {{- if $i }}, {{ end -}}
-            {{- ($img.Process (print "resize " $multipliedWidth "x " $variant.type)).RelPermalink -}}
-            {{- if ne $multiplier 1 -}}
-              {{- print " " $multiplier "x" -}}
-            {{- end -}}
-          {{- end -}}
-        " />
+    <source type="{{ $variant.contentType }}" srcset="
+      {{- range $i, $multiplier := $dpiMultipliers -}}
+        {{- $multipliedWidth := mul $width $multiplier -}}
+        {{- if $i }}, {{ end -}}
+        {{- ($img.Process (print "resize " $multipliedWidth "x " $variant.type)).RelPermalink -}}
+        {{- if ne $multiplier 1 -}}
+          {{- print " " $multiplier "x" -}}
+        {{- end -}}
       {{- end -}}
-    {{- end -}}
+    " />
   {{- end -}}
-  <img src="{{ $fallbackImg.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}" />
+  <img src="{{ $fallbackImg.RelPermalink }}" alt="{{ $alt }}"{{ if $class }} class="{{ $class }}"{{ end }} />
 </picture>
 {{- /* swallow trailing newline */ -}}

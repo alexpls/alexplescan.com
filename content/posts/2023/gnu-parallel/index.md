@@ -108,7 +108,7 @@ By default the output of your command will be printed to your terminal, however 
 
 The CSV file ends up looking like this (only including the first lines for brevity):
 
-```
+```text
 Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,V2,Stdout,Stderr
 4,:,1692491267.732,6.025,0,4,1,0,"bash potentially_flaky_5.sh",potentially_flaky_5.sh,9,FAIL,
 2,:,1692491263.646,12.025,0,4,0,0,"bash potentially_flaky_3.sh",potentially_flaky_3.sh,3,PASS,

@@ -21,3 +21,5 @@ name = 'About'
 pageRef = '/about'
 weight = 30
 
+[markup.goldmark.renderer]
+unsafe = true

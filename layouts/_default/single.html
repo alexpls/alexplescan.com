@@ -25,7 +25,7 @@
   {{ end }}
 
   <div class="container px-3 mx-auto flex flex-col-reverse lg:divide-x lg:flex-row justify-between gap-6 lg:gap-12">
-    <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words prose prose-slate dark:prose-invert prose-pre:text-xs">
+    <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words prose prose-slate dark:prose-invert prose-pre:text-xs prose-img:mx-auto">
       {{ .Content }}
     </article>
 
@@ -54,7 +54,13 @@
             {{- end -}}
           </div>
         </div>
-        {{ if gt 0 (len .Fragments.Headings) }}
+        {{ $hasLevel2Headings := false }}
+        {{ range .Fragments.HeadingsMap }}
+          {{ if eq .Level 2 }}
+            {{ $hasLevel2Headings = true }}
+          {{ end }}
+        {{ end }}
+        {{ if $hasLevel2Headings }}
           <div class="py-3 px-3 lg:px-0">
             <div class="uppercase mb-2 text-xs font-bold dark:text-slate-200">Table of Contents</div>
             <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:dark:text-slate-500">

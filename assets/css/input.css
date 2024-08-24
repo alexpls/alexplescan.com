@@ -6,6 +6,10 @@
   .ap-link {
     @apply underline dark:text-slate-300 hover:dark:text-slate-100;
   }
+  
+  .ap-post-img {
+    @apply rounded border-2 dark:border-slate-400 mx-auto;
+  }
 }
 
 @font-face {
