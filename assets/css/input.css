@@ -10,6 +10,10 @@
   .ap-post-img {
     @apply rounded border-2 border-slate-600 dark:border-slate-400 mx-auto;
   }
+
+  .ap-prose {
+      @apply prose prose-slate dark:prose-invert prose-hr:border-slate-300 dark:prose-hr:border-slate-600 prose-pre:text-xs prose-img:mx-auto;
+  }
 }
 
 @font-face {
