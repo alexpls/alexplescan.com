@@ -8,8 +8,7 @@ Hey, I'm Alex -- a software engineer living in Brisbane, Australia. It's warm he
 
 I started writing software professionally (as in getting paid for it) about 12 years ago. Before that, I spent a few years doing it unprofessionally (as in *trying* to get paid for it). During this time I've worked across a broad range of products, stacks, and disciplines... but I always return to the web as my favourite platform.
 
-By day I work at [Zendesk](https://zendesk.com), where I spend most of my time on the big and beautiful Ruby on Rails codebase that supports our Support product.
-If you've recently asked a business for help and received an email response with "Delivered by Zendesk" in the footer, there's a high chance your request passed through something I've contributed to.
+By day, I work at [Zendesk](https://zendesk.com), where I spend most of my time on the big and beautiful Ruby on Rails codebase that supports our Support product.
 
 By night, I maintain a few personal projects. [Mailgrip](https://mailgrip.io) is my main one. If you're a cool person that's into RSS (what cool person isn't?) you should give it a try!
 
@@ -34,3 +33,6 @@ And some websites I've made include:
 - [cristinasilaghi.com](https://cristinasilaghi.com) (2013)
 - [blkwater.com](https://blkwater.com) (2010) - bask in the glory of my earliest surviving website!
 
+---
+
+{{< image src="brisbane.jpeg" alt="a photo of Brisbane" quality="90" >}}

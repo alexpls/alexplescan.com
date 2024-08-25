@@ -1,5 +1,6 @@
 {{- $src := .Get "src" -}}
 {{- $alt := .Get "alt" | default "" -}}
+{{- $quality := .Get "quality" | default "60" -}}
 {{- $class := .Get "class" -}}
 {{- $desiredWidth := .Get "width" -}}
 {{- $width := $desiredWidth | default "640" -}}
@@ -26,7 +27,7 @@
       {{- range $i, $multiplier := $dpiMultipliers -}}
         {{- $multipliedWidth := mul $width $multiplier -}}
         {{- if $i }}, {{ end -}}
-        {{- ($img.Process (print "resize " $multipliedWidth "x " $variant.type)).RelPermalink -}}
+        {{- ($img.Process (print "resize " $multipliedWidth "x " $variant.type " q" $quality)).RelPermalink -}}
         {{- if ne $multiplier 1 -}}
           {{- print " " $multiplier "x" -}}
         {{- end -}}
