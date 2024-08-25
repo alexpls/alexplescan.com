@@ -20,55 +20,59 @@
   <header class="px-6 flex items-center justify-between border-b bg-slate-300 border-b-slate-400 dark:bg-slate-900 dark:border-b-slate-600">
     <a href="/" class="font-bold py-5 md:w-36 hover:text-slate-500 hover:dark:text-slate-100">{{ site.Title }}</a>
 
-    <nav class="flex justify-center items-center space-x-5 uppercase font-semibold text-sm">
-      {{ $currentPage := . }}
-      {{ range .Site.Menus.main }}
-        {{ if $currentPage.IsMenuCurrent .Menu . }}
-          <a
-           href="{{ .URL }}"
-           aria-current="page"
-           class="
-             py-6
-             border-b
-             border-slate-600
-             hover:text-slate-500
-             hover:border-slate-600
-             hover:dark:text-slate-100
-             dark:border-slate-400
-             dark:text-slate-100
-           "
-         >{{ .Name }}</a>
-        {{ else if $currentPage.HasMenuCurrent .Menu . }}
-          <a
-           href="{{ .URL }}"
-           aria-current="ancestor"
-           class="
-             py-6
-             border-b
-             border-slate-600
-             hover:text-slate-500
-             hover:dark:text-slate-100
-             dark:border-slate-400
-             dark:text-slate-100
-            "
-         >{{ .Name }}</a>
-        {{ else }}
-          <a
-           href="{{ .URL }}"
-           aria-current="ancestor"
-           class="
-             py-6
-             border-b
-             border-b-transparent
-             hover:text-slate-500
-             hover:border-slate-600
-             hover:dark:border-slate-400
-             hover:dark:text-slate-100
-           "
-         >{{ .Name }}</a>
+    <div class="flex items-center space-x-5">
+      <nav class="flex items-center space-x-5 uppercase font-semibold text-sm">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          {{ if $currentPage.IsMenuCurrent .Menu . }}
+            <a
+             href="{{ .URL }}"
+             aria-current="page"
+             class="
+               py-6
+               border-b
+               border-slate-600
+               hover:text-slate-500
+               hover:border-slate-600
+               hover:dark:text-slate-100
+               dark:border-slate-400
+               dark:text-slate-100
+             "
+           >{{ .Name }}</a>
+          {{ else if $currentPage.HasMenuCurrent .Menu . }}
+            <a
+             href="{{ .URL }}"
+             aria-current="ancestor"
+             class="
+               py-6
+               border-b
+               border-slate-600
+               hover:text-slate-500
+               hover:dark:text-slate-100
+               dark:border-slate-400
+               dark:text-slate-100
+              "
+           >{{ .Name }}</a>
+          {{ else }}
+            <a
+             href="{{ .URL }}"
+             aria-current="ancestor"
+             class="
+               py-6
+               border-b
+               border-b-transparent
+               hover:text-slate-500
+               hover:border-slate-600
+               hover:dark:border-slate-400
+               hover:dark:text-slate-100
+             "
+           >{{ .Name }}</a>
+          {{ end }}
         {{ end }}
-      {{ end }}
-    </nav>
+      </nav>
+
+      {{ partial "colour_picker.html" . }}
+    </div>
   </header>
 
   <main>
