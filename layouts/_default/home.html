@@ -11,27 +11,12 @@
           Every now and again I&rsquo;ll post here about
           something learned along the way.
         </p>
-
-        <p class="mb-3 lg:mb-5">
-          To stay up to date you can subscribe to my
-          <a href="#" class="ap-link">newsletter</a>,
-          or
-          <a href="#" class="ap-link">RSS feed</a>.
-        </p>
-
-        <p>
-          You can find me elsewhere on
-          <a href="https://github.com/alexpls" class="ap-link">GitHub</a>,
-          <a href="https://twitter.com/alexplescan" class="ap-link">Twitter</a>,
-          and
-          <a href="mailto:alex@alexplescan.com" class="ap-link">email</a>.
-        </p>
       </div>
     </div>
   </div>
 
-  <div class="max-w-2xl px-3 mx-auto py-12">
-    <div class="max-w-md">
+  <div class="grid grid-cols-12 mx-auto max-w-3xl py-12 px-3 gap-16">
+    <div class="col-span-8">
       {{ $numPosts := 3 }}
       <h2 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Latest posts</h2>
       <ul class="list-disc ml-4">
@@ -54,6 +39,28 @@
       {{ if gt site.RegularPages.Len $numPosts }}
         <a href="/posts" class="ap-link">View {{ sub site.RegularPages.Len $numPosts }} more posts</a>
       {{ end }}
+    </div>
+
+    <div class="col-span-4">
+      <h2 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Elsewhere&hellip;</h2>
+
+      <ul class="list-disc ml-4">
+        <li class="marker:text-slate-400 dark:marker:text-slate-500">
+          <a href="#" class="ap-link hover:underline no-underline">Newsletter</a>
+        </li>
+        <li class="marker:text-slate-400 dark:marker:text-slate-500">
+          <a href="#" class="ap-link hover:underline no-underline">RSS feed</a>
+        </li>
+        <li class="marker:text-slate-400 dark:marker:text-slate-500">
+          <a href="#" class="ap-link hover:underline no-underline">GitHub</a>
+        </li>
+        <li class="marker:text-slate-400 dark:marker:text-slate-500">
+          <a href="#" class="ap-link hover:underline no-underline">Twitter</a>
+        </li>
+        <li class="marker:text-slate-400 dark:marker:text-slate-500">
+          <a href="#" class="ap-link hover:underline no-underline">Email</a>
+        </li>
+      </ul>
     </div>
   </div>
 {{ end }}
