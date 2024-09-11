@@ -3,6 +3,12 @@ languageCode = 'en-US'
 title = 'Alex Plescan'
 summaryLength = 20
 
+[params]
+description = "Alex Plescan's website"
+title = "Alex Plescan"
+[params.social]
+twitter = "alexplescan"
+
 [markup]
 [markup.tableOfContents]
 startLevel=2
