@@ -25,9 +25,15 @@
   {{ end }}
 
   <div class="container px-3 mx-auto flex flex-col-reverse lg:divide-x lg:flex-row justify-between gap-6 lg:gap-12">
-    <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words ap-prose">
-      {{ .Content }}
-    </article>
+    <div>
+      <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words ap-prose">
+        {{ .Content }}
+      </article>
+
+      <div class="mt-20">
+        {{ partial "newsletter.html" }}
+      </div>
+    </div>
 
     <aside class="lg:basis-[300px] flex-shrink-0 max-lg:border border-slate-300 dark:border-slate-600 lg:pl-6 text-sm mx-auto">
       <div class="lg:sticky lg:top-0">

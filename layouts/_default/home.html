@@ -1,17 +1,16 @@
 {{ define "main" }}
-  <div class="border-b border-b-slate-400 dark:border-b-slate-600 py-20">
-    <div class="max-w-2xl px-3 mx-auto text-pretty">
+  <div class="flex items-center relative border-b border-b-slate-400 dark:border-b-slate-600 h-[40vh]">
+    <div class="max-w-2xl px-3 mx-auto text-pretty text-center drop-shadow-2xl">
       <h1 class="text-3xl font-bold mb-7 text-slate-800 dark:text-slate-200">
         Hey, I&rsquo;m Alex &mdash; a software engineer
+        <sup><abbr class="text-xs cursor-help" title="A fancy way to say &ldquo;I make websites&rdquo;">✱</abbr></sup>
       </h1>
 
-      <div class="text-lg lg:text-xl">
-        <p class="mb-3 lg:mb-5">
-          &hellip; which is a fancy way of saying I make websites.
-          Every now and again I&rsquo;ll post here about
-          something learned along the way.
-        </p>
-      </div>
+      <p class="text-lg lg:text-xl leading-relaxed mb-3 lg:mb-5 max-w-xl">
+        This is my home on the internet, where I post about
+        things I&rsquo;m working on, and things I&rsquo;ve
+        learned along the way.
+      </p>
     </div>
   </div>
 
@@ -46,7 +45,7 @@
 
       <ul class="list-disc ml-4">
         <li class="marker:text-slate-400 dark:marker:text-slate-500">
-          <a href="#" class="ap-link hover:underline no-underline">Newsletter</a>
+          <a href="/newsletter" class="ap-link hover:underline no-underline">Newsletter</a>
         </li>
         <li class="marker:text-slate-400 dark:marker:text-slate-500">
           <a href="#" class="ap-link hover:underline no-underline">RSS feed</a>

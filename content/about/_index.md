@@ -10,19 +10,19 @@ I started writing software professionally (as in getting paid for it) about 12 y
 
 By day, I work at [Zendesk](https://zendesk.com), where I spend most of my time on the big and beautiful Ruby on Rails codebase that supports our Support product.
 
-By night, I maintain a few personal projects. [Mailgrip](https://mailgrip.io) is my main one. If you're a cool person that's into RSS (what cool person isn't?) you should give it a try!
+By night, I maintain a few personal projects. [Mailgrip](https://mailgrip.io) is my main one. If you're a cool person that's into RSS (and which cool person isn't?) you should give it a try!
 
 ---
 
-Applications I've built as personal projects include:
+Some of my personal projects include:
 
 - [Mailgrip](https://mailgrip.io) (2022) - forward email newsletters to RSS
-- [temoji.me](https://temoji.me) (2022) - custom emojis for Slack and Discord
-- [acklo](https://acklo.app) (2021) - remote config and feature flag management
-- [mailpin](https://mailpin.com) (2020) - permalinks for emails
-- [Soonlist](https://soonlistapp.com) (2016) - iOS app for tracking upcoming movies
-- SideSwipe (2014) - embeddable knowledge base for web applications
-- [i-MID Wallpapers](https://imidwallpapers.com/) (2014) - wallpaper gallery for Honda i-MID displays
+- [temoji.me](https://temoji.me) (2022) - make custom emojis for Slack and Discord
+- [acklo](https://acklo.app) (2021) - configure your app and manage feature flags
+- [mailpin](https://mailpin.com) (2020) - permalink your emails
+- [Soonlist](https://soonlistapp.com) (2016) - track upcoming movies
+- SideSwipe (2014) - embed a knowledgebase on your web app
+- [i-MID Wallpapers](https://imidwallpapers.com/) (2014) - make wallapers for Honda i-MID displays
 
 And some websites I've made include:
 
