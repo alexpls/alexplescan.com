@@ -8,6 +8,9 @@ description = "Alex Plescan's website"
 title = "Alex Plescan"
 [params.social]
 twitter = "alexplescan"
+[params.plausible]
+enabled = false
+domain = 'alexplescan.com'
 
 [markup]
 [markup.tableOfContents]
@@ -29,3 +32,4 @@ weight = 30
 
 [markup.goldmark.renderer]
 unsafe = true
+

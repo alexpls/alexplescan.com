@@ -32,6 +32,14 @@
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 
+{{ if .Site.Params.plausible.enabled }}
+<script
+  defer
+  data-domain="{{ .Site.Params.plausible.domain }}"
+  src="https://plausible.io/js/plausible.js"
+></script>
+{{ end }}
+
 <script type="text/javascript">
   try {
     window.updateTheme = function() {
