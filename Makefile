@@ -2,6 +2,7 @@
 build:
 	npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css
 	hugo
+	cp _redirects public/_redirects
 
 .PHONY: watch-tailwind
 watch-tailwind:
