@@ -18,3 +18,4 @@ make
 
 - Ensure all post descriptions make sense.
 - Make light theme nicer.
+- Favicon.
