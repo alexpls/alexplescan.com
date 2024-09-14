@@ -2,27 +2,12 @@
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
 
-  {{ with .Resources.Get (.Params.topImage) }}
-  <div class="text-center relative my-6">
-    <!-- TODO: put this through the variant pipeline to get good resizes -->
-    <img alt="abstract surface" class="max-h-[400px] container mx-auto object-cover" src="{{ .RelPermalink }}">
-    <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
-      <div class="flex items-center justify-center bg-slate-900 bg-opacity-50 px-6 py-3">
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 dark:text-slate-200 drop-shadow-lg">{{ $.Title }}</h1>
-          <time datetime="{{ $dateMachine }}" class="hidden lg:block drop-shadow-lg font-semibold">{{ $dateHuman }}</time>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{ else }}
   <div class="py-12 lg:py-24 text-center">
     <div class="mx-auto">
-      <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 dark:text-slate-200">{{ $.Title }}</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-zinc-800 dark:text-slate-200">{{ $.Title }}</h1>
       <time datetime="{{ $dateMachine }}" class="hidden lg:block">{{ $dateHuman }}</time>
     </div>
   </div>
-  {{ end }}
 
   <div class="container px-3 mx-auto flex flex-col-reverse lg:divide-x lg:flex-row justify-between gap-6 lg:gap-12">
     <div>
@@ -35,18 +20,18 @@
       </div>
     </div>
 
-    <aside class="lg:basis-[300px] flex-shrink-0 max-lg:border border-slate-300 dark:border-slate-600 lg:pl-6 text-sm mx-auto">
+    <aside class="lg:basis-[300px] flex-shrink-0 max-lg:border border-zinc-300 dark:border-slate-600 lg:pl-6 text-sm mx-auto">
       <div class="lg:sticky lg:top-0">
-        <div class="hidden lg:block text-center border-b border-slate-300 dark:border-slate-600 font-semibold py-3">
+        <div class="hidden lg:block text-center border-b border-zinc-300 dark:border-slate-600 font-semibold py-3">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
-        <div class="grid grid-cols-2 divide-x border-b border-slate-300 divide-slate-300 dark:border-slate-600 dark:divide-slate-600">
+        <div class="grid grid-cols-2 divide-x border-b border-zinc-300 divide-zinc-300 dark:border-slate-600 dark:divide-slate-600">
           <div class="text-center lg:text-left p-3 lg:pl-0">
-            <div class="uppercase text-xs font-bold text-slate-800 dark:text-slate-200">Published</div>
+            <div class="uppercase text-xs font-bold text-zinc-800 dark:text-slate-200">Published</div>
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           </div>
           <div class="p-3 lg:pl-3 text-center lg:text-left">
-            <div class="uppercase text-xs font-bold text-slate-800 dark:text-slate-200">Tags</div>
+            <div class="uppercase text-xs font-bold text-zinc-800 dark:text-slate-200">Tags</div>
             {{- $tags := .GetTerms "tags" }}
             {{- with $tags -}}
               {{- range $index, $tag := $tags }}
@@ -66,8 +51,8 @@
         {{ end }}
         {{ if $hasLevel2Headings }}
           <div class="py-3 px-3 lg:px-0">
-            <div class="uppercase mb-2 text-xs font-bold text-slate-800 dark:text-slate-200">Table of Contents</div>
-            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:text-slate-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline hover:[&_a]:underline">
+            <div class="uppercase mb-2 text-xs font-bold text-zinc-800 dark:text-slate-200">Table of Contents</div>
+            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:text-zinc-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline hover:[&_a]:underline">
               {{ .TableOfContents }}
             </div>
           </div>
