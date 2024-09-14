@@ -3,20 +3,3 @@
 /feed.xml /index.xml 301
 /projects /about 301
 
-/posts/2024/08/10/wezterm/ /posts/2024/wezterm/ 301
-/posts/2023/08/20/gnu-parallel/ /posts/2023/gnu-parallel/ 301
-/posts/2023/07/15/postgres-timeseries/ /posts/2023/postgres-timeseries/ 301
-/posts/2023/07/08/easy-svg-sparklines/ /posts/2023/easy-svg-sparklines/ 301
-/posts/2023/03/19/using-declarative-shadow-dom/ /posts/2023/using-declarative-shadow-dom/ 301
-/posts/2022/12/22/selling-saas-subscriptions-on-gumroad/ /posts/2022/selling-saas-subscriptions-on-gumroad/ 301
-/posts/2022/11/27/conjoined-triangles-of-success/ /posts/2022/conjoined-triangles-of-success/ 301
-/posts/2022/08/02/metabase-on-fly/ /posts/2022/metabase-on-fly/ 301
-/posts/2022/04/17/the-x-files/ /posts/2022/the-x-files/ 301
-/posts/2017/06/11/addding-devices-to-provisioning-profile-xcode8-managed-signing/ /posts/2017/addding-devices-to-provisioning-profile-xcode8-managed-signing/ 301
-/posts/2016/08/16/emojify-your-wifi-netgear-r6300/ /posts/2016/emojify-your-wifi-netgear-r6300/ 301
-/posts/2016/06/14/using-san-francisco-mono-typeface-before-mac-os-sierra-released/ /posts/2016/using-san-francisco-mono-typeface-before-mac-os-sierra-released/ 301
-/posts/2016/06/13/disabling-app-transport-security-in-development-environment/ /posts/2016/disabling-app-transport-security-in-development-environment/ 301
-/posts/2016/05/03/swift-a-nicer-way-to-tell-if-your-app-is-running-in-debug-mode/ /posts/2016/swift-a-nicer-way-to-tell-if-your-app-is-running-in-debug-mode/ 301
-/posts/2016/03/28/development-environment-config-overrides-in-jekyll/ /posts/2016/development-environment-config-overrides-in-jekyll/ 301
-/posts/2016/03/03/setting-up-swiftlint-on-travis-ci/ /posts/2016/setting-up-swiftlint-on-travis-ci/ 301
-
