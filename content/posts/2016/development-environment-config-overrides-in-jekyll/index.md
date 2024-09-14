@@ -1,9 +1,9 @@
----
-date: "2016-03-28T00:00:00Z"
-description: How to use a separate config for running Jekyll in development and production
-  environments.
-title: Development environment config overrides in Jekyll
----
++++
+date = '2016-03-28T00:00:00Z'
+description = 'How to use a separate config for running Jekyll in development and production environments.'
+title = 'Development environment config overrides in Jekyll'
+tags = ['jekyll']
++++
 
 While building this website using Jekyll I found that there were a few places where
 I needed to override config variables when the site is running in a development

@@ -1,10 +1,10 @@
----
-date: "2023-07-15T00:00:00Z"
-description: How to use set-returning functions in PostgreSQL to generate simple timeseries
-  data
-image: /assets/posts/postgres-timeseries/cover.png
-title: Timeseries with PostgreSQL
----
++++
+date = '2023-07-15T00:00:00Z'
+description = 'How to use set-returning functions in PostgreSQL to generate simple timeseries data.'
+image = '/assets/posts/postgres-timeseries/cover.png'
+title = 'Timeseries with PostgreSQL'
+tags = ['postgresql']
++++
 
 After publishing [Easy SVG Sparklines](/posts/2023/07/08/easy-svg-sparklines/) last week, I received a couple of questions about _how_ the timeseries data displayed on [Mailgrip](https://mailgrip.io/)'s charts is generated.
 

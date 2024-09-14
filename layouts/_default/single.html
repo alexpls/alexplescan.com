@@ -47,14 +47,12 @@
           </div>
           <div class="p-3 lg:pl-3 text-center lg:text-left">
             <div class="uppercase text-xs font-bold text-slate-800 dark:text-slate-200">Tags</div>
-            {{- with .GetTerms "tags" -}}
-              <div>
-                <ul>
-                  {{- range . }}
-                    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-                  {{- end }}
-                </ul>
-              </div>
+            {{- $tags := .GetTerms "tags" }}
+            {{- with $tags -}}
+              {{- range $index, $tag := $tags }}
+                <a href="{{ $tag.RelPermalink }}" class="ap-link no-underline hover:underline">{{ $tag.LinkTitle }}</a>
+                {{- if ne (add $index 1) (len $tags) -}}, {{- end -}}
+              {{- end }}
             {{ else }}
               (none)
             {{- end -}}
@@ -69,7 +67,7 @@
         {{ if $hasLevel2Headings }}
           <div class="py-3 px-3 lg:px-0">
             <div class="uppercase mb-2 text-xs font-bold text-slate-800 dark:text-slate-200">Table of Contents</div>
-            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:text-slate-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline">
+            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:text-slate-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline hover:[&_a]:underline">
               {{ .TableOfContents }}
             </div>
           </div>

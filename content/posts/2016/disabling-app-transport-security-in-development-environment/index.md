@@ -1,9 +1,9 @@
----
-date: "2016-06-13T00:00:00Z"
-description: How to disable App Transport Security in order to make unsecured HTTP
-  requests in a local development environment
-title: Disabling App Transport Security in your development environment
----
++++
+date = '2016-06-13T00:00:00Z'
+description = 'How to disable App Transport Security in order to make unsecured HTTP requests in a local development environment.'
+title = 'Disabling App Transport Security in your development environment'
+tags = ['ios']
++++
 
 iOS 9 introduced [App Transport Security](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW33), which by default forces apps to communicate over HTTPS instead of HTTP. This is a great default for production apps, but it can get in the way of connecting to development servers which are less likely to be configured with a HTTPS connection, especially when running on your local machine.
 

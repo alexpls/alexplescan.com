@@ -1,9 +1,9 @@
----
-date: "2017-06-11T00:00:00Z"
-description: How to add new device UUIDs to a provisioning profile while using Xcode
-  8 managed signing
-title: 'Xcode 8 managed signing: adding new device UUIDs to a provisioning profile'
----
++++
+date = '2017-06-11T00:00:00Z'
+description = 'How to add new device UUIDs to a provisioning profile while using Xcode 8 managed signing.'
+title = 'Xcode 8 managed signing: adding new device UUIDs to a provisioning profile'
+tags = ['ios']
++++
 
 Xcode 8 introduced [managed code signing](https://possiblemobile.com/2016/06/code-signing-xcode-8/), which automatically generates the App IDs, signing certificates, and provisioning profiles you'd usually need to set up manually for your app. This covers most aspects of getting your app ready for distribution, but one thing that still isn't automatic is Xcode's handling of devices UUIDs manually added in the Developer Portal; when new device UUIDs are added you still need to generate a fresh provisioning profile which includes them.
 

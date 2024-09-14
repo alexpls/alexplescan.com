@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <div class="container mx-auto">
+    <div class="py-12 text-center">
+      <h1 class="text-4xl font-bold dark:text-slate-200">{{ .Title }}</h1>
+    </div>
+
+    <div class="ap-prose max-w-2xl mx-auto px-3">
+      {{ .Content }}
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      {{ range .Data.Terms.Alphabetical }}
+        <div class="rounded border border-slate-400 mb-10 shadow-[inset_0px_-40px_60px_-60px_#94a3b8] dark:border-slate-600 dark:shadow-[inset_0px_-40px_60px_-60px_#020617]">
+          <div class="p-6 pt-4">
+            <h2 class="font-bold text-xl dark:text-slate-200 mb-4">
+              <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+            </h2>
+
+            <ul>
+              {{ range .Page.Pages }}
+                <li class="mb-2">
+                  <a href="{{ .RelPermalink }}" class="ap-link">{{ .LinkTitle }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

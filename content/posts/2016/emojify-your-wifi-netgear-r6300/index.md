@@ -1,8 +1,9 @@
----
-date: "2016-08-16T00:00:00Z"
-description: Adding emoji to the Wi-Fi SSID on a Netgear R6300 router.
-title: Emojify your Wi-Fi (Netgear R6300 edition)
----
++++
+date = '2016-08-16T00:00:00Z'
+description = 'Adding emoji to the Wi-Fi SSID on a Netgear R6300 router.'
+title = 'Emojify your Wi-Fi (Netgear R6300 edition)'
+tags = ['random']
++++
 
 After reading Brian Jordan's post [Emojify your Wi-Fi](https://medium.com/@bcjordan/emojify-your-wi-fi-c01f4ac0b0ab#.w7pul5myi) where he adds emoji to his Wi-Fi SSID, <strike>I decided to blatantly rip him off</strike> I got inspired to do the same on my Netgear R6300 router.
 

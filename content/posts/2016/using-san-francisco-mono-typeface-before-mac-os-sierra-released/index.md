@@ -1,11 +1,9 @@
----
-date: "2016-06-14T00:00:00Z"
-description: Apple's new San Francisco Mono comes bundled in with the latest Xcode
-  8 beta. If you're impatient like me and want to use San Francisco Mono in your other
-  apps before macOS Sierra is released, you can install it manually from the Xcode
-  8 Beta app package
-title: How to use the San Francisco Mono typeface before macOS Sierra is released
----
++++
+date = "2016-06-14T00:00:00Z"
+description = "Apple's new San Francisco Mono comes bundled in with the latest Xcode 8 beta. If you're impatient like me and want to use San Francisco Mono in your other apps before macOS Sierra is released, you can install it manually from the Xcode 8 Beta app package."
+title = 'How to use the San Francisco Mono typeface before macOS Sierra is released'
+tags = ['random']
++++
 
 Apple's new San Francisco Mono typeface comes bundled in with the latest Xcode 8 beta, and it's beautiful! If you're impatient like me and want to use San Francisco Mono in your other apps before macOS Sierra is released, you can grab its `otf` files from the Xcode 8 Beta app package and install them manually:
 

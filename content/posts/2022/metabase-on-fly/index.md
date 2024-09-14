@@ -1,9 +1,10 @@
----
-date: "2022-08-02T00:00:00Z"
-description: Guide on how to deploy Metabase to Fly.io in minutes
-image: assets/posts/metabase-on-fly/cover.jpg
-title: Deploying Metabase to Fly.io
----
++++
+date = '2022-08-02T00:00:00Z'
+description = 'Guide on how to deploy Metabase to Fly.io in minutes.'
+image = 'assets/posts/metabase-on-fly/cover.jpg'
+title = 'Deploying Metabase to Fly.io'
+tags = ['cloud']
++++
 
 If you're reading this you probably already know what [Metabase][mb] and [Fly.io][fly] are.
 This is guide on how to get the two working together in minutes.

@@ -1,9 +1,9 @@
----
-date: "2016-03-03T00:00:00Z"
-description: How to set up SwiftLint to run locally on your machine, and integrate
-  it with your Travis CI build process.
-title: Setting up SwiftLint on Travis CI
----
++++
+date = '2016-03-03T00:00:00Z'
+description = 'How to set up SwiftLint to run locally on your machine, and integrate it with your Travis CI build process.'
+title = 'Setting up SwiftLint on Travis CI'
+tags = ['ios']
++++
 
 [SwiftLint](https://github.com/realm/SwiftLint) is a great tool for enforcing [code conventions](https://github.com/github/swift-style-guide/blob/master/README.md) in your Swift projects.
 

@@ -1,11 +1,10 @@
----
-date: "2023-08-20T00:00:00Z"
-description: How to use GNU Parallel to gather stats on long-running flaky tests by
-  running them many times and capturing their results.
-image: cover.png
-title: GNU Parallel, where have you been all my life?
-tags: tools
----
++++
+date = '2023-08-20T00:00:00Z'
+description = 'How to use GNU Parallel to gather stats on long-running flaky tests by running them many times and capturing their results.'
+image = 'cover.png'
+title = 'GNU Parallel, where have you been all my life?'
+tags = ['tools', 'shell']
++++
 
 I was recently trying to figure out how likely a bunch of end-to-end tests were to be flaky, and wanted to gather some stats about their pass/fail rates on my local machine before including them in a broader test suite.
 
