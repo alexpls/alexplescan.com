@@ -10,5 +10,5 @@ watch-tailwind:
 
 .PHONY: watch-hugo
 watch-hugo:
-	hugo server --bind "0.0.0.0"
+	hugo server --buildDrafts --bind "0.0.0.0"
 
