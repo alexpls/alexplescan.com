@@ -14,3 +14,8 @@ make watch-tailwind &
 make
 ```
 
+## TODO
+
+- Ensure all post descriptions make sense.
+- Add tags to all posts.
+- Make light theme nicer.

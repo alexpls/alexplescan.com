@@ -16,7 +16,7 @@
 
   <div class="grid grid-cols-12 mx-auto max-w-3xl py-12 px-3 gap-16">
     <div class="col-span-8">
-      {{ $numPosts := 3 }}
+      {{ $numPosts := 5 }}
       <h2 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Latest posts</h2>
       <ul class="list-disc ml-4">
         {{ range site.RegularPages.Limit $numPosts }}
