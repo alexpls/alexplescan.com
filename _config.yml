@@ -55,7 +55,7 @@ paginate: 3
 paginate_path: "/posts/pages/:num/"
 
 # Whether to enable Plausible analytics
-analytics: true
+analytics: false
 
 exclude:
   - Gemfile

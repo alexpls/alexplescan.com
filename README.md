@@ -1,6 +1,12 @@
-# [alexplescan.com](https://alexplescan.com)
+# [v1.alexplescan.com](https://v1.alexplescan.com)
 
-This is the Jekyll repository for my site [alexplescan.com](https://alexplescan.com).
+---
+
+**Deprecated**: check the `master` branch for the latest version of the site. This one's not being used anymore, but stil deployed to https://v1.alexplescan.com for posterity.
+
+---
+
+This is the Jekyll repository for my site [v1.alexplescan.com](https://v1.alexplescan.com).
 
 No license here, so if any of this code is of use to you - take it and use it however you want!
 
