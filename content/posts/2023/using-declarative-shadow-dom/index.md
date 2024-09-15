@@ -3,7 +3,7 @@ date = '2023-03-19T00:00:00Z'
 description = 'How I used the Declarative Shadow DOM to embed HTML emails on a web page without breaking its CSS styles.'
 image = 'assets/posts/shadow-dom/cover.jpg'
 title = 'Using Declarative Shadow DOM to embed HTML emails on a web page'
-tags = ['web']
+tags = ['Web']
 +++
 
 Recently, I worked on embedding HTML emails into a web page for [Mailgrip](https://mailgrip.io).

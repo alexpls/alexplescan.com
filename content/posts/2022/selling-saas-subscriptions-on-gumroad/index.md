@@ -3,7 +3,7 @@ date = '2022-12-22T00:00:00Z'
 description = 'My experience with using Gumroad to sell subscription based software.'
 image = 'assets/posts/selling-saas-on-gumroad/cover.jpg'
 title = 'Selling SaaS on Gumroad'
-tags = ['web', 'saas']
+tags = ['Web', 'SaaS']
 +++
 
 As part of my recent work on building [Mailgrip](https://mailgrip.io), I decided to experiment with using [Gumroad](https://gumroad.com) to manage payments and subscriptions. This post documents the minimum viable Gumroad integration I implemented, in case you are looking at doing the same thing!

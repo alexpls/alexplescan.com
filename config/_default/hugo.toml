@@ -2,6 +2,7 @@ baseURL = 'https://alexplescan.com/'
 languageCode = 'en-US'
 title = 'Alex Plescan'
 summaryLength = 40
+capitalizeListTitles = false
 
 [params]
 description = "Alex Plescan's website"

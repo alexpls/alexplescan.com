@@ -2,7 +2,7 @@
 date = '2022-04-17T00:00:00Z'
 description = 'A quick, zero-dependency way to manage private files in a git repository.'
 title = 'The ".x" Files'
-tags = ['shell']
+tags = ['Shell']
 +++
 
 <div class="callout">
