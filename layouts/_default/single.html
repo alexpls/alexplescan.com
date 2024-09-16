@@ -9,9 +9,9 @@
     </div>
   </div>
 
-  <div class="container px-3 mx-auto flex flex-col-reverse lg:divide-x lg:flex-row justify-between gap-6 lg:gap-12">
+  <div class="px-3 mx-auto flex justify-center flex-col-reverse lg:divide-x lg:flex-row gap-6 lg:gap-12">
     <div>
-      <article class="max-w-none lg:mx-auto lg:max-w-[69ch] break-words ap-prose">
+      <article class="mx-auto max-w-[69ch] break-words ap-prose">
         {{ .Content }}
       </article>
 
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <aside class="lg:basis-[300px] flex-shrink-0 max-lg:border border-zinc-300 dark:border-slate-600 lg:pl-6 text-sm mx-auto">
+    <aside class="max-w-[400px] mx-auto lg:mx-0 flex-shrink-0 max-lg:border border-zinc-300 dark:border-slate-600 lg:pl-6 text-sm">
       <div class="lg:sticky lg:top-0">
         <div class="hidden lg:block text-center border-b border-zinc-300 dark:border-slate-600 font-semibold py-3">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
