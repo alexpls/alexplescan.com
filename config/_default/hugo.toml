@@ -1,7 +1,7 @@
 baseURL = 'https://alexplescan.com/'
 languageCode = 'en-US'
 title = 'Alex Plescan'
-summaryLength = 40
+summaryLength = 30
 capitalizeListTitles = false
 
 [params]
