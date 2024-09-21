@@ -3,7 +3,7 @@
 {{- $quality := .Get "quality" | default "80" -}}
 {{- $class := .Get "class" -}}
 {{- $desiredWidth := .Get "width" -}}
-{{- $width := $desiredWidth | default "640" -}}
+{{- $width := $desiredWidth | default "760" -}}
 {{- $width = int $width -}}
 {{- $img := .Page.Resources.Get $src -}}
 {{- $fallbackImg := $img.Process (print "resize " $width "x jpg") -}}
