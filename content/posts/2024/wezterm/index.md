@@ -2,7 +2,7 @@
 date = '2024-08-10T00:00:00Z'
 description = 'A guide to configuring WezTerm using its Lua API. Focuses on appearance, keybindings, multiplexing, workspace navigation, and status bar (powerline) setup.'
 title = 'Okay, I really like WezTerm'
-tags = ['Tools', 'Shell']
+tags = ['Tools', 'CLI']
 +++
 
 A while back [my friend](https://blog.lambo.land/) recommended that I try [WezTerm](https://wezfurlong.org/wezterm/). I'd been an iTerm 2 stalwart for the better part of a decade, but not to be *too* narrow-minded I conceded, started it up, and saw this:
