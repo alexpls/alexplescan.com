@@ -5,7 +5,7 @@
         Hey, I&rsquo;m Alex &mdash; I make websites
       </h1>
 
-      <p class="text-lg lg:text-xl leading-relaxed mb-3 lg:mb-5 max-w-xl">
+      <p class="text-lg lg:text-xl leading-relaxed max-w-xl">
         This is my home on the internet, where I post about
         things I&rsquo;m working on, and things I&rsquo;ve
         learned along the way.
@@ -24,11 +24,11 @@
             {{ $dateHuman := .Date | time.Format ":date_long" }}
             <time datetime="{{ $dateMachine }}" class="text-sm text-zinc-500 dark:text-slate-400">{{ $dateHuman }}</time>
             <div>
-              <a class="font-bold text-zinc-800 dark:text-slate-200 hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+              <a class="ap-link font-bold no-underline hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </div>
             <p class="text-sm text-justify text-zinc-500 dark:text-slate-400">
               {{ .Summary }}
-              <a href="{{ .RelPermalink }}" class="ap-link text-sm">Keep reading</a>.
+              <a href="{{ .RelPermalink }}" class="ap-link text-sm">Keep reading&hellip;</a>
             </p>
           </li>
         {{ end }}
