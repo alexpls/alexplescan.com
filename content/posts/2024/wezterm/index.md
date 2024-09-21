@@ -1,7 +1,6 @@
 +++
 date = '2024-08-10T00:00:00Z'
 description = 'A guide to configuring WezTerm using its Lua API. Focuses on appearance, keybindings, multiplexing, workspace navigation, and status bar (powerline) setup.'
-image = 'cover.png'
 title = 'Okay, I really like WezTerm'
 tags = ['Tools', 'Shell']
 +++
