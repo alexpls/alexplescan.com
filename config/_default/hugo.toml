@@ -1,7 +1,8 @@
 baseURL = 'https://alexplescan.com/'
 languageCode = 'en-US'
 title = 'Alex Plescan'
-summaryLength = 30
+# forcing a one-word summary ensures that only the first paragraph is ever used
+summaryLength = 1 
 capitalizeListTitles = false
 
 [params]
