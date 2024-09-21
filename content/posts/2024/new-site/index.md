@@ -5,7 +5,9 @@ description = "Discusses the ground-up rebuild of this site, using Hugo, and Tai
 tags = ['Web']
 +++
 
-It's been eight years since I first made this site, and since then it hasn't had any substantial updates to its design or overall structure. Here we are now in 2024, and I find myself to be a developer with a blog that _doesn't_ have a dark theme... what set out as an effort to rectify this embarrassing fact with some simple CSS tweaks ended up being a rewrite of the entire site. Oh well - guess I love to shave yaks!
+I first made this site back in 2016, and since then it hasn't had any substantial updates to its design or overall structure. Here we are now in 2024, and I find myself to be a developer with a blog that _doesn't_ have a dark theme.
+
+What set out as an effort to rectify this embarrassing fact with some simple CSS tweaks ended up being a rewrite of the entire site. Oh well - guess I love to shave yaks!
 
 This post runs through some of the new things I'm doing with this site from a technical point of view, as well as some things that I've decided not to change from the old one.
 
