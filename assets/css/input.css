@@ -1,243 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./font-lato";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 
-@layer base {
-  .ap-link {
-    @apply underline text-blue-800 hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-100;
-  }
-  
-  .ap-post-img {
-    @apply rounded border-2 border-zinc-500 dark:border-slate-400 mx-auto;
-  }
-
-  .ap-prose {
-      @apply prose prose-zinc dark:prose-slate dark:prose-invert prose-hr:border-zinc-300 dark:prose-hr:border-slate-600 prose-pre:text-xs prose-img:mx-auto prose-a:ap-link;
-  }
-
-  .ap-input {
-    @apply block p-2.5 w-full rounded-lg dark:bg-slate-900;
-  }
-
-  .ap-btn {
-    @apply px-4 py-2 transition-all shadow-inner font-semibold text-zinc-200 dark:text-slate-200 rounded-lg text-center bg-blue-600 cursor-pointer hover:bg-blue-700;
-  }
+@theme {
+  --font-sans: "Lato", sans-serif;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Black.eot'); 
-  src: url('/fonts/lato/LatoLatin-Black.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Black.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Black.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Black.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 900;
-  text-rendering: optimizeLegibility;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility ap-link {
+  @apply underline text-blue-800 hover:text-blue-500 dark:text-blue-300 hover:dark:text-blue-100;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-BlackItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-BlackItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-BlackItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-BlackItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-BlackItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 900;
-  text-rendering: optimizeLegibility;
+@utility ap-post-img {
+  @apply rounded border-2 border-zinc-500 dark:border-slate-400 mx-auto;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Bold.eot'); 
-  src: url('/fonts/lato/LatoLatin-Bold.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Bold.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Bold.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Bold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 700;
-  text-rendering: optimizeLegibility;
+@utility ap-prose {
+    @apply prose prose-zinc dark:prose-slate dark:prose-invert prose-hr:border-zinc-300 dark:prose-hr:border-slate-600 prose-pre:text-xs prose-img:mx-auto prose-a:ap-link;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-BoldItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-BoldItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-BoldItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-BoldItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-BoldItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 700;
-  text-rendering: optimizeLegibility;
+@utility ap-input {
+  @apply block p-2.5 w-full rounded-lg dark:bg-slate-900;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Hairline.eot'); 
-  src: url('/fonts/lato/LatoLatin-Hairline.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Hairline.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Hairline.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Hairline.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 100;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-HairlineItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-HairlineItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-HairlineItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-HairlineItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-HairlineItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 100;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Heavy.eot'); 
-  src: url('/fonts/lato/LatoLatin-Heavy.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Heavy.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Heavy.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Heavy.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 800;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-HeavyItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-HeavyItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-HeavyItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-HeavyItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-HeavyItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 800;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Italic.eot'); 
-  src: url('/fonts/lato/LatoLatin-Italic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Italic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Italic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Italic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Light.eot'); 
-  src: url('/fonts/lato/LatoLatin-Light.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Light.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Light.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Light.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 300;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-LightItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-LightItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-LightItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-LightItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-LightItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 300;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Medium.eot'); 
-  src: url('/fonts/lato/LatoLatin-Medium.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Medium.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Medium.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-MediumItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-MediumItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-MediumItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-MediumItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-MediumItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Regular.eot'); 
-  src: url('/fonts/lato/LatoLatin-Regular.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Regular.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Regular.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Semibold.eot'); 
-  src: url('/fonts/lato/LatoLatin-Semibold.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Semibold.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Semibold.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Semibold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 600;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-SemiboldItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-SemiboldItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-SemiboldItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-SemiboldItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-SemiboldItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 600;
-  text-rendering: optimizeLegibility;
-}
-
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-Thin.eot'); 
-  src: url('/fonts/lato/LatoLatin-Thin.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-Thin.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-Thin.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-Thin.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 200;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/lato/LatoLatin-ThinItalic.eot'); 
-  src: url('/fonts/lato/LatoLatin-ThinItalic.eot?#iefix') format('embedded-opentype'), 
-       url('/fonts/lato/LatoLatin-ThinItalic.woff2') format('woff2'), 
-       url('/fonts/lato/LatoLatin-ThinItalic.woff') format('woff'), 
-       url('/fonts/lato/LatoLatin-ThinItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 200;
-  text-rendering: optimizeLegibility;
+@utility ap-btn {
+  @apply px-4 py-2 transition-all shadow-inner font-semibold text-zinc-200 dark:text-slate-200 rounded-lg text-center bg-blue-600 cursor-pointer hover:bg-blue-700;
 }
 

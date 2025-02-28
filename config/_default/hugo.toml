@@ -36,4 +36,3 @@ weight = 20
 name = 'About'
 pageRef = '/about'
 weight = 30
-
