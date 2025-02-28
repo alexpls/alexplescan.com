@@ -15,19 +15,7 @@
   {{ end }}
 {{ end }}
 
-{{ with resources.Get "css/output.css" }}
-  {{ if hugo.IsDevelopment }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" />
-  {{ else }}
-    {{ with . | minify | fingerprint }}
-      <link
-        rel="stylesheet"
-        href="{{ .RelPermalink }}"
-        integrity="{{ .Data.Integrity }}"
-        crossorigin="anonymous" />
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{ partialCached "css.html" . }}
 
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
