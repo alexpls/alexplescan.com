@@ -4,13 +4,15 @@ My website. I detailed some of the choices made while building it [in this post]
 
 ```bash
 # install
-asdf install && npm install
+asdf plugin add nodejs
+asdf plugin add hugo
+asdf install
+npm install
 
 # dev
-make watch-hugo &
-make watch-tailwind &
+just dev
 
 # build
-make
+just build
 ```
 
