@@ -262,6 +262,7 @@
       "creating-and-switching-between-workspaces",
       "custom-content-delivery-webhook",
       "deploying-to-cloudflare-pages",
+      "display-data-channel-ddc",
       "drawing-a-line",
       "enter-the-shadow-realm-dom",
       "enter-the-x-folder",
@@ -281,6 +282,8 @@
       "keys",
       "lato-font",
       "lets-get-swiftlint-running-locally",
+      "linux-kde-desktop-environment",
+      "macos",
       "many-colours-all-at-once",
       "moving-around-panes",
       "multiplexing-terminals-levelling-up-key-assignments",
@@ -295,6 +298,7 @@
       "responsive-images",
       "scaling",
       "splitting-panes-leader-key",
+      "the-monitor",
       "the-timeseries-query",
       "use-a-name-thats-unique-across-your-project",
       "use-an-awful-name",
@@ -304,7 +308,8 @@
       "whats-browser-support-like",
       "where-to-from-here",
       "why-not-just-insert-the-emails-html-into-the-page",
-      "window-styling"
+      "window-styling",
+      "windows"
     ]
   }
 }
