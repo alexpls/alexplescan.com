@@ -16,7 +16,7 @@ domain = 'alexplescan.com'
 
 [permalinks]
 [permalinks.page]
-posts = '/posts/:year/:month/:day/:slugorfilename/'
+posts = '/posts/:year/:month/:day/:slugorcontentbasename/'
 
 [markup]
 [markup.tableOfContents]

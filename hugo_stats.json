@@ -131,7 +131,6 @@
       "h-auto",
       "hidden",
       "highlight",
-      "hover:[&_a]:underline",
       "hover:border-zinc-600",
       "hover:dark:border-slate-400",
       "hover:dark:text-slate-100",
