@@ -14,7 +14,10 @@ With a recent upgrade of my monitor I wanted to solve this problem for good; I w
 
 Well, I've done it. Behold:
 
-<video alt="video demonstrating switching between inputs using a keyboard shortcut" src="demo.mp4" controls="yes"></video>
+<video alt="video demonstrating switching between inputs using a keyboard shortcut" controls="yes">
+  <source src="demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 A couple of things have made this possible:
 
