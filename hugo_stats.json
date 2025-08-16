@@ -52,6 +52,7 @@
       "-translate-y-[24px]",
       "701",
       "[&_a]:ap-link",
+      "[&_a]:hover:underline",
       "[&_a]:no-underline",
       "[&_li]:marker:dark:text-slate-300",
       "[&_li]:marker:text-zinc-400",
