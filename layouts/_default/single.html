@@ -2,14 +2,14 @@
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format "2 Jan. 2006" }}
 
-  <div class="py-12 lg:py-24 text-center">
+  <div class="mx-4 py-12 lg:py-24 text-center">
     <div class="mx-auto">
       <h1 class="text-3xl sm:text-4xl font-bold text-zinc-800 dark:text-slate-200 mb-2">{{ $.Title }}</h1>
       <time datetime="{{ $dateMachine }}" class="hidden lg:block">{{ $dateHuman }}</time>
     </div>
   </div>
 
-  <div class="px-6 flex flex-col-reverse lg:flex-row justify-center gap-6">
+  <div class="px-4 flex flex-col-reverse lg:flex-row justify-center gap-6">
     <div class="min-w-0">
       <article class="mx-auto break-words ap-prose max-w-[760px]">
         {{ .Content }}
