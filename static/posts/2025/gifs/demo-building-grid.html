@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building the Grid Demo</title>
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          background: black;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+      }
+    </style>
+</head>
+<body>
+    <script src="https://gifs.alex.works/assets/p5.i-hacked-this-to-fix-gif-loading.min.js"></script>
+    <script>
+    const GIF_URL = 'goku.gif'
+    const BASE_ROW_HEIGHT = 60
+    const PADDING = 8
+    const PAN_PER_FRAME = 0.5
+
+    let rows = []
+    let panX = 0
+    let sourceImg
+
+    function preload() {
+      sourceImg = loadImage(GIF_URL)
+    }
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight)
+      buildRows()
+      fillInitialCells()
+    }
+
+    function buildRows() {
+      rows = []
+      let y = 0
+      while (y < height) {
+        // add some visual interest by randomising height of the
+        // row, as well as its panning speed multiplier
+        const h = BASE_ROW_HEIGHT + random(0, 50)
+        rows.push({
+          y,
+          height: h,
+          speedMul: random(1, 2.5),
+          offsetX: 0,
+          cells: []
+        })
+        y += h + PADDING
+      }
+    }
+
+    function addCell(row) {
+      const aspect = sourceImg.width / sourceImg.height
+      const w = Math.floor(row.height * aspect)
+      row.cells.push({
+        width: w,
+        img: sourceImg
+      })
+    }
+
+    function fillInitialCells() {
+      // fill a little beyond screen width for smoother start
+      rows.forEach(row => {
+        while (rowWidth(row) < width * 1.2) addCell(row)
+      })
+    }
+
+    function rowWidth(row) {
+      return row.cells.reduce((sum, c, i) => sum + c.width + (i > 0 ? PADDING : 0), 0)
+    }
+
+    function draw() {
+      background(0)
+      if (!sourceImg) return
+
+      panX += PAN_PER_FRAME
+
+      rows.forEach(row => {
+        const rowPan = panX * row.speedMul
+
+        // need another cell appearing on the right?
+        if (row.offsetX + rowWidth(row) < width + rowPan) {
+          addCell(row)
+          removeOffscreen(row, rowPan)
+        }
+
+        push()
+        translate(-rowPan, row.y)
+        let x = row.offsetX
+        row.cells.forEach(cell => {
+          image(cell.img, x, 0, cell.width, row.height)
+          x += cell.width + PADDING
+        })
+        pop()
+      })
+    }
+
+    function removeOffscreen(row, rowPan) {
+      // recycle cells fully scrolled past the left edge
+      while (row.cells.length) {
+        const first = row.cells[0]
+        const firstRight = row.offsetX + first.width
+        if (firstRight < rowPan) {
+          row.offsetX += first.width + PADDING
+          row.cells.shift()
+        } else {
+          break
+        }
+      }
+    }
+    </script>
+</body>
+</html>

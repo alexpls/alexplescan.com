@@ -1,0 +1,7 @@
+{{ $name := .Get "src" }} {{ $height := .Get "height" | default "h-[120px]" }}
+{{ with .Page.Resources.GetMatch $name }}
+<div
+  class="w-full {{ $height }} bg-repeat-x bg-[length:auto_100%] bg-center [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%]"
+  style="background-image:url('{{ .RelPermalink }}')"
+></div>
+{{ end }}

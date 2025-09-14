@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRT Shader Demo</title>
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          background: black;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+      }
+    </style>
+</head>
+<body>
+    <div id="sketch-container"></div>
+    <script src="https://gifs.alex.works/assets/p5.i-hacked-this-to-fix-gif-loading.min.js"></script>
+    <script>
+    const GIF_URL = 'goku.gif'
+    let gifImg
+    let buffer, crt
+
+    function preload() {
+      gifImg = loadImage(GIF_URL)
+    }
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight)
+      initBuffer()
+    }
+
+    function initBuffer() {
+      // create a buffer at a max width of 1920 for our draws. we don't
+      // want to exceed this width because otherwise too many GIFs will
+      // be loaded at once and we'll tank performance.
+      const bw = min(windowWidth, 1920)
+      const scale = windowWidth / bw
+      const bh = Math.floor(windowHeight / scale)
+      buffer = createGraphics(bw, bh, WEBGL)
+      buffer.pixelDensity(1)
+
+      // instantiate the shader
+      crt = buffer.createFilterShader(CRT_SHADER_SRC)
+    }
+
+    function draw() {
+      buffer.background(0)
+
+      // tile the gif to fill the buffer for a prettier example
+      if (gifImg) {
+        const tileW = gifImg.width
+        const tileH = gifImg.height
+        buffer.push()
+        buffer.imageMode(CORNER)
+        // note: WEBGL origin is center, so iterate from -width/2,-height/2
+        const startX = -buffer.width / 2
+        const startY = -buffer.height / 2
+        for (let ty = startY; ty < buffer.height / 2; ty += tileH) {
+          for (let tx = startX; tx < buffer.width / 2; tx += tileW) {
+            buffer.image(gifImg, tx, ty, tileW, tileH)
+          }
+        }
+        buffer.pop()
+      }
+
+      // apply the shader
+      if (crt) buffer.filter(crt)
+
+      background('black')
+
+      // draw the image back to the main buffer (the onscreen canvas)
+      // and scale it so it fits
+      image(buffer, 0, 0, width, height)
+    }
+
+
+    // https://babylonjs.medium.com/retro-crt-shader-a-post-processing-effect-study-1cb3f783afbc
+    const CRT_SHADER_SRC = `
+    precision highp float;
+
+    uniform sampler2D tex0;
+    varying vec2 vTexCoord;
+
+    vec2 curveRemapUV(vec2 uv) {
+      // as we near the edge of our screen apply greater distortion using a cubic function
+      uv = 2.0 * uv - 1.0;
+      vec2 curvature = vec2(6.0);
+      vec2 offset = abs(uv.yx) / curvature;
+      uv = uv + uv * offset * offset;
+      uv = uv * 0.5 + 0.5;
+      return uv;
+    }
+
+    vec4 adjBrightness(vec2 inUV, vec4 clr) {
+      float r = 0.5;
+      vec2 cornerUV = min(2.0 * (0.5 - abs(inUV - vec2(0.5))) + r, 1.0);
+      float br = cornerUV.x * cornerUV.y + 0.15;
+      br = pow(cornerUV.x * cornerUV.y, 2.2) + 0.45;
+      br = clamp(br * br * br * br + 0.55, 0.0, 1.0);
+      return clr * br;
+    }
+
+    void main() {
+      vec2 remappedUV = curveRemapUV(vTexCoord);
+      vec4 baseColor = texture2D(tex0, remappedUV);
+      if (remappedUV.x < 0.0 || remappedUV.y < 0.0 || remappedUV.x > 1.0 || remappedUV.y > 1.0){
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+      } else {
+        gl_FragColor = adjBrightness(vTexCoord, baseColor);
+      }
+
+      gl_FragColor *= abs(sin(remappedUV.y * 1024.0));
+      gl_FragColor.a = 1.0;
+    }
+    `
+    </script>
+</body>
+</html>

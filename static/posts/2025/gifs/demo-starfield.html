@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starfield Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://gifs.alex.works/assets/p5.i-hacked-this-to-fix-gif-loading.min.js"></script>
+    <script>
+    let stars = []
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight)
+      initStars()
+    }
+
+    function draw() {
+      background('black')
+      drawStars()
+    }
+
+    function initStars() {
+      const maxStars = 2000
+      const density = 1000 // bigger = fewer stars
+      const target = Math.min((width * height) / density, maxStars)
+      for (let i = 0; i < target; i++) {
+        stars.push({
+          x: random(0, width),
+          y: random(0, height),
+          speed: random(0.1, 0.5),
+          size: random(0.5, 3)
+        })
+      }
+    }
+
+    function drawStars() {
+      stroke(255, 255, 255, 150)
+      strokeWeight(2)
+      beginShape(POINTS)
+      stars.forEach(s => {
+        s.x -= s.speed
+        if (s.x < 0) {
+          s.x = width
+          s.y = random(0, height)
+        }
+        vertex(s.x, s.y)
+      })
+      endShape()
+    }
+    </script>
+</body>
+</html>
