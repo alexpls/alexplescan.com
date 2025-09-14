@@ -43,16 +43,16 @@
             {{- end -}}
           </div>
         </div>
-        {{ $hasLevel2Headings := false }}
+        {{ $hasTocHeadings := false }}
         {{ range .Fragments.HeadingsMap }}
-          {{ if eq .Level 2 }}
-            {{ $hasLevel2Headings = true }}
+          {{ if or (eq .Level 2) (eq .Level 3) }}
+            {{ $hasTocHeadings = true }}
           {{ end }}
         {{ end }}
-        {{ if $hasLevel2Headings }}
+        {{ if $hasTocHeadings }}
           <div class="py-3 px-3 lg:px-0">
             <div class="mb-2 text-xs text-zinc-800 dark:text-slate-200"><span class="uppercase font-bold">Table of Contents</span> (<a href="#top" class="ap-link">Top</a>)</div>
-            <div class="ml-4 [&_ol]:list-decimal [&_li]:marker:text-zinc-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline [&_a]:hover:underline">
+            <div class="ml-4 [&_ol]:list-decimal [&_ol_ol]:list-[lower-alpha] [&_ol_ol]:ml-5 [&_li]:marker:text-zinc-400 [&_li]:marker:dark:text-slate-300 [&_a]:ap-link [&_a]:no-underline [&_a]:hover:underline">
               {{ .TableOfContents }}
             </div>
           </div>
