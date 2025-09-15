@@ -15,7 +15,9 @@
   {{ end }}
 {{ end }}
 
-{{ partialCached "css.html" . }}
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ partial "css.html" . }}
+{{ end }}
 
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
