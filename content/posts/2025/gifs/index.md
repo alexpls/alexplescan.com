@@ -6,7 +6,7 @@ image = 'cover.jpg'
 tags = ['Web']
 +++
 
-A couple of weeks ago, some former colleagues competed in Brisbane’s Battle of the Tech Bands - and won! I created visuals for six of their songs, which were mostly 90s/2000s covers. It felt only right to theme the visuals around that era too.
+A couple of weeks ago, my [former colleagues](https://www.fortherecord.com/) competed in Brisbane’s Battle of the Tech Bands - and won! I created visuals for six of their songs, which were mostly 90s/2000s covers. It felt only right to theme the visuals around that era too.
 
 Here's how one of my favourites turned out (fittingly for a tech themed battle, it's rendered entirely in-browser):
 
