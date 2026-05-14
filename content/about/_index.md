@@ -16,6 +16,7 @@ By night, I maintain a few personal projects. [Mailgrip](https://mailgrip.io) is
 
 Some of my personal projects include:
 
+- [untils](https://untils.com) (2026) - get notified when the things you care about change
 - [Mailgrip](https://mailgrip.io) (2022) - forward email newsletters to RSS
 - [temoji.me](https://temoji.me) (2022) - make custom emojis for Slack and Discord
 - [acklo](https://acklo.app) (2021) - configure your app and manage feature flags
