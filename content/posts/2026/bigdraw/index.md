@@ -1,7 +1,7 @@
 +++
 date = '2026-07-07T12:00:00+1000'
 title = 'bigdraw: I made a collaborative drawing site'
-description = 'Announcing bigdraw.party: a collaborative drawing grid where strangers claim tiles, draw whatever they like, and turn a big empty grid into a weird little shared place on the internet.'
+description = 'Announcing bigdraw.party: a big collaborative multiplayer drawing where strangers can draw together.'
 image = 'grid.png'
 tags = ['Web']
 +++
